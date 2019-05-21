@@ -8,47 +8,47 @@ use App\Acervo;
 
 class AcervoController extends Controller
 {
-    /**
-     * Variável de classe Acervo
-     *
-     * @var Acervo
-     **/
-    private $item;
+    public function getAutores($IDAcervo){
+        $autores = DB::table('autoresdoacervo')->where('IDAcervo', '=', $IDAcervo)
+        ->join('autores', 'autoresdoacervo.IDAutor', '=', 'autores.IDAutor')
+        ->select('autores.IDAutor','autores.NomeDoAutor','autoresdoacervo.Sequencia','autores.Cutter')
+        ->get();
 
-    function __construct(Acervo $item)
-    {
-        $this->item = $item;
+        return $autores;
     }
 
     public function index(){
+        // Método padrão excede tempo limite. Utilizado método explícito (declarado nome da tabela)
+        // $data = ['data' => Acervo::all()];
         $data = ['data' => DB::table('acervo')->get()];
-        return response()->json($data);
-
-        // Método paginado
-        // return response()->json($this->shazam->paginate(3));
-
-        // ANTIGO
-        /*
-    	$items = DB::table('acervo')->limit(99)->get();
-    	
-        $itemsCoded = [];
-    	foreach ($items as $key => $value) {
-    		array_push($itemsCoded, $value);
-    	}
-    	return json_encode($itemsCoded);
-        */
+        return response()->json($data);        
     }
 
-    // public function pag($pg = 10){
+    /**
+        Retorno padrão - resultados paginados
+    **/
     public function pag(){
-        return response()->json(Acervo::all()->paginate(10));
+        $data = Acervo::paginate(10);
+        // Inclui dados dos autores em cada item do acervo
+        foreach ($data as $key => $value) {
+            $autores = collect(['Autores' => $this->getAutores($value->IDAcervo)]);            
+            $data[$key] = $autores->merge($value);
+        }
+
+        return response()->json($data);
     }
 
     public function mostrar($id){
-    	// return $response()->json(DB::table('acervo')->get($item));
-        // $data = DB::table('acervo')->where('IDAcervo',$id)->first();
-        $data = Acervo::find($id);
-        return response()->json($data);
+        // Retorna item do acervo
+        $item = Acervo::find($id);
+
+        // Popula item com os autores
+        $autores = collect(['Autores' => $this->getAutores($id)]);
+
+        $data = $autores->merge($item);
+
+        // Retorna resultado em JSON
+        return response()->json(['data' => $data]);
     }
 
     public function cadastrar(Request $request){
