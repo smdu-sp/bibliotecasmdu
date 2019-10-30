@@ -26,6 +26,11 @@
                 </tr>
             </tbody>
         </table>
+        <hr>
+        <div>
+          <a :href="resultados.prev_page_url">Anterior</a>
+          <a :href="resultados.next_page_url">Próxima</a>
+        </div>
   </div>
 </template>
 
@@ -33,13 +38,15 @@
   export default {
       data() {
         return {
-          acervo: []
+          acervo: [],
+          resultados: {}
         }
       },
       created() {
-      let uri = 'http://bibliotecasmdu/api/acervo';
+      let uri = 'http://localhost:8000/api/acervo';
       this.axios.get(uri).then(response => {
-        this.acervo = response.data.data;
+        this.resultados = response.data;
+        this.acervo = this.resultados.data;
       });
     }
   }

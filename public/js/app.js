@@ -48254,19 +48254,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      acervo: []
+      acervo: [],
+      resultados: {}
     };
   },
   created: function created() {
     var _this = this;
 
-    var uri = 'http://bibliotecasmdu/api/acervo';
+    var uri = 'http://localhost:8000/api/acervo';
     this.axios.get(uri).then(function (response) {
-      _this.acervo = response.data.data;
+      _this.resultados = response.data;
+      _this.acervo = _this.resultados.data;
     });
   }
 });
@@ -48338,6 +48345,18 @@ var render = function() {
         }),
         0
       )
+    ]),
+    _vm._v(" "),
+    _c("hr"),
+    _vm._v(" "),
+    _c("div", [
+      _c("a", { attrs: { href: _vm.resultados.prev_page_url } }, [
+        _vm._v("Anterior")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: _vm.resultados.next_page_url } }, [
+        _vm._v("Próxima")
+      ])
     ])
   ])
 }
