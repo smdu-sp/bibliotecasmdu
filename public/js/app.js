@@ -47386,7 +47386,7 @@ exports = module.exports = __webpack_require__(45)(false);
 
 
 // module
-exports.push([module.i, "\n.fade-enter-active, .fade-leave-active {\n  -webkit-transition: opacity .2s;\n  transition: opacity .2s\n}\n.fade-enter, .fade-leave-active {\n  opacity: 0\n}\n", ""]);
+exports.push([module.i, "\n.container {\r\n  padding-top: 2em;\n}\n.header-icon {\r\n  max-width: 150px;\r\n  padding-left: 2em;\r\n  padding-top: 1.5em;\n}\n.logo {\r\n  max-width: 300px;\n}\n.fade-enter-active,\r\n.fade-leave-active {\r\n  -webkit-transition: opacity 0.2s;\r\n  transition: opacity 0.2s;\n}\n.fade-enter,\r\n.fade-leave-active {\r\n  opacity: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -47770,7 +47770,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -47787,51 +47804,40 @@ var render = function() {
     { staticClass: "container" },
     [
       _c(
-        "nav",
-        { staticClass: "navbar navbar-expand-sm bg-dark navbar-dark" },
+        "div",
         [
-          _c("ul", { staticClass: "navbar-nav" }, [
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "router-link",
-                  { staticClass: "nav-link", attrs: { to: "/" } },
-                  [_vm._v("Home")]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "router-link",
-                  { staticClass: "nav-link", attrs: { to: "/cadastrar" } },
-                  [_vm._v("Cadastrar Item")]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "router-link",
-                  { staticClass: "nav-link", attrs: { to: "/catalogo" } },
-                  [_vm._v("Catálogo")]
-                )
-              ],
-              1
-            )
-          ])
-        ]
+          _c("router-link", { attrs: { to: "/" } }, [
+            _c("img", {
+              staticClass: "logo",
+              attrs: { src: __webpack_require__(69), alt: "Home" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("router-link", { attrs: { to: "/sobre" } }, [
+            _c("img", {
+              staticClass: "header-icon",
+              attrs: { src: __webpack_require__(70), alt: "Sobre" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("router-link", { attrs: { to: "/catalogo" } }, [
+            _c("img", {
+              staticClass: "header-icon",
+              attrs: {
+                src: __webpack_require__(71),
+                alt: "Catalogo"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "header-icon",
+            attrs: { src: __webpack_require__(72), alt: "login" }
+          })
+        ],
+        1
       ),
+      _vm._v(" "),
       _c("br"),
       _vm._v(" "),
       _c("transition", { attrs: { name: "fade" } }, [_c("router-view")], 1)
@@ -47854,6 +47860,10 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(73)
+}
 var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(51)
@@ -47862,7 +47872,7 @@ var __vue_template__ = __webpack_require__(52)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -47916,11 +47926,112 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Componente Home montado.');
-    }
+  mounted: function mounted() {
+    console.log("Componente Home montado.");
+  }
 });
 
 /***/ }),
@@ -47938,15 +48049,101 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card card-default" }, [
-          _c("div", { staticClass: "card-header" }, [_vm._v("Home")]),
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "bg-home" }, [
+        _c("div", { staticClass: "alinhar-itens" }, [
+          _c("p", { staticClass: "titulo" }, [
+            _vm._v("Controle de documentos")
+          ]),
           _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _vm._v("\n                Página inicial\n            ")
+          _c("p", { staticClass: "subtitulo" }, [
+            _vm._v(
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n      tempor incididunt ut labore et dolore magna aliqua. "
+            )
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("button", { staticClass: "btnVisualizarCatalogo" }, [
+            _vm._v("Visualizar Catálogo")
           ])
         ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "home-card" }, [
+        _c("img", {
+          staticClass: "icon-sizes",
+          attrs: { src: "/images/novidades-icon.jpg" }
+        }),
+        _vm._v(" "),
+        _c("h4", [_vm._v("NOVIDADES")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n      tempor incididunt ut labore et dolore magna aliqua."
+          )
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("button", { staticClass: "btnCards" }, [_vm._v("Acessar")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "home-card" }, [
+        _c("img", {
+          staticClass: "icon-sizes",
+          attrs: { src: "/images/dicas-de-leitura-icon.jpg" }
+        }),
+        _vm._v(" "),
+        _c("h4", [_vm._v("DICAS DE LEITURA")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n      tempor incididunt ut labore et dolore magna aliqua."
+          )
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("button", { staticClass: "btnCards" }, [_vm._v("Acessar")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "home-card" }, [
+        _c("img", {
+          staticClass: "icon-sizes",
+          attrs: { src: "/images/mais-procurados-icon.jpg" }
+        }),
+        _vm._v(" "),
+        _c("h4", [_vm._v("MAIS PROCURADOS")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n      tempor incididunt ut labore et dolore magna aliqua."
+          )
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("button", { staticClass: "btnCards" }, [_vm._v("Acessar")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "home-card" }, [
+        _c("img", {
+          staticClass: "icon-sizes",
+          attrs: { src: "/images/curiosidades-icon.jpg" }
+        }),
+        _vm._v(" "),
+        _c("h4", [_vm._v("CURIOSIDADES")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n      tempor incididunt ut labore et dolore magna aliqua."
+          )
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("button", { staticClass: "btnCards" }, [_vm._v("Acessar")])
       ])
     ])
   }
@@ -48398,6 +48595,79 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/logo-prefeitura.jpg?52d4ec414f0e4b099f750aab85c2f71b";
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/sobre-icon.jpg?11d24d6a2a2f39b18af8b183d6ae5534";
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/catalogo-icon.jpg?b4e73ebcf8a7621e1b75d0ea9a61cb07";
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/login-icon.jpg?576295f43c248a275e0cb494c66fa284";
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(74);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(46)("5aee971e", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6707e3d4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6707e3d4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(45)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.bg-home {\r\n  background-image: url('/images/background-home-image.jpg');\r\n  background-repeat: no-repeat;\r\n  min-height: 500px;\r\n  -webkit-filter: brightness(50%);\r\n  text-align: center;\r\n  opacity: 0.9;\n}\n.alinhar-itens {\r\nposition: absolute;\r\ntop: 25%; \r\nbottom: 25%;\r\nmargin: auto;\n}\n.titulo {\r\n  color: white;\r\n  font-weight: bold;\r\n  font-size: 40px;\r\n  text-align: center;\n}\n.subtitulo {\r\n  color: white;\r\n  font-weight: bold;\r\n  font-size: 24px;\r\n  text-align: center;\n}\n.btnVisualizarCatalogo {\r\n  color: white;\r\n  background-color: red;\r\n  border-radius: 12px;\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n  padding: 6px;\n}\n.home-card {\r\n  margin-right: auto;\r\n  margin-left: auto;\r\n  float: left;\r\n  width: 250px;\r\n  color: #000;\n}\n.icon-sizes {\r\n  max-width: 90px;\r\n  padding-top: 50px;\n}\nh4 {\r\n  font-weight: bold;\r\n  color: #000;\n}\n.btnCards {\r\n  background-color: green;\r\n  color: white;\r\n  font-weight: bold;\r\n  font-size: 20px;\r\n  border-radius: 12px;\r\n  padding: 6px;\n}\r\n", ""]);
+
+// exports
+
 
 /***/ })
 /******/ ]);
