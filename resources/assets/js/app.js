@@ -14,6 +14,7 @@ Vue.use(VueAxios, axios);
 import Home from './components/Home.vue';
 import Cadastrar from './components/Cadastrar.vue';
 import Catalogo from './components/Catalogo.vue';
+import Sobre from './components/Sobre.vue';
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
       name: 'catalogo',
       path: '/catalogo/:id?',
       component: Catalogo
+  },
+  {
+      name: 'sobre',
+      path: '/sobre',
+      component: Sobre
   }
 ];
 
