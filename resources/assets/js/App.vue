@@ -29,7 +29,7 @@
       <div class="container">
         <div class="columns">
           <div class="colun">
-            <p><strong> Municipal de Urbanismo e Licenciamento (SMUL) Prefeitura de São Paulo</strong></p>
+            <p><strong> Secretaria Municipal de Urbanismo e Licenciamento (SMUL) Prefeitura de São Paulo</strong></p>
           </div>
           <p>Rua São Bento, 405, Centro - 18º andar, CEP 01011-100 - São Paulo - SP, Telefone: (11)3113 7500</p>
         </div>

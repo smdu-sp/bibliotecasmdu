@@ -3,54 +3,60 @@
     <h1>Catálogo de Documentos</h1>
     <h2>Localize em nosso catálogo o documento desejado</h2>
 
-    <div class="header">
-      <div class="sub-header">
-        <div class="item-header">Pesquisar por:</div>
-      </div>
-      <div class="sub-header">
-        <div class="item-header">
-        <form action="/action_page.php">
-          <select name="pesquisa" size="1">
-            <option value="autor">Autor</option>
-            <option value="assunto">Assunto</option>
-            <option value="palavra">Palavra</option>
-            <option value="titulo">Título</option>
+    <div class="row header-pesquisa">
+      <tr>
+        <td>
+          <label class="lbPesquisar">Pesquisar por:</label>
+        </td>
+        <td>
+          <select name="pesquisa" class="form-control form-group-sm select-size">
+            <option value="1">Autor</option>
+            <option value="2">Assunto</option>
+            <option value="3">Palavra</option>
+            <option value="4">Título</option>
           </select>
-        </form></div>
-        </div>
-        <div class="sub-header">
-        <div class="item-header">
-        <input type="search" placeholder="Digite o termo desejado" />
-        </div>
-        </div>
-        <div class="sub-header">
-        <div class="item-header">
-          <input type="button" class="btnPesquisar" value="Pesquisar">
-        </div>
-      </div>
+        </td>
+        <td>
+          <input
+            type="search"
+            placeholder="Digite o termo desejado"
+            class="form-control search-size"
+          />
+        </td>
+        <td>
+          <button type="submit" class="btn mb-2 btn-color">Pesquisar</button>
+        </td>
+      </tr>
     </div>
-    
+
     <div class="row">
-      <div class="col-md-10"></div>
+      <div class="col-md-10">
+        <label class="itens-localizados">Foram localizados 10 itens em nossa base de dados</label>
+      </div>
       <div class="col-md-2">
         <router-link :to="{ name: 'cadastrar' }" class="btn btn-primary">Cadastrar Item</router-link>
       </div>
     </div>
     <br />
 
+    <!--Tabela de itens encontrados-->
     <table class="table table-hover">
       <thead>
-        <tr>
+        <tr class>
           <th>ID</th>
-          <th>Nome</th>
+          <th>Título</th>
           <th>Notas</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="item in acervo" :key="item.id">
           <td>{{ item.IDAcervo }}</td>
-          <td>{{ item.Titulo }}</td>
-          <td>{{ item.Notas }}</td>
+          <td
+            @click="openModal"
+            data-toggle="modal"
+            data-target=".bd-example-modal-lg"
+          >{{ item.Titulo }}</td>
+          <td @click="openModal">{{ item.Notas }}</td>
           <td>
             <router-link
               :to="{name: 'atualizar', params: { id: item.IDAcervo }}"
@@ -63,6 +69,77 @@
         </tr>
       </tbody>
     </table>
+    <!--Tabela de itens encontrados-->
+
+    <!--Modal-->
+    <div
+      class="modal fade bd-example-modal-lg"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <h5 class="modal-title">Modal title</h5>
+          <div class="modal-header">
+            <table class="table info-obra">
+              <tbody>
+                <tr>
+                  <th scope="row">Titulo:</th>
+                  <td>Título da obra</td>
+                </tr>
+                <tr>
+                  <th scope="row">Autoria:</th>
+                  <td>SOBRENOME, Primeiro Segundo Nome</td>
+                </tr>
+                <tr>
+                  <th scope="row">Descrição:</th>
+                  <td>Descrição da obra caso houver.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Assuntos:</th>
+                  <td>Assunto da obra. Exemplo: Economia, Administração.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Imprenta:</th>
+                  <td>São Paulo: 2013.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Classificação:</th>
+                  <td>CD 070</td>
+                </tr>
+                <tr>
+                  <th scope="row">Resumo:</th>
+                  <td>
+                    Tese apresentada ao Curso de Administração de Empresas na Universidade Braz Cubas para obtanção da
+                    certificação de nível superior.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Tipo do documento:</th>
+                  <td>CD-ROM</td>
+                </tr>
+                <tr>
+                  <th scope="row">Número de Chamada:</th>
+                  <td>CD 070</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tombo:</th>
+                  <td>00070</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+        <button type="button" class="btn btn-danger">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+        </div>
+      </div>
+    </div>
+    <!--Modal-->
+
     <hr />
     <div>
       <a :href="resultados.prev_page_url">Anterior</a>
@@ -76,27 +153,56 @@ h1 {
   color: #000;
   font-weight: bold;
 }
+
 h2 {
   color: #000;
   font-style: italic;
 }
+
 .main {
   padding: 2em;
 }
-.header {
-  width: 100%;
-  display: table;
-}
-.sub-header {
-  display: table-cell;
-}
-.item-header {
-  margin-left: 25px;
-}
-.sub-header:first-subheader .item-header {
-  margin-left: 0;
+.header-pesquisa {
+  margin-left: 5px;
+  padding-top: 20px;
+  padding-bottom: 3em;
 }
 
+.lbPesquisar {
+  font-size: 18px;
+  color: #000;
+}
+.select-size {
+  width: 200px;
+  margin-left: 30px;
+  margin-right: 15px;
+}
+.search-size {
+  width: 500px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.btn-color {
+  margin-left: 15px;
+  width: 150px;
+  color: #fff;
+  background-color: #090;
+  font-weight: bold;
+}
+.btn-color:hover {
+  background-color: #080;
+  color: #fff;
+}
+.itens-localizados {
+  font-size: 26px;
+  font-style: italic;
+  color: #0c0;
+  padding-top: 20px;
+}
+.info-obra th {
+  color: #080;
+}
 </style>
 
 <script>
