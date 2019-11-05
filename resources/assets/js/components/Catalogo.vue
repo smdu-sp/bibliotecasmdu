@@ -3,35 +3,41 @@
     <h1>Catálogo de Documentos</h1>
     <h2>Localize em nosso catálogo o documento desejado</h2>
 
-    <div class="row header-pesquisa">
-      <tr>
-        <td>
-          <label class="lbPesquisar">Pesquisar por:</label>
-        </td>
-        <td>
-          <select name="pesquisa" class="form-control form-group-sm select-size">
-            <option value="1">Autor</option>
-            <option value="2">Assunto</option>
-            <option value="3">Palavra</option>
-            <option value="4">Título</option>
-          </select>
-        </td>
-        <td>
-          <input
-            type="search"
-            placeholder="Digite o termo desejado"
-            class="form-control search-size"
-          />
-        </td>
-        <td>
-          <button type="submit" class="btn mb-2 btn-color">Pesquisar</button>
-        </td>
-      </tr>
+    <!--pesquisa-->
+    <div class="box-container">
+      <div class="search-container">
+        <div class="row header-pesquisa">
+          <tr>
+            <td>
+              <label class="lbPesquisar">Pesquisar por:</label>
+            </td>
+            <td>
+              <select name="pesquisa" class="form-control form-group-sm select-size">
+                <option value="1">Autor</option>
+                <option value="2">Assunto</option>
+                <option value="3">Palavra</option>
+                <option value="4">Título</option>
+              </select>
+            </td>
+            <td>
+              <input
+                type="search"
+                placeholder="Digite o termo desejado"
+                class="form-control search-size"
+              />
+            </td>
+            <td>
+              <button type="submit" class="btn mb-2 btn-color">Pesquisar</button>
+            </td>
+          </tr>
+        </div>
+      </div>
     </div>
+    <!--pesquisa-->
 
     <div class="row">
       <div class="col-md-10">
-        <label class="itens-localizados">Foram localizados 10 itens em nossa base de dados</label>
+        <label class="itens-localizados">Foram localizados 10 registros em nossa base de dados</label>
       </div>
       <div class="col-md-2">
         <router-link :to="{ name: 'cadastrar' }" class="btn btn-primary">Cadastrar Item</router-link>
@@ -50,12 +56,14 @@
       </thead>
       <tbody>
         <tr v-for="item in acervo" :key="item.id">
-          <td>{{ item.IDAcervo }}</td>
+          <td @click="openModal"
+            data-toggle="modal"
+            data-target=".bd-example-modal-lg" class="pointer">{{ item.IDAcervo }}</td>
           <td
             @click="openModal"
             data-toggle="modal"
             data-target=".bd-example-modal-lg"
-          >{{ item.Titulo }}</td>
+           class="pointer">{{ item.Titulo }}</td>
           <td @click="openModal">{{ item.Notas }}</td>
           <td>
             <router-link
@@ -81,7 +89,7 @@
     >
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
-          <h5 class="modal-title">Modal title</h5>
+          <h5 class="modal-title">Informações da obra</h5>
           <div class="modal-header">
             <table class="table info-obra">
               <tbody>
@@ -132,9 +140,9 @@
             </table>
           </div>
           <div class="modal-footer">
-        <button type="button" class="btn btn-danger">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+            <button type="button" class="btn btn-danger">Reservar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
         </div>
       </div>
     </div>
@@ -158,14 +166,23 @@ h2 {
   color: #000;
   font-style: italic;
 }
+.pointer {
+  cursor: pointer;
+}
 
 .main {
   padding: 2em;
 }
+.box-container {
+ padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.search-container {
+  padding: 20px;
+}
 .header-pesquisa {
-  margin-left: 5px;
-  padding-top: 20px;
-  padding-bottom: 3em;
+width: 100%;
 }
 
 .lbPesquisar {
@@ -174,13 +191,9 @@ h2 {
 }
 .select-size {
   width: 200px;
-  margin-left: 30px;
-  margin-right: 15px;
 }
 .search-size {
   width: 500px;
-  margin-right: 15px;
-  margin-left: 15px;
 }
 
 .btn-color {
@@ -200,8 +213,17 @@ h2 {
   color: #0c0;
   padding-top: 20px;
 }
+.modal-title {
+  padding: 10px;
+  margin-left: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #0a0
+}
 .info-obra th {
-  color: #080;
+  color: #0a0;
+  font-weight: bold;
+  font-size: 16px;
 }
 </style>
 

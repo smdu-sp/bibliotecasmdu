@@ -1,5 +1,5 @@
 <template>
-  <div class="main" >
+  <div class="main">
     <div>
       <router-link to="/">
         <img src="../img/logo-prefeitura.jpg" alt="Home" class="logo" />
@@ -15,36 +15,78 @@
         <img src="../img/catalogo-icon.jpg" alt="Catalogo" class="header-icon" />
       </router-link>
 
-      <router-link to="/login">
-      <img src="../img/login-icon.jpg" alt="login" class="header-icon to-the-right" />
-      </router-link>
-      
+      <a class="pointer">
+        <img
+          src="../img/login-icon.jpg"
+          alt="login"
+          class="header-icon to-the-right"
+          @click="openModal"
+          data-toggle="modal"
+          data-target=".chamar-modal"
+        />
+      </a>
     </div>
     <br />
     <transition name="fade">
       <router-view></router-view>
     </transition>
 
-    <footer class="">
+    <!--Modal-login-->
+    <div
+      class="modal fade chamar-modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+      
+    >
+      <div class="modal-dialog modal-dialog-centered modal-style">
+        <div class="modal-content">
+          <h5 class="modal-title ">Login</h5>
+
+          <form>
+            <div class="form-group row">
+              <label class="col-sm-1 col-form-label"><img src="../img/user-icon.jpg" alt="user" class="login-icon-style"></label>
+              <div class="col-sm-11">
+                <input type="text" class="form-control" placeholder="ex: D47812" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-1 col-form-label"><img src="../img/password-icon.jpg" alt="password" class="login-icon-style"></label>
+              <div class="col-sm-11">
+                <input type="password" class="form-control" placeholder="Password" />
+              </div>
+            </div>
+          </form>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger">Reservar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Modal-login-->
+
+    <footer class>
       <div class="container">
         <div class="columns">
           <div class="colun">
-            <p><strong> Secretaria Municipal de Urbanismo e Licenciamento (SMUL) Prefeitura de São Paulo</strong></p>
+            <p>
+              <strong>Secretaria Municipal de Urbanismo e Licenciamento (SMUL) Prefeitura de São Paulo</strong>
+            </p>
           </div>
           <p>Rua São Bento, 405, Centro - 18º andar, CEP 01011-100 - São Paulo - SP, Telefone: (11)3113 7500</p>
         </div>
-        <div class="">
-
-        </div>
+        <div class></div>
       </div>
     </footer>
-
   </div>
 </template>
  
 <style>
- .main {
-  background-color: #FFF;
+.main {
+  background-color: #fff;
   padding-top: 2em;
 }
 .container {
@@ -63,6 +105,9 @@
 .logo {
   max-width: 300px;
 }
+.login-icon-style {
+  width: 30px;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.2s;
@@ -70,6 +115,25 @@
 .fade-enter,
 .fade-leave-active {
   opacity: 0;
+}
+.modal-content {
+  padding: 15px
+}
+.modal-style {
+  width: 400px;
+}
+.modal-title {
+  padding: 10px;
+  margin-left: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #0a0
+}
+.pointer {
+  cursor: pointer;
+}
+.user-width {
+  width: 300px;
 }
 footer {
   padding-top: 3em;

@@ -47703,7 +47703,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.main {\n  background-color: #FFF;\n  padding-top: 2em;\n}\n.container {\n  padding-top: 2em;\n}\n.header-icon {\n  max-width: 150px;\n  padding-left: 2em;\n  padding-top: 1.5em;\n}\n.to-the-right {\n  float: right;\n  padding-top: 3em;\n  padding-right: 2em;\n}\n.logo {\n  max-width: 300px;\n}\n.fade-enter-active,\n.fade-leave-active {\n  -webkit-transition: opacity 0.2s;\n  transition: opacity 0.2s;\n}\n.fade-enter,\n.fade-leave-active {\n  opacity: 0;\n}\nfooter {\n  padding-top: 3em;\n  padding-bottom: 3em;\n  font-size: 16px;\n  text-align: center;\n  color: #000;\n}\n", ""]);
+exports.push([module.i, "\n.main {\r\n  background-color: #fff;\r\n  padding-top: 2em;\n}\n.container {\r\n  padding-top: 2em;\n}\n.header-icon {\r\n  max-width: 150px;\r\n  padding-left: 2em;\r\n  padding-top: 1.5em;\n}\n.to-the-right {\r\n  float: right;\r\n  padding-top: 3em;\r\n  padding-right: 2em;\n}\n.logo {\r\n  max-width: 300px;\n}\n.login-icon-style {\r\n  width: 30px;\n}\n.fade-enter-active,\r\n.fade-leave-active {\r\n  -webkit-transition: opacity 0.2s;\r\n  transition: opacity 0.2s;\n}\n.fade-enter,\r\n.fade-leave-active {\r\n  opacity: 0;\n}\n.modal-content {\r\n  padding: 15px\n}\n.modal-style {\r\n  width: 400px;\n}\n.modal-title {\r\n  padding: 10px;\r\n  margin-left: 12px;\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n  color: #0a0\n}\n.pointer {\r\n  cursor: pointer;\n}\n.user-width {\r\n  width: 300px;\n}\nfooter {\r\n  padding-top: 3em;\r\n  padding-bottom: 3em;\r\n  font-size: 16px;\r\n  text-align: center;\r\n  color: #000;\n}\r\n", ""]);
 
 // exports
 
@@ -47829,6 +47829,70 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -47871,10 +47935,16 @@ var render = function() {
             })
           ]),
           _vm._v(" "),
-          _c("router-link", { attrs: { to: "/login" } }, [
+          _c("a", { staticClass: "pointer" }, [
             _c("img", {
               staticClass: "header-icon to-the-right",
-              attrs: { src: __webpack_require__(53), alt: "login" }
+              attrs: {
+                src: __webpack_require__(53),
+                alt: "login",
+                "data-toggle": "modal",
+                "data-target": ".chamar-modal"
+              },
+              on: { click: _vm.openModal }
             })
           ])
         ],
@@ -47885,12 +47955,106 @@ var render = function() {
       _vm._v(" "),
       _c("transition", { attrs: { name: "fade" } }, [_c("router-view")], 1),
       _vm._v(" "),
-      _vm._m(0)
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1)
     ],
     1
   )
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "modal fade chamar-modal",
+        attrs: {
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "myLargeModalLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "modal-dialog modal-dialog-centered modal-style" },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _c("h5", { staticClass: "modal-title " }, [_vm._v("Login")]),
+              _vm._v(" "),
+              _c("form", [
+                _c("div", { staticClass: "form-group row" }, [
+                  _c("label", { staticClass: "col-sm-1 col-form-label" }, [
+                    _c("img", {
+                      staticClass: "login-icon-style",
+                      attrs: {
+                        src: __webpack_require__(82),
+                        alt: "user"
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-sm-11" }, [
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "text", placeholder: "ex: D47812" }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group row" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-sm-1 col-form-label",
+                      attrs: { for: "inputPassword" }
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "login-icon-style",
+                        attrs: {
+                          src: __webpack_require__(83),
+                          alt: "password"
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-sm-11" }, [
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "password", placeholder: "Password" }
+                    })
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-footer" }, [
+                _c(
+                  "button",
+                  { staticClass: "btn btn-danger", attrs: { type: "button" } },
+                  [_vm._v("Reservar")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-secondary",
+                    attrs: { type: "button", "data-dismiss": "modal" }
+                  },
+                  [_vm._v("Fechar")]
+                )
+              ])
+            ])
+          ]
+        )
+      ]
+    )
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -47902,7 +48066,7 @@ var staticRenderFns = [
             _c("p", [
               _c("strong", [
                 _vm._v(
-                  " Secretaria Municipal de Urbanismo e Licenciamento (SMUL) Prefeitura de São Paulo"
+                  "Secretaria Municipal de Urbanismo e Licenciamento (SMUL) Prefeitura de São Paulo"
                 )
               ])
             ])
@@ -48299,7 +48463,11 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("input", {
           staticClass: "btnCards",
-          attrs: { type: "", name: "cardDicasDeLeitura", value: " Acessar" }
+          attrs: {
+            type: "button",
+            name: "cardDicasDeLeitura",
+            value: " Acessar"
+          }
         })
       ]),
       _vm._v(" "),
@@ -48658,7 +48826,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\nh1 {\r\n  color: #000;\r\n  font-weight: bold;\n}\nh2 {\r\n  color: #000;\r\n  font-style: italic;\n}\n.main {\r\n  padding: 2em;\n}\n.header-pesquisa {\r\n  margin-left: 5px;\r\n  padding-top: 20px;\r\n  padding-bottom: 3em;\n}\n.lbPesquisar {\r\n  font-size: 18px;\r\n  color: #000;\n}\n.select-size {\r\n  width: 200px;\r\n  margin-left: 30px;\r\n  margin-right: 15px;\n}\n.search-size {\r\n  width: 500px;\r\n  margin-right: 15px;\r\n  margin-left: 15px;\n}\n.btn-color {\r\n  margin-left: 15px;\r\n  width: 150px;\r\n  color: #fff;\r\n  background-color: #090;\r\n  font-weight: bold;\n}\n.btn-color:hover {\r\n  background-color: #080;\r\n  color: #fff;\n}\n.itens-localizados {\r\n  font-size: 26px;\r\n  font-style: italic;\r\n  color: #0c0;\r\n  padding-top: 20px;\n}\n.info-obra th {\r\n  color: #080;\n}\r\n", ""]);
+exports.push([module.i, "\nh1 {\r\n  color: #000;\r\n  font-weight: bold;\n}\nh2 {\r\n  color: #000;\r\n  font-style: italic;\n}\n.pointer {\r\n  cursor: pointer;\n}\n.main {\r\n  padding: 2em;\n}\n.box-container {\r\n padding: 0;\r\n  margin: 0;\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\n}\n.search-container {\r\n  padding: 20px;\n}\n.header-pesquisa {\r\nwidth: 100%;\n}\n.lbPesquisar {\r\n  font-size: 18px;\r\n  color: #000;\n}\n.select-size {\r\n  width: 200px;\n}\n.search-size {\r\n  width: 500px;\n}\n.btn-color {\r\n  margin-left: 15px;\r\n  width: 150px;\r\n  color: #fff;\r\n  background-color: #090;\r\n  font-weight: bold;\n}\n.btn-color:hover {\r\n  background-color: #080;\r\n  color: #fff;\n}\n.itens-localizados {\r\n  font-size: 26px;\r\n  font-style: italic;\r\n  color: #0c0;\r\n  padding-top: 20px;\n}\n.modal-title {\r\n  padding: 10px;\r\n  margin-left: 12px;\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n  color: #0a0\n}\n.info-obra th {\r\n  color: #0a0;\r\n  font-weight: bold;\r\n  font-size: 16px;\n}\r\n", ""]);
 
 // exports
 
@@ -48669,6 +48837,28 @@ exports.push([module.i, "\nh1 {\r\n  color: #000;\r\n  font-weight: bold;\n}\nh2
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -48939,11 +49129,23 @@ var render = function() {
         "tbody",
         _vm._l(_vm.acervo, function(item) {
           return _c("tr", { key: item.id }, [
-            _c("td", [_vm._v(_vm._s(item.IDAcervo))]),
+            _c(
+              "td",
+              {
+                staticClass: "pointer",
+                attrs: {
+                  "data-toggle": "modal",
+                  "data-target": ".bd-example-modal-lg"
+                },
+                on: { click: _vm.openModal }
+              },
+              [_vm._v(_vm._s(item.IDAcervo))]
+            ),
             _vm._v(" "),
             _c(
               "td",
               {
+                staticClass: "pointer",
                 attrs: {
                   "data-toggle": "modal",
                   "data-target": ".bd-example-modal-lg"
@@ -49001,46 +49203,56 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row header-pesquisa" }, [
-      _c("tr", [
-        _c("td", [
-          _c("label", { staticClass: "lbPesquisar" }, [
-            _vm._v("Pesquisar por:")
+    return _c("div", { staticClass: "box-container" }, [
+      _c("div", { staticClass: "search-container" }, [
+        _c("div", { staticClass: "row header-pesquisa" }, [
+          _c("tr", [
+            _c("td", [
+              _c("label", { staticClass: "lbPesquisar" }, [
+                _vm._v("Pesquisar por:")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", [
+              _c(
+                "select",
+                {
+                  staticClass: "form-control form-group-sm select-size",
+                  attrs: { name: "pesquisa" }
+                },
+                [
+                  _c("option", { attrs: { value: "1" } }, [_vm._v("Autor")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "2" } }, [_vm._v("Assunto")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "3" } }, [_vm._v("Palavra")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "4" } }, [_vm._v("Título")])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("td", [
+              _c("input", {
+                staticClass: "form-control search-size",
+                attrs: {
+                  type: "search",
+                  placeholder: "Digite o termo desejado"
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("td", [
+              _c(
+                "button",
+                {
+                  staticClass: "btn mb-2 btn-color",
+                  attrs: { type: "submit" }
+                },
+                [_vm._v("Pesquisar")]
+              )
+            ])
           ])
-        ]),
-        _vm._v(" "),
-        _c("td", [
-          _c(
-            "select",
-            {
-              staticClass: "form-control form-group-sm select-size",
-              attrs: { name: "pesquisa" }
-            },
-            [
-              _c("option", { attrs: { value: "1" } }, [_vm._v("Autor")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "2" } }, [_vm._v("Assunto")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "3" } }, [_vm._v("Palavra")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "4" } }, [_vm._v("Título")])
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("td", [
-          _c("input", {
-            staticClass: "form-control search-size",
-            attrs: { type: "search", placeholder: "Digite o termo desejado" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("td", [
-          _c(
-            "button",
-            { staticClass: "btn mb-2 btn-color", attrs: { type: "submit" } },
-            [_vm._v("Pesquisar")]
-          )
         ])
       ])
     ])
@@ -49051,7 +49263,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-md-10" }, [
       _c("label", { staticClass: "itens-localizados" }, [
-        _vm._v("Foram localizados 10 itens em nossa base de dados")
+        _vm._v("Foram localizados 10 registros em nossa base de dados")
       ])
     ])
   },
@@ -49095,7 +49307,9 @@ var staticRenderFns = [
       [
         _c("div", { staticClass: "modal-dialog modal-lg" }, [
           _c("div", { staticClass: "modal-content" }, [
-            _c("h5", { staticClass: "modal-title" }, [_vm._v("Modal title")]),
+            _c("h5", { staticClass: "modal-title" }, [
+              _vm._v("Informações da obra")
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "modal-header" }, [
               _c("table", { staticClass: "table info-obra" }, [
@@ -49187,7 +49401,7 @@ var staticRenderFns = [
               _c(
                 "button",
                 { staticClass: "btn btn-danger", attrs: { type: "button" } },
-                [_vm._v("Save changes")]
+                [_vm._v("Reservar")]
               ),
               _vm._v(" "),
               _c(
@@ -49196,7 +49410,7 @@ var staticRenderFns = [
                   staticClass: "btn btn-secondary",
                   attrs: { type: "button", "data-dismiss": "modal" }
                 },
-                [_vm._v("Close")]
+                [_vm._v("Fechar")]
               )
             ])
           ])
@@ -49423,6 +49637,27 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/user-icon.jpg?d2871836ec7558a40039b0b81a81cce7";
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/password-icon.jpg?96ae75708c8fdaef0020ff68ce3e3de0";
 
 /***/ })
 /******/ ]);

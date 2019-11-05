@@ -30,7 +30,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua.</p>
         <br>
-        <input type="" name="cardDicasDeLeitura" class="btnCards" value=" Acessar">
+        <input type="button" name="cardDicasDeLeitura" class="btnCards" value=" Acessar">
     </div>
 
     <div class="home-card">
