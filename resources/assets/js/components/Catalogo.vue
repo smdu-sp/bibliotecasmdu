@@ -1,36 +1,26 @@
 <template>
-  <div class="main">
+  <div id="main">
     <h1>Catálogo de Documentos</h1>
     <h2>Localize em nosso catálogo o documento desejado</h2>
 
     <!--pesquisa-->
-    <div class="box-container">
-      <div class="search-container">
-        <div class="row header-pesquisa">
-          <tr>
-            <td>
-              <label class="lbPesquisar">Pesquisar por:</label>
-            </td>
-            <td>
-              <select name="pesquisa" class="form-control form-group-sm select-size">
-                <option value="1">Autor</option>
-                <option value="2">Assunto</option>
-                <option value="3">Palavra</option>
-                <option value="4">Título</option>
-              </select>
-            </td>
-            <td>
-              <input
-                type="search"
-                placeholder="Digite o termo desejado"
-                class="form-control search-size"
-              />
-            </td>
-            <td>
-              <button type="submit" class="btn mb-2 btn-color">Pesquisar</button>
-            </td>
-          </tr>
-        </div>
+    <div class=" linha-pesquisa">
+      <div class="col-md-2">
+        <label class="lbPesquisar">Pesquisar por:</label>
+      </div>
+      <div class="col-md-2">
+        <select name="pesquisa" class="form-control form-group-sm select-size">
+          <option value="1">Autor</option>
+          <option value="2">Assunto</option>
+          <option value="3">Palavra</option>
+          <option value="4">Título</option>
+        </select>
+      </div>
+      <div class="col-md-7">
+        <input type="search" placeholder="Digite o termo desejado" class="form-control" />
+      </div>
+      <div class="col-md-1">
+        <button type="submit" class="btn mb-2 btn-color">Pesquisar</button>
       </div>
     </div>
     <!--pesquisa-->
@@ -56,14 +46,18 @@
       </thead>
       <tbody>
         <tr v-for="item in acervo" :key="item.id">
-          <td @click="openModal"
-            data-toggle="modal"
-            data-target=".bd-example-modal-lg" class="pointer">{{ item.IDAcervo }}</td>
           <td
             @click="openModal"
             data-toggle="modal"
             data-target=".bd-example-modal-lg"
-           class="pointer">{{ item.Titulo }}</td>
+            class="pointer"
+          >{{ item.IDAcervo }}</td>
+          <td
+            @click="openModal"
+            data-toggle="modal"
+            data-target=".bd-example-modal-lg"
+            class="pointer"
+          >{{ item.Titulo }}</td>
           <td @click="openModal">{{ item.Notas }}</td>
           <td>
             <router-link
@@ -149,10 +143,49 @@
     <!--Modal-->
 
     <hr />
-    <div>
-      <a :href="resultados.prev_page_url">Anterior</a>
-      <a :href="resultados.next_page_url">Próxima</a>
+
+    <!--Paginação-->
+    <div class="container-pagination">
+      <div class="pagination">
+        <a
+          :href="resultados.prev_page_url"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="Primeira página"
+          class="pointer"
+        >&lt&lt</a>
+        <!--símbolo 'less than'-->
+        <a
+          :href="resultados.prev_page_url"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="Anterior"
+          class="pointer"
+        >&lt</a>
+        <a href="#">1</a>
+        <a class="active" href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a
+          :href="resultados.next_page_url"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="Próxima"
+          class="pointer"
+        >&gt</a>
+        <a
+          :href="resultados.next_page_url"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="Última página"
+          class="pointer"
+        >&gt&gt</a>
+        <!--símbolo 'greater than'-->
+      </div>
     </div>
+    <!--Paginação-->
   </div>
 </template>
 
@@ -170,34 +203,19 @@ h2 {
   cursor: pointer;
 }
 
-.main {
+#main {
   padding: 2em;
-}
-.box-container {
- padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-.search-container {
-  padding: 20px;
-}
-.header-pesquisa {
-width: 100%;
 }
 
 .lbPesquisar {
   font-size: 18px;
   color: #000;
+  width: 11.6%;
 }
 .select-size {
   width: 200px;
 }
-.search-size {
-  width: 500px;
-}
-
 .btn-color {
-  margin-left: 15px;
   width: 150px;
   color: #fff;
   background-color: #090;
@@ -218,12 +236,41 @@ width: 100%;
   margin-left: 12px;
   font-size: 20px;
   font-weight: bold;
-  color: #0a0
+  color: #0a0;
 }
 .info-obra th {
   color: #0a0;
   font-weight: bold;
   font-size: 16px;
+}
+.container-pagination {
+  text-align: center;
+}
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.linha-pesquisa > * {
+  padding-left: 2em;
+}
+.linha-pesquisa > :first-child {
+  padding-left: 0em;
 }
 </style>
 
