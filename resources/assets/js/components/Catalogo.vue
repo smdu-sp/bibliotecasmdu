@@ -4,11 +4,11 @@
     <h2>Localize em nosso catálogo o documento desejado</h2>
 
     <!--pesquisa-->
-    <div class=" linha-pesquisa">
-      <div class="col-md-2">
+    <div class="linha-pesquisa row">
+      <div class="col-sm-2">
         <label class="lbPesquisar">Pesquisar por:</label>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-3">
         <select name="pesquisa" class="form-control form-group-sm select-size">
           <option value="1">Autor</option>
           <option value="2">Assunto</option>
@@ -16,10 +16,10 @@
           <option value="4">Título</option>
         </select>
       </div>
-      <div class="col-md-7">
+      <div class="col-md-5">
         <input type="search" placeholder="Digite o termo desejado" class="form-control" />
       </div>
-      <div class="col-md-1">
+      <div class="col-sm-2">
         <button type="submit" class="btn mb-2 btn-color">Pesquisar</button>
       </div>
     </div>
@@ -29,22 +29,22 @@
       <div class="col-md-10">
         <label class="itens-localizados">Foram localizados 10 registros em nossa base de dados</label>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2" style="padding-top: 20px;">
         <router-link :to="{ name: 'cadastrar' }" class="btn btn-primary">Cadastrar Item</router-link>
       </div>
     </div>
-    <br />
+    <br>
 
     <!--Tabela de itens encontrados-->
     <table class="table table-hover">
       <thead>
-        <tr class>
+        <tr class="titulos-pesquisa">
           <th>ID</th>
           <th>Título</th>
           <th>Notas</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="table-body">
         <tr v-for="item in acervo" :key="item.id">
           <td
             @click="openModal"
@@ -199,6 +199,7 @@ h2 {
   color: #000;
   font-style: italic;
 }
+
 .pointer {
   cursor: pointer;
 }
@@ -210,27 +211,43 @@ h2 {
 .lbPesquisar {
   font-size: 18px;
   color: #000;
-  width: 11.6%;
 }
+
 .select-size {
   width: 200px;
+  color: #000;
+  font-weight: bold;
 }
+
 .btn-color {
-  width: 150px;
+  width: 120.75px;
   color: #fff;
   background-color: #090;
   font-weight: bold;
+  padding-left: 0;
 }
+
 .btn-color:hover {
   background-color: #080;
   color: #fff;
 }
+
 .itens-localizados {
   font-size: 26px;
   font-style: italic;
-  color: #0c0;
+  color: #090;
   padding-top: 20px;
 }
+.titulos-pesquisa {
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+}
+.table-body {
+  font-size: 16px;
+  color: #000;
+}
+
 .modal-title {
   padding: 10px;
   margin-left: 12px;
@@ -238,14 +255,17 @@ h2 {
   font-weight: bold;
   color: #0a0;
 }
+
 .info-obra th {
   color: #0a0;
   font-weight: bold;
   font-size: 16px;
 }
+
 .container-pagination {
   text-align: center;
 }
+
 .pagination {
   display: inline-block;
 }
@@ -266,11 +286,8 @@ h2 {
   background-color: #ddd;
 }
 
-.linha-pesquisa > * {
-  padding-left: 2em;
-}
 .linha-pesquisa > :first-child {
-  padding-left: 0em;
+  padding-left: 1em;
 }
 </style>
 

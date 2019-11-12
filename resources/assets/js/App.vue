@@ -60,7 +60,7 @@
           </form>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger">Reservar</button>
+            <button type="button" class="btn btn-danger">Entrar</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
           </div>
         </div>
