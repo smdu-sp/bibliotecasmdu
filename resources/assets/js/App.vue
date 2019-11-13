@@ -54,13 +54,14 @@
             <div class="form-group row">
               <label for="inputPassword" class="col-sm-1 col-form-label"><img src="../img/password-icon.jpg" alt="password" class="login-icon-style"></label>
               <div class="col-sm-11">
-                <input type="password" class="form-control" placeholder="Password" />
+                <input type="password" class="form-control" placeholder="Senha" />
               </div>
             </div>
           </form>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger">Entrar</button>
+            <label><a href="#">Criar login</a></label>
+            <button type="button" class="btn btn-modal">Entrar</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
           </div>
         </div>
@@ -129,6 +130,16 @@
   font-weight: bold;
   color: #0a0
 }
+.btn-modal {
+  width: 70.39px;
+  color: #fff;
+  background-color: #090;
+  font-weight: bold;
+  padding-left: 10px;
+  text-align: center;
+
+}
+
 .pointer {
   cursor: pointer;
 }
@@ -145,5 +156,16 @@ footer {
 </style>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      userLevel: 'unknown'
+    }
+  },
+  methods: {
+    openModal () {
+      // Função do Bootstrap
+    }
+  }
+};
 </script>

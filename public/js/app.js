@@ -47703,7 +47703,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.main {\r\n  background-color: #fff;\r\n  padding-top: 2em;\n}\n.container {\r\n  padding-top: 2em;\n}\n.header-icon {\r\n  max-width: 150px;\r\n  padding-left: 2em;\r\n  padding-top: 1.5em;\n}\n.to-the-right {\r\n  float: right;\r\n  padding-top: 3em;\r\n  padding-right: 2em;\n}\n.logo {\r\n  max-width: 300px;\n}\n.login-icon-style {\r\n  width: 30px;\n}\n.fade-enter-active,\r\n.fade-leave-active {\r\n  -webkit-transition: opacity 0.2s;\r\n  transition: opacity 0.2s;\n}\n.fade-enter,\r\n.fade-leave-active {\r\n  opacity: 0;\n}\n.modal-content {\r\n  padding: 15px\n}\n.modal-style {\r\n  width: 400px;\n}\n.modal-title {\r\n  padding: 10px;\r\n  margin-left: 12px;\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n  color: #0a0\n}\n.pointer {\r\n  cursor: pointer;\n}\n.user-width {\r\n  width: 300px;\n}\nfooter {\r\n  padding-top: 3em;\r\n  padding-bottom: 3em;\r\n  font-size: 16px;\r\n  text-align: center;\r\n  color: #000;\n}\r\n", ""]);
+exports.push([module.i, "\n.main {\r\n  background-color: #fff;\r\n  padding-top: 2em;\n}\n.container {\r\n  padding-top: 2em;\n}\n.header-icon {\r\n  max-width: 150px;\r\n  padding-left: 2em;\r\n  padding-top: 1.5em;\n}\n.to-the-right {\r\n  float: right;\r\n  padding-top: 3em;\r\n  padding-right: 2em;\n}\n.logo {\r\n  max-width: 300px;\n}\n.login-icon-style {\r\n  width: 30px;\n}\n.fade-enter-active,\r\n.fade-leave-active {\r\n  -webkit-transition: opacity 0.2s;\r\n  transition: opacity 0.2s;\n}\n.fade-enter,\r\n.fade-leave-active {\r\n  opacity: 0;\n}\n.modal-content {\r\n  padding: 15px\n}\n.modal-style {\r\n  width: 400px;\n}\n.modal-title {\r\n  padding: 10px;\r\n  margin-left: 12px;\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n  color: #0a0\n}\n.btn-modal {\r\n  width: 70.39px;\r\n  color: #fff;\r\n  background-color: #090;\r\n  font-weight: bold;\r\n  padding-left: 10px;\r\n  text-align: center;\n}\n.pointer {\r\n  cursor: pointer;\n}\n.user-width {\r\n  width: 300px;\n}\nfooter {\r\n  padding-top: 3em;\r\n  padding-bottom: 3em;\r\n  font-size: 16px;\r\n  text-align: center;\r\n  color: #000;\n}\r\n", ""]);
 
 // exports
 
@@ -47893,8 +47893,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      userLevel: 'unknown'
+    };
+  },
+
+  methods: {
+    openModal: function openModal() {
+      // Função do Bootstrap
+    }
+  }
+});
 
 /***/ }),
 /* 49 */
@@ -48027,16 +48050,20 @@ var staticRenderFns = [
                   _c("div", { staticClass: "col-sm-11" }, [
                     _c("input", {
                       staticClass: "form-control",
-                      attrs: { type: "password", placeholder: "Password" }
+                      attrs: { type: "password", placeholder: "Senha" }
                     })
                   ])
                 ])
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "modal-footer" }, [
+                _c("label", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Criar login")])
+                ]),
+                _vm._v(" "),
                 _c(
                   "button",
-                  { staticClass: "btn btn-danger", attrs: { type: "button" } },
+                  { staticClass: "btn btn-modal", attrs: { type: "button" } },
                   [_vm._v("Entrar")]
                 ),
                 _vm._v(" "),
@@ -49625,6 +49652,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -49632,6 +49666,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       acervo: [],
       resultados: {}
     };
+  },
+
+  methods: {
+    openModal: function openModal() {
+      // Função do Bootstrap
+    },
+    checkUserLevel: function checkUserLevel(userLevel) {
+      return userLevel === this.$parent.userLevel;
+    }
   },
   created: function created() {
     var _this = this;
@@ -49656,6 +49699,32 @@ var render = function() {
     _c("h1", [_vm._v("Catálogo de Documentos")]),
     _vm._v(" "),
     _c("h2", [_vm._v("Localize em nosso catálogo o documento desejado")]),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        on: {
+          click: function($event) {
+            return _vm.checkUserLevel()
+          }
+        }
+      },
+      [_vm._v("Teste")]
+    ),
+    _vm._v(" "),
+    _vm.checkUserLevel("noob")
+      ? _c("div", { staticStyle: { "background-color": "red" } }, [
+          _vm._v("NOOB!")
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.checkUserLevel("pro")
+      ? _c("div", { staticStyle: { "background-color": "blue" } }, [
+          _vm._v("PRO")
+        ])
+      : _vm._e(),
     _vm._v(" "),
     _vm._m(0),
     _vm._v(" "),
@@ -49719,31 +49788,42 @@ var render = function() {
               _vm._v(_vm._s(item.Notas))
             ]),
             _vm._v(" "),
-            _c(
-              "td",
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "btn btn-primary",
-                    attrs: {
-                      to: { name: "atualizar", params: { id: item.IDAcervo } }
-                    }
-                  },
-                  [_vm._v("Atualizar")]
+            false
+              ? _c(
+                  "td",
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: {
+                          to: {
+                            name: "atualizar",
+                            params: { id: item.IDAcervo }
+                          }
+                        }
+                      },
+                      [_vm._v("Atualizar")]
+                    )
+                  ],
+                  1
                 )
-              ],
-              1
-            ),
+              : _vm._e(),
             _vm._v(" "),
-            _vm._m(3, true)
+            false
+              ? _c("td", [
+                  _c("button", { staticClass: "btn btn-danger" }, [
+                    _vm._v("Deletar")
+                  ])
+                ])
+              : _vm._e()
           ])
         }),
         0
       )
     ]),
     _vm._v(" "),
-    _vm._m(4),
+    _vm._m(3),
     _vm._v(" "),
     _c("hr"),
     _vm._v(" "),
@@ -49760,7 +49840,7 @@ var render = function() {
               title: "Primeira página"
             }
           },
-          [_vm._v("<<")]
+          [_vm._v("«")]
         ),
         _vm._v(" "),
         _c(
@@ -49814,7 +49894,7 @@ var render = function() {
               title: "Última página"
             }
           },
-          [_vm._v(">>")]
+          [_vm._v("»")]
         )
       ])
     ])
@@ -49887,14 +49967,6 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Notas")])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("button", { staticClass: "btn btn-danger" }, [_vm._v("Deletar")])
     ])
   },
   function() {
@@ -50008,7 +50080,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "modal-footer" }, [
               _c(
                 "button",
-                { staticClass: "btn btn-danger", attrs: { type: "button" } },
+                { staticClass: "btn btn-color", attrs: { type: "button" } },
                 [_vm._v("Reservar")]
               ),
               _vm._v(" "),

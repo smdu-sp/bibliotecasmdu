@@ -3,6 +3,13 @@
     <h1>Catálogo de Documentos</h1>
     <h2>Localize em nosso catálogo o documento desejado</h2>
 
+    <!-- BOTÃO TESTE -->
+    <br />
+    <button @click="checkUserLevel()">Teste</button>
+    <div v-if="checkUserLevel('noob')" style="background-color: red">NOOB!</div>
+    <div v-if="checkUserLevel('pro')" style="background-color: blue">PRO</div>
+    <!-- FIM BOTÃO TESTE -->
+
     <!--pesquisa-->
     <div class="linha-pesquisa row">
       <div class="col-sm-2">
@@ -33,7 +40,7 @@
         <router-link :to="{ name: 'cadastrar' }" class="btn btn-primary">Cadastrar Item</router-link>
       </div>
     </div>
-    <br>
+    <br />
 
     <!--Tabela de itens encontrados-->
     <table class="table table-hover">
@@ -59,13 +66,13 @@
             class="pointer"
           >{{ item.Titulo }}</td>
           <td @click="openModal">{{ item.Notas }}</td>
-          <td>
+          <td v-if="false">
             <router-link
               :to="{name: 'atualizar', params: { id: item.IDAcervo }}"
               class="btn btn-primary"
             >Atualizar</router-link>
           </td>
-          <td>
+          <td v-if="false">
             <button class="btn btn-danger">Deletar</button>
           </td>
         </tr>
@@ -134,7 +141,7 @@
             </table>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger">Reservar</button>
+            <button type="button" class="btn btn-color">Reservar</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
           </div>
         </div>
@@ -153,7 +160,7 @@
           data-placement="bottom"
           title="Primeira página"
           class="pointer"
-        >&lt&lt</a>
+        >«</a>
         <!--símbolo 'less than'-->
         <a
           :href="resultados.prev_page_url"
@@ -181,7 +188,7 @@
           data-placement="bottom"
           title="Última página"
           class="pointer"
-        >&gt&gt</a>
+        >»</a>
         <!--símbolo 'greater than'-->
       </div>
     </div>
@@ -298,6 +305,14 @@ export default {
       acervo: [],
       resultados: {}
     };
+  },
+  methods: {
+    openModal() {
+      // Função do Bootstrap
+    },
+    checkUserLevel(userLevel) {
+      return userLevel === this.$parent.userLevel;
+    }
   },
   created() {
     let uri = "http://localhost:8000/api/acervo";
