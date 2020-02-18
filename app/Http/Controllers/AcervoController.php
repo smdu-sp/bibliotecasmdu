@@ -20,6 +20,7 @@ class AcervoController extends Controller
     public function index(){
         // Método padrão excede tempo limite. Utilizado método explícito (declarado nome da tabela)
         // $data = ['data' => Acervo::all()];
+        // TODO: criar tratativa para falha na serialização do JSON
         $data = ['data' => DB::table('acervo')->get()];
         return response()->json($data);        
     }

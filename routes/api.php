@@ -35,4 +35,4 @@ Route::prefix('acervo')->group(function(){
 	Route::post('/cadastrar', 'AcervoController@cadastrar')->name('cadastrar_item');
 
 	Route::delete('/{item}', 'AcervoController@deletar')->name('deletar_item');
-});
+	});

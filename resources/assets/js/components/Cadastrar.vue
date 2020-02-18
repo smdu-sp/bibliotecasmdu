@@ -1,8 +1,9 @@
 <template>
-  <div class="container">
+  <div class="main">
     <h1>Cadastrar Item</h1>
-    <label class="subtitulo">Formulário para cadastro de novos materiais</label>
+    <h2>Formulário para cadastro de novos materiais</h2>
     <form @submit.prevent="adicionarItem">
+      
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
@@ -58,7 +59,7 @@
               type="text"
               class="form-control"
               v-model="item.Editora"
-              placeholder="Nome Editora"
+              placeholder="Nome da Editora"
             />
           </div>
         </div>
@@ -129,21 +130,19 @@
 </template>
 
 <style>
+.main {
+  padding: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: inherit;
+}
 h1 {
-  font-weight: bold;
-}
-label {
-  font-size: 18px;
-  font-weight: bold;
-}
-.container {
-  padding-left: 0;
-  padding-top: 0;
   color: #000;
+  font-weight: bold;
 }
-.subtitulo {
-  font-size: 22px;
+h2 {
+  font-size: 28px;
   font-style: italic;
+  color: black;
 }
 .resumo-sinopse {
   max-width: 100%; 
@@ -157,12 +156,15 @@ label {
   font-weight: bold;
   padding-left: 0;
 }
-
 .btn-color:hover {
   background-color: #080;
   color: #fff;
 }
+.form-group {
+  color: black;
+}
 </style>
+
 <script>
 export default {
   mounted() {

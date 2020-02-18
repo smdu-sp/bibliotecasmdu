@@ -8,14 +8,14 @@
             <p class="subtitulo">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. </p>
             <br>
-            <input type="button" name="Visualizar Catálogo" class="btnVisualizarCatalogo" value="Visualizar Catálogo">
-        </div>        
+            <router-link to="catalogo"><input type="button" name="Visualizar Catálogo" class="btnVisualizarCatalogo" value="Visualizar Catálogo"></router-link>
+        </div>
         <img class="bg-img" src="/images/background-home-image.jpg">
     </div>
   <!--Div da imagem-->
 
   <!--cartões de opções-->
-    <div class="home-card">
+    <!-- <div class="home-card">
         <img src="/images/novidades-icon.jpg" class="icon-sizes">
         <h4>NOVIDADES</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -49,7 +49,7 @@
             tempor incididunt ut labore et dolore magna aliqua.</p>
         <br>
         <input type="button" name="cardCuriosidades" class="btnCards" value="Acessar">
-    </div>
+    </div> -->
   <!--cartões de opções-->
 
 </div>
@@ -58,10 +58,12 @@
 <style>
 .container {
   background-color: #FFF;
+    padding: 2em;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .bg-home {
-    /*background-image: url('/images/background-home-image.jpg');
-    background-repeat: no-repeat;*/
+    /*background-image: url('/images/background-home-image.jpg');*/
+    /*background-repeat: no-repeat;*/
     min-height: 500px;
     text-align: center;
     width: 100%;
@@ -75,7 +77,6 @@
   left: 0;
   height: 500px;
 }
-
 .alinhar-itens {
     position: absolute;
     justify-content: center;
@@ -85,14 +86,12 @@
     z-index: 2;
     left: 0;
 }
-
 .titulo {
     color: white;
     font-weight: bold;
     font-size: 40px;
     text-align: center;
 }
-
 .subtitulo {
     color: white;
     font-weight: bold;
@@ -102,7 +101,6 @@
     margin-right: 40px;
     margin-left: 40px;
 }
-
 .btnVisualizarCatalogo {
     color: white;
     background-color: #c00;
@@ -112,10 +110,7 @@
     font-size: 20px;
     font-weight: bold;
     padding: 6px;
-    
-
 }
-
 .home-card {
     margin-right: 1%;
     margin-left: 1%;
@@ -124,22 +119,18 @@
     color: #000;
     text-align: center;
     min-height: 100px;
-
 }
 .home-card > img {
   min-height: 143px;
 }
-
 .icon-sizes {
     max-width: 90px;
     padding-top: 50px;
 }
-
 h4 {
     font-weight: bold;
     color: #000;
 }
-
 .btnCards {
     width: 150px;
     background-color: #090;

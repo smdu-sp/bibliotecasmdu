@@ -15,6 +15,18 @@
         <img src="../img/catalogo-icon.jpg" alt="Catalogo" class="header-icon" />
       </router-link>
 
+      <router-link to="/usuarios">
+        <img src="../img/usuario-icon.jpg" alt="Usuarios" class="header-icon" />
+      </router-link>
+
+      <router-link to="/relatorios">
+        <img src="../img/relatorios-icon.jpg" alt="Relatorios" class="header-icon" />
+      </router-link>
+
+      <!-- <router-link to="/etiquetas">
+        <img src="../img/etiquetas-icon.jpg" alt="Etiquetas" class="header-icon" />
+      </router-link> -->
+
       <a class="pointer">
         <img
           src="../img/login-icon.jpg"
@@ -26,7 +38,7 @@
         />
       </a>
     </div>
-    <br />
+    <!-- <Header></Header> -->
     <transition name="fade">
       <router-view></router-view>
     </transition>
@@ -38,21 +50,24 @@
       role="dialog"
       aria-labelledby="myLargeModalLabel"
       aria-hidden="true"
-      
     >
       <div class="modal-dialog modal-dialog-centered modal-style">
         <div class="modal-content">
-          <h5 class="modal-title ">Login</h5>
+          <h5 class="modal-title">Login</h5>
 
           <form>
             <div class="form-group row">
-              <label class="col-sm-1 col-form-label"><img src="../img/user-icon.jpg" alt="user" class="login-icon-style"></label>
+              <label class="col-sm-1 col-form-label">
+                <img src="../img/user-icon.jpg" alt="user" class="login-icon-style" />
+              </label>
               <div class="col-sm-11">
-                <input type="text" class="form-control" placeholder="ex: D47812" />
+                <input type="text" class="form-control" placeholder="Ex: joaodasilva@gmail.com" />
               </div>
             </div>
             <div class="form-group row">
-              <label for="inputPassword" class="col-sm-1 col-form-label"><img src="../img/password-icon.jpg" alt="password" class="login-icon-style"></label>
+              <label for="inputPassword" class="col-sm-1 col-form-label">
+                <img src="../img/password-icon.jpg" alt="password" class="login-icon-style" />
+              </label>
               <div class="col-sm-11">
                 <input type="password" class="form-control" placeholder="Senha" />
               </div>
@@ -60,8 +75,10 @@
           </form>
 
           <div class="modal-footer">
-            <label><a href="#">Criar login</a></label>
-            <button type="button" class="btn btn-modal">Entrar</button>
+            <label>
+              <a href="/cadastrarlogin">Criar login</a>
+            </label>
+            <a href="/entrar" class="btn btn-modal">Entrar</a>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
           </div>
         </div>
@@ -77,7 +94,7 @@
               <strong>Secretaria Municipal de Urbanismo e Licenciamento (SMUL) Prefeitura de São Paulo</strong>
             </p>
           </div>
-          <p>Rua São Bento, 405, Centro - 18º andar, CEP 01011-100 - São Paulo - SP, Telefone: (11)3113 7500</p>
+          <p>Rua São Bento, 405, Centro - 18º andar, CEP 01011-100 - São Paulo - SP, Telefone: (11) 3113-7500</p>
         </div>
         <div class></div>
       </div>
@@ -118,7 +135,7 @@
   opacity: 0;
 }
 .modal-content {
-  padding: 15px
+  padding: 15px;
 }
 .modal-style {
   width: 400px;
@@ -128,7 +145,14 @@
   margin-left: 12px;
   font-size: 20px;
   font-weight: bold;
-  color: #0a0
+  color: #0a0;
+}
+a {
+  color:gray;
+}
+a:hover {
+  color:lightslategrey;
+  text-decoration: none;
 }
 .btn-modal {
   width: 70.39px;
@@ -137,9 +161,11 @@
   font-weight: bold;
   padding-left: 10px;
   text-align: center;
-
 }
-
+.btn-modal:hover {
+  color:lightgrey;
+  background-color:#080;
+}
 .pointer {
   cursor: pointer;
 }
@@ -156,14 +182,20 @@ footer {
 </style>
 
 <script>
+import Header from "./components/Header.vue";
+
 export default {
+  name: "Biblioteca",
+  components: {
+    Header
+  },
   data() {
     return {
-      userLevel: 'unknown'
-    }
+      userLevel: "unknown"
+    };
   },
   methods: {
-    openModal () {
+    openModal() {
       // Função do Bootstrap
     }
   }
