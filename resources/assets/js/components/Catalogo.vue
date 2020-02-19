@@ -3,7 +3,7 @@
     <h1>Catálogo de Documentos</h1>
     <h2>Localize em nosso catálogo o documento desejado</h2>
 
-    <!--Pesquisa-->
+    <!--pesquisa-->
     <div class="linha-pesquisa row">
       <div class="col-sm-2">
         <label class="lbPesquisar">Pesquisar por:</label>
@@ -23,14 +23,14 @@
         <button type="submit" class="btn mb-2 btn-color">Pesquisar</button>
       </div>
     </div>
-    <!--Pesquisa-->
+    <!--pesquisa-->
 
     <div class="row">
       <div class="col-md-10">
         <h3>Foram localizados 10 registros em nossa base de dados</h3>
       </div>
       <div class="col-md-2" style="padding-top: 20px;">
-        <router-link :to="{ name: 'cadastrar' }" class="btn btn-cadastro">Cadastrar Item</router-link>
+        <router-link :to="{ name: 'cadastrar' }" class="btn btn-secondary1">Cadastrar Item</router-link>
       </div>
     </div>
     <br />
@@ -310,13 +310,13 @@ h2 {
   background-color: #080;
   color: #fff;
 }
-.btn-cadastro {
+.btn-secondary1 {
   color: white;
   background-color:gray;
   border:white;
   font-weight: bold;
 }
-.btn-cadastro:hover {
+.btn-secondary1:hover {
   background-color: darkgrey;
   border: white;
 }

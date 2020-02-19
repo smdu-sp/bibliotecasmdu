@@ -48882,8 +48882,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -48935,11 +48933,7 @@ var render = function() {
         staticClass: "bg-img",
         attrs: { src: "/images/background-home-image.jpg" }
       })
-    ]),
-    _vm._v(" "),
-    _vm._v("\r\n\r\n// Sem utilização por enquanto\r\n  "),
-    _vm._v(" "),
-    _vm._v("\r\n// Sem utilização por enquanto\r\n\r\n")
+    ])
   ])
 }
 var staticRenderFns = []
@@ -49049,7 +49043,6 @@ exports.push([module.i, "\n.main {\r\n  padding: 2em;\r\n  font-family: Arial, H
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
 //
 //
 //
@@ -49732,7 +49725,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.main {\r\n  padding: 2em;\r\n  font-family: Arial, Helvetica, sans-serif;\n}\nh1 {\r\n  color: #000;\r\n  font-weight: bold;\n}\nh2 {\r\n  font-size: 28px;\r\n  color: #000;\r\n  font-style: italic;\n}\n.pointer {\r\n  cursor: pointer;\n}\n.lbPesquisar {\r\n  font-size: 18px;\r\n  color: #000;\n}\n.select-size {\r\n  width: 200px;\r\n  color: #000;\r\n  font-weight: bold;\n}\n.btn-color {\r\n  width: 120.75px;\r\n  color: #fff;\r\n  background-color: #090;\r\n  font-weight: bold;\n}\n.btn-color:hover {\r\n  background-color: #080;\r\n  color: #fff;\n}\n.btn-cadastro {\r\n  color: white;\r\n  background-color:gray;\r\n  border:white;\r\n  font-weight: bold;\n}\n.btn-cadastro:hover {\r\n  background-color: darkgrey;\r\n  border: white;\n}\nh3 {\r\n  font-size: 26px;\r\n  font-style: italic;\r\n  color: #090;\r\n  padding-top: 20px;\n}\n.titulos-pesquisa {\r\n  color: #000;\r\n  font-weight: bold;\r\n  font-size: 18px;\n}\n.table-body {\r\n  font-size: 16px;\r\n  color: #000;\n}\n.table-body td {\r\n  table-layout: fixed;\r\n  max-width: 100px;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n  white-space: nowrap;\r\n  -webkit-transition: all ease 0.8s;\r\n  transition: all ease 0.8s;\n}\n.table-body td:hover {\r\n  max-width: 100px;\r\n  overflow: auto;\r\n  text-overflow: ellipsis;\r\n  white-space: initial;\n}\nul {\r\n  list-style: upper-roman;\n}\n.modal-title {\r\n  padding: 10px;\r\n  margin-left: 12px;\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n  color: #0a0;\n}\n.info-obra th {\r\n  color: #0a0;\r\n  font-weight: bold;\r\n  font-size: 16px;\n}\n.info-obra td {\r\n  color: black;\r\n  display: -webkit-box;\n}\n.container-pagination {\r\n  text-align: center;\n}\n.pagination button {\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 8px 16px;\r\n  text-decoration: none;\r\n  border: none;\r\n  border-radius: 15px;\n}\n.linha-pesquisa > :first-child {\r\n  padding-left: 1em;\n}\r\n", ""]);
+exports.push([module.i, "\n.main {\r\n  padding: 2em;\r\n  font-family: Arial, Helvetica, sans-serif;\n}\nh1 {\r\n  color: #000;\r\n  font-weight: bold;\n}\nh2 {\r\n  font-size: 28px;\r\n  color: #000;\r\n  font-style: italic;\n}\n.pointer {\r\n  cursor: pointer;\n}\n.lbPesquisar {\r\n  font-size: 18px;\r\n  color: #000;\n}\n.select-size {\r\n  width: 200px;\r\n  color: #000;\r\n  font-weight: bold;\n}\n.btn-color {\r\n  width: 120.75px;\r\n  color: #fff;\r\n  background-color: #090;\r\n  font-weight: bold;\n}\n.btn-color:hover {\r\n  background-color: #080;\r\n  color: #fff;\n}\n.btn-secondary1 {\r\n  color: white;\r\n  background-color:gray;\r\n  border:white;\r\n  font-weight: bold;\n}\n.btn-secondary1:hover {\r\n  background-color: darkgrey;\r\n  border: white;\n}\nh3 {\r\n  font-size: 26px;\r\n  font-style: italic;\r\n  color: #090;\r\n  padding-top: 20px;\n}\n.titulos-pesquisa {\r\n  color: #000;\r\n  font-weight: bold;\r\n  font-size: 18px;\n}\n.table-body {\r\n  font-size: 16px;\r\n  color: #000;\n}\n.table-body td {\r\n  table-layout: fixed;\r\n  max-width: 100px;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n  white-space: nowrap;\r\n  -webkit-transition: all ease 0.8s;\r\n  transition: all ease 0.8s;\n}\n.table-body td:hover {\r\n  max-width: 100px;\r\n  overflow: auto;\r\n  text-overflow: ellipsis;\r\n  white-space: initial;\n}\nul {\r\n  list-style: upper-roman;\n}\n.modal-title {\r\n  padding: 10px;\r\n  margin-left: 12px;\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n  color: #0a0;\n}\n.info-obra th {\r\n  color: #0a0;\r\n  font-weight: bold;\r\n  font-size: 16px;\n}\n.info-obra td {\r\n  color: black;\r\n  display: -webkit-box;\n}\n.container-pagination {\r\n  text-align: center;\n}\n.pagination button {\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 8px 16px;\r\n  text-decoration: none;\r\n  border: none;\r\n  border-radius: 15px;\n}\n.linha-pesquisa > :first-child {\r\n  padding-left: 1em;\n}\r\n", ""]);
 
 // exports
 
@@ -50207,7 +50200,7 @@ var render = function() {
           _c(
             "router-link",
             {
-              staticClass: "btn btn-cadastro",
+              staticClass: "btn btn-secondary1",
               attrs: { to: { name: "cadastrar" } }
             },
             [_vm._v("Cadastrar Item")]
@@ -53189,11 +53182,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -53421,7 +53409,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.main {\r\n  padding: 2em;\r\n  font-family: Arial, Helvetica, sans-serif;\n}\nh1 {\r\n  color: #000;\r\n  font-weight: bold;\n}\nh2 {\r\n  color: #000;\r\n  font-size: 28px;\r\n  font-style: italic;\n}\n.container {\r\n  padding-left: 0;\r\n  padding-top: 0;\r\n  color: #000;\n}\n.pointer {\r\n  cursor: pointer;\n}\n.lbPesquisar {\r\n  font-size: 18px;\r\n  color: #000;\n}\n.select-size {\r\n  width: 200px;\r\n  color: #000;\r\n  font-weight: bold;\n}\n.btn-color {\r\n  width: 120.75px;\r\n  color: #fff;\r\n  background-color: #090;\r\n  font-weight: bold;\n}\n.btn-color:hover {\r\n  background-color: #080;\r\n  color: #fff;\n}\nh3 {\r\n  font-size: 26px;\r\n  font-style: italic;\r\n  color: #090;\r\n  padding-top: 20px;\n}\n.relatorios-pesquisa {\r\n  color: #000;\r\n  font-weight: bold;\r\n  font-size: 18px;\n}\n.titulos-pesquisa th {\r\n  color: #000;\r\n  font-weight: bold;\r\n  font-size: 18px;\n}\ntable,\r\ntd {\r\n  color: black;\r\n  font-size: 16px;\n}\n.disponivel {\r\n  color: #080;\r\n  font-weight: bold;\r\n  font-style: italic;\n}\n.atrasado {\r\n  color: red;\r\n  font-weight: bold;\r\n  font-style: italic;\n}\n.modal-body {\r\n  padding: 0px;\n}\n.modal-title {\r\n  padding: 10px;\r\n  margin-left: 12px;\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n  color: #0a0;\n}\r\n", ""]);
+exports.push([module.i, "\n.main {\r\n  padding: 2em;\r\n  font-family: Arial, Helvetica, sans-serif;\n}\nh1 {\r\n  color: #000;\r\n  font-weight: bold;\n}\nh2 {\r\n  color: #000;\r\n  font-size: 28px;\r\n  font-style: italic;\n}\n.container {\r\n  padding-left: 0;\r\n  padding-top: 0;\r\n  color: #000;\n}\n.pointer {\r\n  cursor: pointer;\n}\n.lbPesquisar {\r\n  font-size: 18px;\r\n  color: #000;\n}\n.select-size {\r\n  width: 200px;\r\n  color: #000;\r\n  font-weight: bold;\n}\n.btn-color {\r\n  width: 120.75px;\r\n  color: #fff;\r\n  background-color: #090;\r\n  font-weight: bold;\n}\n.btn-color:hover {\r\n  background-color: #080;\r\n  color: #fff;\n}\nh3 {\r\n  font-size: 26px;\r\n  font-style: italic;\r\n  color: #090;\r\n  padding-top: 20px;\n}\n.relatorios-pesquisa {\r\n  color: #000;\r\n  font-weight: bold;\r\n  font-size: 18px;\n}\n.titulos-pesquisa th {\r\n  color: #000;\r\n  font-weight: bold;\r\n  font-size: 18px;\n}\ntable, td, a {\r\n  color: black;\r\n  font-size: 16px;\n}\n.disponivel {\r\n  color: #080;\r\n  font-weight: bold;\r\n  font-style: italic;\n}\n.atrasado {\r\n  color: red;\r\n  font-weight: bold;\r\n  font-style: italic;\n}\n.modal-title {\r\n  padding: 10px;\r\n  margin-left: 12px;\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n  color: #0a0;\n}\r\n", ""]);
 
 // exports
 
@@ -53644,17 +53632,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      methods: {
+        openModal: function openModal() {
+          // Função do Bootstrap
+        }
+      },
       relatorio: [{
         tituloItem: "Avenida Paulista",
         autorItem: "Primeiro Nome Sobrenome",
@@ -53677,12 +53663,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         edicaoData: "01"
       }]
     };
-  },
-
-  methods: {
-    openModal: function openModal() {
-      // Função do Bootstrap
-    }
   }
 });
 
@@ -53868,10 +53848,10 @@ var staticRenderFns = [
       {
         staticClass: "modal fade modal-relatorio",
         attrs: {
-          id: "exampleModalCenter",
+          id: "ExemploModalCentralizado",
           tabindex: "-1",
           role: "dialog",
-          "aria-labelledby": "exampleModalCenterTitle",
+          "aria-labelledby": "TituloModalCentralizado",
           "aria-hidden": "true"
         }
       },
@@ -53889,58 +53869,52 @@ var staticRenderFns = [
                   "h5",
                   {
                     staticClass: "modal-title",
-                    attrs: { id: "exampleModalCenterTitle" }
+                    attrs: { id: "TituloModalCentralizado" }
                   },
-                  [_vm._v("Informações da Obra")]
+                  [_vm._v("Título do modal")]
                 )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "modal-body" }, [
-                _c("table", { staticClass: "table info-obra" }, [
-                  _c("tbody", [
-                    _c("tr", [
-                      _c("th", { attrs: { scope: "row" } }, [
-                        _vm._v("Titulo:")
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("Título da obra")])
+              _c("table", { staticClass: "table info-obra" }, [
+                _c("tbody", [
+                  _c("tr", [
+                    _c("th", { attrs: { scope: "row" } }, [_vm._v("Titulo:")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("Título da obra")])
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c("th", { attrs: { scope: "row" } }, [_vm._v("Autor:")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("SOBRENOME, Primeiro Segundo Nome")])
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c("th", { attrs: { scope: "row" } }, [_vm._v("Nome:")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("Marco Willian")])
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c("th", { attrs: { scope: "row" } }, [_vm._v("E-mail:")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v("marcowilliam1@gmail.com")])
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c("th", { attrs: { scope: "row" } }, [
+                      _vm._v("Devolução prevista:")
                     ]),
                     _vm._v(" "),
-                    _c("tr", [
-                      _c("th", { attrs: { scope: "row" } }, [_vm._v("Autor:")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("SOBRENOME, Primeiro Segundo Nome")])
+                    _c("td", [_vm._v("12/01/2020")])
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c("th", { attrs: { scope: "row" } }, [
+                      _vm._v("Situação:")
                     ]),
                     _vm._v(" "),
-                    _c("tr", [
-                      _c("th", { attrs: { scope: "row" } }, [_vm._v("Nome:")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("Marco Willian")])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("th", { attrs: { scope: "row" } }, [
-                        _vm._v("E-mail:")
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("marcowilliam1@gmail.com")])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("th", { attrs: { scope: "row" } }, [
-                        _vm._v("Devolução prevista:")
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("12/01/2020")])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("th", { attrs: { scope: "row" } }, [
-                        _vm._v("Situação:")
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("Atrasado")])
-                    ])
+                    _c("td", [_vm._v("Atrasado")])
                   ])
                 ])
               ]),
@@ -53949,10 +53923,10 @@ var staticRenderFns = [
                 _c(
                   "button",
                   {
-                    staticClass: "btn btn-secondary",
+                    staticClass: "btn btn-secondary1",
                     attrs: { type: "button", "data-dismiss": "modal" }
                   },
-                  [_vm._v("Close")]
+                  [_vm._v("Fechar")]
                 )
               ])
             ])
