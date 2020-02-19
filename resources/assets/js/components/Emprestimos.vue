@@ -3,10 +3,13 @@
     <h1>Empréstimos</h1>
     <h2>Histórico de Empréstimos</h2>
 
+    <!-- Botões -->
     <button class="btn btn-btn1" type="submit">Gerar Recibo</button>
     <button class="btn btn-btn2" type="submit">Dar Baixa</button>
     <button class="btn btn-btn3" type="submit">Novo Empréstimo</button>
-    
+    <!-- Botões -->
+
+    <!-- Informações dos Empréstimos -->
     <div
       class="tab-pane"
       id="histEmprestimos"
@@ -39,6 +42,8 @@
         </tbody>
       </table>
     </div>
+    <!-- Informações dos Empréstimos -->
+
   </div>
 </template>
 
