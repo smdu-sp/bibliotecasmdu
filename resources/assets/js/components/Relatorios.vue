@@ -77,56 +77,59 @@
     </table>
     <!--Tabela de itens encontrados-->
 
+
     <!--Modal-->
     <div
       class="modal fade modal-relatorio"
-      id="ExemploModalCentralizado"
+      id="exampleModalCenter"
       tabindex="-1"
       role="dialog"
-      aria-labelledby="TituloModalCentralizado"
+      aria-labelledby="exampleModalCenterTitle"
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="TituloModalCentralizado">Título do modal</h5>
+            <h5 class="modal-title" id="exampleModalCenterTitle">Informações da Obra</h5>
           </div>
-          <table class="table info-obra">
-            <tbody>
-              <tr>
-                <th scope="row">Titulo:</th>
-                <td>Título da obra</td>
-              </tr>
-              <tr>
-                <th scope="row">Autor:</th>
-                <td>SOBRENOME, Primeiro Segundo Nome</td>
-              </tr>
-              <tr>
-                <th scope="row">Nome:</th>
-                <td>Marco Willian</td>
-              </tr>
-              <tr>
-                <th scope="row">E-mail:</th>
-                <td>marcowilliam1@gmail.com</td>
-              </tr>
-              <tr>
-                <th scope="row">Devolução prevista:</th>
-                <td>12/01/2020</td>
-              </tr>
-              <tr>
-                <th scope="row">Situação:</th>
-                <td>Atrasado</td>
-              </tr>
-            </tbody>
-          </table>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary1" data-dismiss="modal">Fechar</button>
-        </div>
+          <div class="modal-body">
+            <table class="table info-obra">
+              <tbody>
+                <tr>
+                  <th scope="row">Titulo:</th>
+                  <td>Título da obra</td>
+                </tr>
+                <tr>
+                  <th scope="row">Autor:</th>
+                  <td>SOBRENOME, Primeiro Segundo Nome</td>
+                </tr>
+                <tr>
+                  <th scope="row">Nome:</th>
+                  <td>Marco Willian</td>
+                </tr>
+                <tr>
+                  <th scope="row">E-mail:</th>
+                  <td>marcowilliam1@gmail.com</td>
+                </tr>
+                <tr>
+                  <th scope="row">Devolução prevista:</th>
+                  <td>12/01/2020</td>
+                </tr>
+                <tr>
+                  <th scope="row">Situação:</th>
+                  <td>Atrasado</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
     </div>
     <!--Modal-->
-
+  
   </div>
 </template>
 
@@ -187,7 +190,8 @@ h3 {
   font-weight: bold;
   font-size: 18px;
 }
-table, td, a {
+table,
+td {
   color: black;
   font-size: 16px;
 }
@@ -201,6 +205,9 @@ table, td, a {
   font-weight: bold;
   font-style: italic;
 }
+.modal-body {
+  padding: 0px;
+}
 .modal-title {
   padding: 10px;
   margin-left: 12px;
@@ -213,12 +220,7 @@ table, td, a {
 <script>
 export default {
   data() {
-    return {
-      methods: {
-        openModal() {
-          // Função do Bootstrap
-        }
-      },
+    return {      
       relatorio: [
         {
           tituloItem: "Avenida Paulista",
@@ -245,7 +247,12 @@ export default {
           edicaoData: "01"
         }
       ]
-    };
-  }
+    }    
+  },
+  methods: {
+        openModal() {
+          // Função do Bootstrap
+        }
+      }
 };
 </script>
