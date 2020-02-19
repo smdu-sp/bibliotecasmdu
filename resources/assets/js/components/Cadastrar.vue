@@ -3,7 +3,7 @@
     <h1>Cadastrar Item</h1>
     <h2>Formulário para cadastro de novos materiais</h2>
     <form @submit.prevent="adicionarItem">
-      
+      <!-- Formulario de Cadastro -->
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
@@ -39,7 +39,6 @@
           </div>
         </div>
       </div>
-
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
@@ -64,7 +63,6 @@
           </div>
         </div>
       </div>
-
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
@@ -94,7 +92,6 @@
           </div>
         </div>
       </div>
-
       <div class="row">
         <div class="col-md-2">
           <div class="form-group">
@@ -120,11 +117,15 @@
           </div>
         </div>
       </div>
-
+      <!-- Formulario de Cadastro -->
+      
+      <!-- Botão de Enviar Cadastro -->
       <br />
       <div class="form-group">
         <button class="btn mb-2 btn-color">Cadastrar</button>
       </div>
+      <!-- Botão de Enviar Cadastro -->
+
     </form>
   </div>
 </template>
