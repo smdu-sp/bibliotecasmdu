@@ -48882,6 +48882,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -48933,7 +48935,11 @@ var render = function() {
         staticClass: "bg-img",
         attrs: { src: "/images/background-home-image.jpg" }
       })
-    ])
+    ]),
+    _vm._v(" "),
+    _vm._v("\r\n\r\n// Sem utilização por enquanto\r\n  "),
+    _vm._v(" "),
+    _vm._v("\r\n// Sem utilização por enquanto\r\n\r\n")
   ])
 }
 var staticRenderFns = []
@@ -49043,6 +49049,7 @@ exports.push([module.i, "\n.main {\r\n  padding: 2em;\r\n  font-family: Arial, H
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -53071,6 +53078,11 @@ exports.push([module.i, "\n.main {\r\n  padding: 2em;\r\n  font-family: Arial, H
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
 //
 //
 //
