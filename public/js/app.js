@@ -48935,11 +48935,7 @@ var render = function() {
         staticClass: "bg-img",
         attrs: { src: "/images/background-home-image.jpg" }
       })
-    ]),
-    _vm._v(" "),
-    _vm._v("\r\n\r\n// Sem utilização por enquanto\r\n  "),
-    _vm._v(" "),
-    _vm._v("\r\n// Sem utilização por enquanto\r\n\r\n")
+    ])
   ])
 }
 var staticRenderFns = []
