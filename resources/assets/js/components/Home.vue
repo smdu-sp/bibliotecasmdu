@@ -14,7 +14,7 @@
     </div>
   <!--Div da imagem-->
 
-<!--  Sem utilização por enquanto -->
+// Sem utilização por enquanto
   <!--cartões de opções-->
     <!-- <div class="home-card">
         <img src="/images/novidades-icon.jpg" class="icon-sizes">
@@ -52,7 +52,11 @@
         <input type="button" name="cardCuriosidades" class="btnCards" value="Acessar">
     </div> -->
   <!--cartões de opções-->
+<<<<<<< HEAD
  <!-- Sem utilização por enquanto -->
+=======
+// Sem utilização por enquanto
+>>>>>>> e70d313d82f2deedcc1c9bc4147aa25835a518ba
 
 </div>
 </template>
