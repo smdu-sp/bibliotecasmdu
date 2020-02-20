@@ -12,52 +12,6 @@
         </div>
         <img class="bg-img" src="/images/background-home-image.jpg">
     </div>
-  <!--Div da imagem-->
-
-// Sem utilização por enquanto
-  <!--cartões de opções-->
-    <!-- <div class="home-card">
-        <img src="/images/novidades-icon.jpg" class="icon-sizes">
-        <h4>NOVIDADES</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.</p>
-        <br>
-        <input type="button" name="cardNovidades" class="btnCards" value="Acessar">
-    </div>
-
-    <div class="home-card">
-        <img src="/images/dicas-de-leitura-icon.jpg" class="icon-sizes">
-        <h4>DICAS DE LEITURA</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.</p>
-        <br>
-        <input type="button" name="cardDicasDeLeitura" class="btnCards" value=" Acessar">
-    </div>
-
-    <div class="home-card">
-        <img src="/images/mais-procurados-icon.jpg" class="icon-sizes">
-        <h4>MAIS PROCURADOS</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.</p>
-        <br>
-        <input type="button" name="cardMaisProcurados" class="btnCards" value="Acessar"> 
-    </div>
-
-    <div class="home-card">
-        <img src="/images/curiosidades-icon.jpg" class="icon-sizes">
-        <h4>CURIOSIDADES</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.</p>
-        <br>
-        <input type="button" name="cardCuriosidades" class="btnCards" value="Acessar">
-    </div> -->
-  <!--cartões de opções-->
-<<<<<<< HEAD
- <!-- Sem utilização por enquanto -->
-=======
-// Sem utilização por enquanto
->>>>>>> e70d313d82f2deedcc1c9bc4147aa25835a518ba
-
 </div>
 </template>
 
