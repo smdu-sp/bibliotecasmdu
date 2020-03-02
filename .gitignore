@@ -12,3 +12,5 @@ yarn-error.log
 .env
 .bkp
 .env.bkp
+composer.lock
+public/js/app.js

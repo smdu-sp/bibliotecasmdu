@@ -29,6 +29,8 @@ Route::prefix('acervo')->group(function(){
 	Route::get('/', 'AcervoController@pag')->name('paginate_acervo');
 	Route::get('/{item}', 'AcervoController@mostrar')->name('item_acervo');
 
+	Route::get('/busca/{termo}', 'BuscaAcervoController@pag')->name('buscar_acervo');
+
 	// Route::put('/{item}', 'AcervoController@editar')->name('editar_item');
 	Route::post('/atualizar/{item}', 'AcervoController@atualizar')->name('editar_item');
 	
