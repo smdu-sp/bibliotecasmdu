@@ -48842,48 +48842,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -53417,7 +53375,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.main {\r\n  padding: 2em;\r\n  font-family: Arial, Helvetica, sans-serif;\n}\nh1 {\r\n  color: #000;\r\n  font-weight: bold;\n}\nh2 {\r\n  color: #000;\r\n  font-size: 28px;\r\n  font-style: italic;\n}\n.container {\r\n  padding-left: 0;\r\n  padding-top: 0;\r\n  color: #000;\n}\n.pointer {\r\n  cursor: pointer;\n}\n.lbPesquisar {\r\n  font-size: 18px;\r\n  color: #000;\n}\n.select-size {\r\n  width: 200px;\r\n  color: #000;\r\n  font-weight: bold;\n}\n.btn-color {\r\n  width: 120.75px;\r\n  color: #fff;\r\n  background-color: #090;\r\n  font-weight: bold;\n}\n.btn-color:hover {\r\n  background-color: #080;\r\n  color: #fff;\n}\nh3 {\r\n  font-size: 26px;\r\n  font-style: italic;\r\n  color: #090;\r\n  padding-top: 20px;\n}\n.relatorios-pesquisa {\r\n  color: #000;\r\n  font-weight: bold;\r\n  font-size: 18px;\n}\n.titulos-pesquisa th {\r\n  color: #000;\r\n  font-weight: bold;\r\n  font-size: 18px;\n}\ntable, td, a {\r\n  color: black;\r\n  font-size: 16px;\n}\n.disponivel {\r\n  color: #080;\r\n  font-weight: bold;\r\n  font-style: italic;\n}\n.atrasado {\r\n  color: red;\r\n  font-weight: bold;\r\n  font-style: italic;\n}\n.modal-title {\r\n  padding: 10px;\r\n  margin-left: 12px;\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n  color: #0a0;\n}\r\n", ""]);
+exports.push([module.i, "\n.main {\r\n  padding: 2em;\r\n  font-family: Arial, Helvetica, sans-serif;\n}\nh1 {\r\n  color: #000;\r\n  font-weight: bold;\n}\nh2 {\r\n  color: #000;\r\n  font-size: 28px;\r\n  font-style: italic;\n}\n.container {\r\n  padding-left: 0;\r\n  padding-top: 0;\r\n  color: #000;\n}\n.pointer {\r\n  cursor: pointer;\n}\n.lbPesquisar {\r\n  font-size: 18px;\r\n  color: #000;\n}\n.select-size {\r\n  width: 200px;\r\n  color: #000;\r\n  font-weight: bold;\n}\n.btn-color {\r\n  width: 120.75px;\r\n  color: #fff;\r\n  background-color: #090;\r\n  font-weight: bold;\n}\n.btn-color:hover {\r\n  background-color: #080;\r\n  color: #fff;\n}\nh3 {\r\n  font-size: 26px;\r\n  font-style: italic;\r\n  color: #090;\r\n  padding-top: 20px;\n}\n.relatorios-pesquisa {\r\n  color: #000;\r\n  font-weight: bold;\r\n  font-size: 18px;\n}\n.titulos-pesquisa th {\r\n  color: #000;\r\n  font-weight: bold;\r\n  font-size: 18px;\n}\ntable,\r\ntd,\r\na {\r\n  color: black;\r\n  font-size: 16px;\n}\n.disponivel {\r\n  color: #080;\r\n  font-weight: bold;\r\n  font-style: italic;\n}\n.atrasado {\r\n  color: red;\r\n  font-weight: bold;\r\n  font-style: italic;\n}\n.modal-title {\r\n  padding: 10px;\r\n  margin-left: 12px;\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n  color: #0a0;\n}\r\n", ""]);
 
 // exports
 
@@ -53640,15 +53598,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      methods: {
-        openModal: function openModal() {
-          // Função do Bootstrap
-        }
-      },
       relatorio: [{
         tituloItem: "Avenida Paulista",
         autorItem: "Primeiro Nome Sobrenome",
@@ -53671,6 +53625,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         edicaoData: "01"
       }]
     };
+  },
+
+  methods: {
+    openModal: function openModal() {
+      // Função do Bootstrap
+    }
   }
 });
 

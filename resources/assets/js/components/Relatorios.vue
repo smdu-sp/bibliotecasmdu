@@ -119,14 +119,13 @@
               </tr>
             </tbody>
           </table>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary1" data-dismiss="modal">Fechar</button>
-        </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary1" data-dismiss="modal">Fechar</button>
+          </div>
         </div>
       </div>
     </div>
     <!--Modal-->
-
   </div>
 </template>
 
@@ -187,7 +186,9 @@ h3 {
   font-weight: bold;
   font-size: 18px;
 }
-table, td, a {
+table,
+td,
+a {
   color: black;
   font-size: 16px;
 }
@@ -214,11 +215,6 @@ table, td, a {
 export default {
   data() {
     return {
-      methods: {
-        openModal() {
-          // Função do Bootstrap
-        }
-      },
       relatorio: [
         {
           tituloItem: "Avenida Paulista",
@@ -246,6 +242,11 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    openModal() {
+      // Função do Bootstrap
+    }
   }
 };
 </script>
