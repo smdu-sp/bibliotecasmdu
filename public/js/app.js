@@ -50090,7 +50090,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       acervo: [],
       itemAtual: {},
       resultados: {},
-      pagination: {}
+      pagination: {},
+      termoPesquisa: ''
     };
   },
 
@@ -50120,15 +50121,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         prev_page_url: data.prev_page_url
       };
       this.pagination = cPagination;
+    },
+    pesquisar: function pesquisar() {
+      var _this = this;
+
+      var uri = "/api/acervo/busca/" + this.termoPesquisa;
+      this.axios.get(uri).then(function (response) {
+        _this.resultados = response.data;
+        _this.acervo = _this.resultados.data;
+      });
+    },
+    verificaValidade: function verificaValidade(propriedade) {
+      if (propriedade && propriedade.length > 0) {
+        return true;
+      } else {
+        return false;
+      }
     }
   },
   created: function created() {
-    var _this = this;
+    var _this2 = this;
 
     var uri = "http://localhost:8000/api/acervo";
     this.axios.get(uri).then(function (response) {
-      _this.resultados = response.data;
-      _this.acervo = _this.resultados.data;
+      _this2.resultados = response.data;
+      _this2.acervo = _this2.resultados.data;
     });
   },
   mounted: function mounted() {
@@ -50149,10 +50166,63 @@ var render = function() {
     _vm._v(" "),
     _c("h2", [_vm._v("Localize em nosso catálogo o documento desejado")]),
     _vm._v(" "),
-    _vm._m(0),
+    _c("div", { staticClass: "linha-pesquisa row" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-5" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.termoPesquisa,
+              expression: "termoPesquisa"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: { type: "search", placeholder: "Digite o termo desejado" },
+          domProps: { value: _vm.termoPesquisa },
+          on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.pesquisar()
+            },
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.termoPesquisa = $event.target.value
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-sm-2" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn mb-2 btn-color",
+            attrs: { type: "submit" },
+            on: {
+              click: function($event) {
+                return _vm.pesquisar()
+              }
+            }
+          },
+          [_vm._v("Pesquisar")]
+        )
+      ])
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _vm._m(1),
+      _vm._m(2),
       _vm._v(" "),
       _c(
         "div",
@@ -50174,7 +50244,7 @@ var render = function() {
     _c("br"),
     _vm._v(" "),
     _c("table", { staticClass: "table table-hover" }, [
-      _vm._m(2),
+      _vm._m(3),
       _vm._v(" "),
       _c(
         "tbody",
@@ -50315,7 +50385,7 @@ var render = function() {
                       _vm._v("Subtítulo:")
                     ]),
                     _vm._v(" "),
-                    _vm.itemAtual.Subtítulo
+                    _vm.verificaValidade(_vm.itemAtual.SubTitulo)
                       ? _c("td", [_vm._v(_vm._s(_vm.itemAtual.SubTitulo))])
                       : _c("td", [_vm._v("Não há subtítulo disponível.")])
                   ]),
@@ -50341,18 +50411,18 @@ var render = function() {
                       _vm._v("Descrição:")
                     ]),
                     _vm._v(" "),
-                    _vm.itemAtual.Resumo
+                    _vm.verificaValidade(_vm.itemAtual.Resumo)
                       ? _c("td", [_vm._v(_vm._s(_vm.itemAtual.Resumo))])
                       : _c("td", [_vm._v("Não há descrição disponível.")])
                   ]),
-                  _vm._v(" "),
-                  _vm._m(3),
                   _vm._v(" "),
                   _vm._m(4),
                   _vm._v(" "),
                   _vm._m(5),
                   _vm._v(" "),
                   _vm._m(6),
+                  _vm._v(" "),
+                  _vm._m(7),
                   _vm._v(" "),
                   _c("tr", [
                     _c("th", { attrs: { scope: "row" } }, [
@@ -50373,7 +50443,7 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _vm._m(7)
+            _vm._m(8)
           ])
         ])
       ]
@@ -50568,44 +50638,31 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "linha-pesquisa row" }, [
-      _c("div", { staticClass: "col-sm-2" }, [
-        _c("label", { staticClass: "lbPesquisar" }, [_vm._v("Pesquisar por:")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-3" }, [
-        _c(
-          "select",
-          {
-            staticClass: "form-control form-group-sm select-size",
-            attrs: { name: "pesquisa" }
-          },
-          [
-            _c("option", { attrs: { value: "1" } }, [_vm._v("Autor")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "2" } }, [_vm._v("Assunto")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "3" } }, [_vm._v("Palavra")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "4" } }, [_vm._v("Título")])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-5" }, [
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { type: "search", placeholder: "Digite o termo desejado" }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-sm-2" }, [
-        _c(
-          "button",
-          { staticClass: "btn mb-2 btn-color", attrs: { type: "submit" } },
-          [_vm._v("Pesquisar")]
-        )
-      ])
+    return _c("div", { staticClass: "col-sm-2" }, [
+      _c("label", { staticClass: "lbPesquisar" }, [_vm._v("Pesquisar por:")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c(
+        "select",
+        {
+          staticClass: "form-control form-group-sm select-size",
+          attrs: { name: "pesquisa" }
+        },
+        [
+          _c("option", { attrs: { value: "1" } }, [_vm._v("Autor")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "2" } }, [_vm._v("Assunto")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "3" } }, [_vm._v("Palavra")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "4" } }, [_vm._v("Título")])
+        ]
+      )
     ])
   },
   function() {

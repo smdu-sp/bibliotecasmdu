@@ -17,10 +17,10 @@
         </select>
       </div>
       <div class="col-md-5">
-        <input type="search" placeholder="Digite o termo desejado" class="form-control" />
+        <input type="search" v-on:keyup.enter="pesquisar()" v-model="termoPesquisa" placeholder="Digite o termo desejado" class="form-control" />
       </div>
       <div class="col-sm-2">
-        <button type="submit" class="btn mb-2 btn-color">Pesquisar</button>
+        <button @click="pesquisar()" type="submit" class="btn mb-2 btn-color">Pesquisar</button>
       </div>
     </div>
     <!--pesquisa-->
@@ -113,7 +113,7 @@
                 </tr>
                 <tr>
                   <th scope="row">Subtítulo:</th>
-                  <td v-if="itemAtual.Subtítulo">{{ itemAtual.SubTitulo }}</td>
+                  <td v-if="verificaValidade(itemAtual.SubTitulo)">{{ itemAtual.SubTitulo }}</td>
                   <td v-else>Não há subtítulo disponível.</td>
                 </tr>
                 <tr>
@@ -122,7 +122,7 @@
                 </tr>
                 <tr>
                   <th scope="row">Descrição:</th>
-                  <td v-if="itemAtual.Resumo">{{ itemAtual.Resumo }}</td>
+                  <td v-if="verificaValidade(itemAtual.Resumo)">{{ itemAtual.Resumo }}</td>
                   <td v-else>Não há descrição disponível.</td>
                 </tr>
                 <tr>
@@ -392,6 +392,7 @@ export default {
       itemAtual: {},
       resultados: {},
       pagination: {},
+      termoPesquisa: ''
     };
   },
   methods: {
@@ -420,6 +421,21 @@ export default {
       };
       this.pagination = cPagination;
     },
+    pesquisar: function() {
+      let uri = "/api/acervo/busca/"+this.termoPesquisa;
+      this.axios.get(uri).then(response => {
+        this.resultados = response.data;
+        this.acervo = this.resultados.data;
+      })
+    },
+    verificaValidade(propriedade) {
+      if (propriedade && propriedade.length > 0) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
   },
   created() {
     let uri = "http://localhost:8000/api/acervo";
