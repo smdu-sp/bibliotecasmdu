@@ -50082,7 +50082,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -50169,9 +50168,7 @@ var render = function() {
     _c("div", { staticClass: "linha-pesquisa row" }, [
       _vm._m(0),
       _vm._v(" "),
-      _vm._m(1),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-5" }, [
+      _c("div", { staticClass: "col-md-8" }, [
         _c("input", {
           directives: [
             {
@@ -50222,7 +50219,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _vm._m(2),
+      _vm._m(1),
       _vm._v(" "),
       _c(
         "div",
@@ -50244,7 +50241,7 @@ var render = function() {
     _c("br"),
     _vm._v(" "),
     _c("table", { staticClass: "table table-hover" }, [
-      _vm._m(3),
+      _vm._m(2),
       _vm._v(" "),
       _c(
         "tbody",
@@ -50285,39 +50282,22 @@ var render = function() {
               [_vm._v(_vm._s(item.Titulo))]
             ),
             _vm._v(" "),
-            item.Notas
-              ? _c(
-                  "td",
-                  {
-                    staticClass: "pointer",
-                    attrs: {
-                      "data-toggle": "modal",
-                      "data-target": ".bd-example-modal-lg"
-                    },
-                    on: {
-                      click: function($event) {
-                        return _vm.openModal(item)
-                      }
-                    }
-                  },
-                  [_vm._v(_vm._s(item.Notas))]
-                )
-              : _c(
-                  "td",
-                  {
-                    staticClass: "pointer",
-                    attrs: {
-                      "data-toggle": "modal",
-                      "data-target": ".bd-example-modal-lg"
-                    },
-                    on: {
-                      click: function($event) {
-                        return _vm.openModal(item)
-                      }
-                    }
-                  },
-                  [_vm._v("Não há notas disponíveis.")]
-                ),
+            _c(
+              "td",
+              {
+                staticClass: "pointer",
+                attrs: {
+                  "data-toggle": "modal",
+                  "data-target": ".bd-example-modal-lg"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.openModal(item)
+                  }
+                }
+              },
+              [_vm._v(_vm._s(item.Notas))]
+            ),
             _vm._v(" "),
             item.Autores.length > 0
               ? _c(
@@ -50416,13 +50396,13 @@ var render = function() {
                       : _c("td", [_vm._v("Não há descrição disponível.")])
                   ]),
                   _vm._v(" "),
+                  _vm._m(3),
+                  _vm._v(" "),
                   _vm._m(4),
                   _vm._v(" "),
                   _vm._m(5),
                   _vm._v(" "),
                   _vm._m(6),
-                  _vm._v(" "),
-                  _vm._m(7),
                   _vm._v(" "),
                   _c("tr", [
                     _c("th", { attrs: { scope: "row" } }, [
@@ -50443,7 +50423,7 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _vm._m(8)
+            _vm._m(7)
           ])
         ])
       ]
@@ -50640,29 +50620,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-2" }, [
       _c("label", { staticClass: "lbPesquisar" }, [_vm._v("Pesquisar por:")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-3" }, [
-      _c(
-        "select",
-        {
-          staticClass: "form-control form-group-sm select-size",
-          attrs: { name: "pesquisa" }
-        },
-        [
-          _c("option", { attrs: { value: "1" } }, [_vm._v("Autor")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "2" } }, [_vm._v("Assunto")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "3" } }, [_vm._v("Palavra")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "4" } }, [_vm._v("Título")])
-        ]
-      )
     ])
   },
   function() {

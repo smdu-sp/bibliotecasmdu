@@ -8,15 +8,15 @@
       <div class="col-sm-2">
         <label class="lbPesquisar">Pesquisar por:</label>
       </div>
-      <div class="col-md-3">
+      <!-- <div class="col-md-3">
         <select name="pesquisa" class="form-control form-group-sm select-size">
           <option value="1">Autor</option>
           <option value="2">Assunto</option>
           <option value="3">Palavra</option>
           <option value="4">Título</option>
         </select>
-      </div>
-      <div class="col-md-5">
+      </div> -->
+      <div class="col-md-8">
         <input type="search" v-on:keyup.enter="pesquisar()" v-model="termoPesquisa" placeholder="Digite o termo desejado" class="form-control" />
       </div>
       <div class="col-sm-2">
@@ -60,18 +60,17 @@
             class="pointer"
           >{{ item.Titulo }}</td>
           <td 
-          v-if="item.Notas"
           @click="openModal(item)"
           data-toggle="modal"
           data-target=".bd-example-modal-lg"
           class="pointer"
           >{{ item.Notas }}</td>
-          <td v-else
+          <!-- <td v-else
           @click="openModal(item)"
           data-toggle="modal"
           data-target=".bd-example-modal-lg"
           class="pointer"
-          >Não há notas disponíveis.</td>
+          >Não há notas disponíveis.</td> -->
           <!-- <td v-if="false">
             <router-link
               :to="{name: 'atualizar', params: { id: item.IDAcervo }}"
