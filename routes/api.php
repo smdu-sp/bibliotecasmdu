@@ -38,3 +38,8 @@ Route::prefix('acervo')->group(function(){
 
 	Route::delete('/{item}', 'AcervoController@deletar')->name('deletar_item');
 	});
+
+Route::prefix('correntistas')->group(function(){
+	Route::get('/', 'CorrentistasController@pag')->name('paginate_correntistas');
+	Route::get('/{item}', 'CorrentistasController@mostrar')->name('correntista');
+});
