@@ -51,13 +51,13 @@ class CorrentistasController extends Controller
     }
 
     public function atualizar($id, Request $request){
-        $item = Acervo::find($id);
+        $item = Correntistas::find($id);
         $item->update($request->all());
 
         return response()->json('atualizado com sucesso');
     }
 
-    public function deletar(Acervo $item){
+    public function deletar(Correntistas $item){
     	$item->delete();
 
     	// return response()->json(null, 204);

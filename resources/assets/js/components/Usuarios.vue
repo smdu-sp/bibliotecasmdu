@@ -1,11 +1,9 @@
 <template>
   <div class="main">
-
-
     <h1>Usuários</h1>
     <h2>Localizar usuário</h2>
 
-    <br/>
+    <br />
     <!-- pesquisa -->
     <div class="linha-pesquisa row">
       <div class="col-sm-2">
@@ -38,16 +36,22 @@
     <table class="table table-hover">
       <thead>
         <tr class="titulos-pesquisa">
+          <th scope="col">ID</th>
           <th scope="col">Nome</th>
-          <th scope="col">CPF</th>
           <th scope="col">E-mail</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in usuario" v-bind:key="item.id">
-          <td><a href="/emprestimos" class="pointer">{{ item.nomeItem }}</a></td>
-          <td><a href="/emprestimos" class="pointer">{{ item.cpfItem }}</a></td>
-          <td><a href="/emprestimos" class="pointer">{{ item.emailItem }}</a></td>
+        <tr v-for="item in correntistas" v-bind:key="item.id">
+          <td>
+            <a href="/emprestimos" class="pointer">{{ item.IDCorrentista }}</a>
+          </td>
+          <td>
+            <a href="/emprestimos" class="pointer">{{ item.NomeCorrentista }}</a>
+          </td>
+          <td>
+            <a href="/emprestimos" class="pointer">{{ item.Email }}</a>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -58,7 +62,7 @@
     <!--Paginação-->
     <div class="container-pagination">
       <div class="pagination">
-        <a
+        <!-- <a
           href="#"
           data-toggle="tooltip"
           data-placement="bottom"
@@ -71,14 +75,58 @@
           data-placement="bottom"
           title="Anterior"
           class="pointer"
-        >&lt;</a>
-        <a href="#">1</a>
+        >&lt;</a>-->
+        <button
+          class="btn btn-default"
+          @click="buscarUsuarios('/api/correntistas')"
+          v-if="pagination.prev_page_url"
+        >«</button>
+        <button
+          class="btn btn-default"
+          @click="buscarUsuarios(pagination.prev_page_url)"
+          v-if="pagination.prev_page_url"
+        >&lt;</button>
+        <!-- <a href="#">1</a>
         <a class="active" href="#">2</a>
         <a href="#">3</a>
         <a href="#">4</a>
         <a href="#">5</a>
-        <a href="#">6</a>
-        <a
+        <a href="#">6</a>-->
+        <button
+          v-if="(parseInt(pagination.current_page) - 3) > 0"
+          class="btn btn-default"
+          @click="buscarUsuarios('/api/correntistas?page=' + (parseInt(pagination.current_page) - 3))"
+        >{{ pagination.current_page - 3 }}</button>
+        <button
+          v-if="(parseInt(pagination.current_page) - 2) > 0"
+          class="btn btn-default"
+          @click="buscarUsuarios('/api/correntistas?page=' + (parseInt(pagination.current_page) - 2))"
+        >{{ pagination.current_page - 2 }}</button>
+        <button
+          v-if="(parseInt(pagination.current_page) - 1) > 0"
+          class="btn btn-default"
+          @click="buscarUsuarios('/api/correntistas?page=' + (parseInt(pagination.current_page) - 1))"
+        >{{ pagination.current_page - 1 }}</button>
+        <button class="btn btn-secondary2">{{ pagination.current_page }}</button>
+        <button
+          v-if="(parseInt(pagination.current_page) + 1) <= pagination.last_page"
+          class="btn btn-default"
+          @click="buscarUsuarios('/api/correntistas?page=' + (parseInt(pagination.current_page) + 1))"
+          :disabled="!pagination.next_page_url"
+        >{{ pagination.current_page + 1 }}</button>
+        <button
+          v-if="(parseInt(pagination.current_page) + 2) <= pagination.last_page"
+          class="btn btn-default"
+          @click="buscarUsuarios('/api/correntistas?page=' + (parseInt(pagination.current_page) + 2))"
+          :disabled="!pagination.next_page_url"
+        >{{ pagination.current_page + 2 }}</button>
+        <button
+          v-if="(parseInt(pagination.current_page) + 3) <= pagination.last_page"
+          class="btn btn-default"
+          @click="buscarUsuarios('/api/correntistas?page=' + (parseInt(pagination.current_page) + 3))"
+          :disabled="!pagination.next_page_url"
+        >{{ pagination.current_page +3 }}</button>
+        <!-- <a
           href="#"
           data-toggle="tooltip"
           data-placement="bottom"
@@ -91,7 +139,17 @@
           data-placement="bottom"
           title="Última página"
           class="pointer"
-        >»</a>
+        >»</a>-->
+        <button
+          class="btn btn-default"
+          @click="buscarUsuarios(pagination.next_page_url)"
+          v-if="pagination.next_page_url"
+        >&gt;</button>
+        <button
+          class="btn btn-default"
+          @click="buscarUsuarios('/api/correntistas?page=' + (parseInt(pagination.last_page)))"
+          v-if="pagination.next_page_url"
+        >»</button>
       </div>
     </div>
     <!--Paginação-->
@@ -119,6 +177,7 @@ h2 {
 }
 .pointer {
   cursor: pointer;
+  color: #000;
 }
 .lbPesquisar {
   font-size: 18px;
@@ -155,31 +214,16 @@ td {
   font-size: 16px;
   color: #000;
 }
-a {
-  color: inherit;
-}
-a:hover {
-  color: inherit;
-  text-decoration: none;
-}
 .container-pagination {
   text-align: center;
 }
-.pagination {
+.pagination button {
   display: inline-block;
-}
-.pagination a {
   color: black;
-  float: left;
   padding: 8px 16px;
   text-decoration: none;
-}
-.pagination a.active {
-  background-color: #4caf50;
-  color: white;
-}
-.pagination a:hover:not(.active) {
-  background-color: #ddd;
+  border: none;
+  border-radius: 15px;
 }
 .linha-pesquisa > :first-child {
   padding-left: 1em;
@@ -191,39 +235,39 @@ a:hover {
 export default {
   data() {
     return {
-      usuario: [
-        {
-          nomeItem: "Marco William",
-          cpfItem: "999.999.999-99",
-          emailItem: "marcowilliam1@gmail.com"
-        },
-        {
-          nomeItem: "Marcia Silva",
-          cpfItem: "999.999.999-99",
-          emailItem: "silvamarcia23@gmail.com"
-        },
-        {
-          nomeItem: "Jessica Boelho",
-          cpfItem: "999.999.999-99",
-          emailItem: "boelhojessica@gmail.com"
-        },
-        {
-          nomeItem: "Lucia Maria",
-          cpfItem: "999.999.999-99",
-          emailItem: "lucimaria89@gmail.com"
-        },
-        {
-          nomeItem: "Lucas Silva",
-          cpfItem: "999.999.999-99",
-          emailItem: "lucasilva2@gmail.com"
-        },
-        {
-          nomeItem: "Bruno Matias",
-          cpfItem: "999.999.999-99",
-          emailItem: "brunom1972@gmail.com"
-        },
-      ],
+      correntistas: [],
+      pagination: {}
     };
+  },
+  methods: {
+    buscarUsuarios: function(page_url) {
+      document.activeElement.blur();
+      let app = this;
+      page_url = page_url || "/api/correntistas";
+      this.axios.get(page_url).then(function(response) {
+        app.makePagination(response.data);
+        app.correntistas = response.data.data;
+      });
+    },
+    makePagination: function(data) {
+      let cPagination = {
+        current_page: data.current_page,
+        last_page: data.last_page,
+        next_page_url: data.next_page_url,
+        prev_page_url: data.prev_page_url
+      };
+      this.pagination = cPagination;
+    }
+  },
+  created() {
+    let uri = "http://localhost:8000/api/correntistas";
+    this.axios.get(uri).then(response => {
+      this.resultados = response.data;
+      this.acervo = this.resultados.data;
+    });
+  },
+  mounted() {
+    this.buscarUsuarios();
   }
 };
 </script>
