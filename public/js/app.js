@@ -51029,7 +51029,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.main {\r\n  padding: 2em;\r\n  font-family: Arial, Helvetica, sans-serif;\n}\nh1 {\r\n  color: #000;\r\n  font-weight: bold;\n}\nh2 {\r\n  font-size: 28px;\r\n  font-style: italic;\n}\n.container {\r\n  padding-left: 0;\r\n  padding-top: 0;\r\n  color: #000;\n}\n.pointer {\r\n  cursor: pointer;\r\n  color: #000;\n}\n.lbPesquisar {\r\n  font-size: 18px;\r\n  color: #000;\n}\n.select-size {\r\n  width: 200px;\r\n  color: #000;\r\n  font-weight: bold;\n}\n.btn-color {\r\n  width: 120.75px;\r\n  color: #fff;\r\n  background-color: #090;\r\n  font-weight: bold;\n}\n.btn-color:hover {\r\n  background-color: #080;\r\n  color: #fff;\n}\nh3 {\r\n  font-size: 26px;\r\n  font-style: italic;\r\n  color: #090;\r\n  padding-top: 20px;\n}\n.titulos-pesquisa th {\r\n  color: #000;\r\n  font-weight: bold;\r\n  font-size: 18px;\n}\ntd {\r\n  max-width: 100px;\r\n  font-size: 16px;\r\n  color: #000;\n}\n.container-pagination {\r\n  text-align: center;\n}\n.pagination button {\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 8px 16px;\r\n  text-decoration: none;\r\n  border: none;\r\n  border-radius: 15px;\n}\n.linha-pesquisa > :first-child {\r\n  padding-left: 1em;\n}\r\n", ""]);
+exports.push([module.i, "\n.main {\r\n  padding: 2em;\r\n  font-family: Arial, Helvetica, sans-serif;\n}\nh1 {\r\n  color: #000;\r\n  font-weight: bold;\n}\nh2 {\r\n  font-size: 28px;\r\n  font-style: italic;\n}\n.container {\r\n  padding-left: 0;\r\n  padding-top: 0;\r\n  color: #000;\n}\n.pointer {\r\n  cursor: pointer;\n}\n.lbPesquisar {\r\n  font-size: 18px;\r\n  color: #000;\n}\n.select-size {\r\n  width: 200px;\r\n  color: #000;\r\n  font-weight: bold;\n}\n.btn-color {\r\n  width: 120.75px;\r\n  color: #fff;\r\n  background-color: #090;\r\n  font-weight: bold;\n}\n.btn-color:hover {\r\n  background-color: #080;\r\n  color: #fff;\n}\nh3 {\r\n  font-size: 26px;\r\n  font-style: italic;\r\n  color: #090;\r\n  padding-top: 20px;\n}\n.titulos-pesquisa th {\r\n  color: #000;\r\n  font-weight: bold;\r\n  font-size: 18px;\n}\ntd {\r\n  max-width: 100px;\r\n  font-size: 16px;\r\n  color: #000;\n}\na {\r\n  color: inherit;\n}\na:hover {\r\n  color: inherit;\r\n  text-decoration: none;\n}\n.container-pagination {\r\n  text-align: center;\n}\n.pagination {\r\n  display: inline-block;\n}\n.pagination a {\r\n  color: black;\r\n  float: left;\r\n  padding: 8px 16px;\r\n  text-decoration: none;\n}\n.pagination a.active {\r\n  background-color: #4caf50;\r\n  color: white;\n}\n.pagination a:hover:not(.active) {\r\n  background-color: #ddd;\n}\n.linha-pesquisa > :first-child {\r\n  padding-left: 1em;\n}\r\n", ""]);
 
 // exports
 
@@ -51229,90 +51229,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      correntistas: [],
-      pagination: {}
+      usuario: [{
+        nomeItem: "Marco William",
+        cpfItem: "999.999.999-99",
+        emailItem: "marcowilliam1@gmail.com"
+      }, {
+        nomeItem: "Marcia Silva",
+        cpfItem: "999.999.999-99",
+        emailItem: "silvamarcia23@gmail.com"
+      }, {
+        nomeItem: "Jessica Boelho",
+        cpfItem: "999.999.999-99",
+        emailItem: "boelhojessica@gmail.com"
+      }, {
+        nomeItem: "Lucia Maria",
+        cpfItem: "999.999.999-99",
+        emailItem: "lucimaria89@gmail.com"
+      }, {
+        nomeItem: "Lucas Silva",
+        cpfItem: "999.999.999-99",
+        emailItem: "lucasilva2@gmail.com"
+      }, {
+        nomeItem: "Bruno Matias",
+        cpfItem: "999.999.999-99",
+        emailItem: "brunom1972@gmail.com"
+      }]
     };
-  },
-
-  methods: {
-    buscarUsuarios: function buscarUsuarios(page_url) {
-      document.activeElement.blur();
-      var app = this;
-      page_url = page_url || "/api/correntistas";
-      this.axios.get(page_url).then(function (response) {
-        app.makePagination(response.data);
-        app.correntistas = response.data.data;
-      });
-    },
-    makePagination: function makePagination(data) {
-      var cPagination = {
-        current_page: data.current_page,
-        last_page: data.last_page,
-        next_page_url: data.next_page_url,
-        prev_page_url: data.prev_page_url
-      };
-      this.pagination = cPagination;
-    }
-  },
-  created: function created() {
-    var _this = this;
-
-    var uri = "http://localhost:8000/api/correntistas";
-    this.axios.get(uri).then(function (response) {
-      _this.resultados = response.data;
-      _this.acervo = _this.resultados.data;
-    });
-  },
-  mounted: function mounted() {
-    this.buscarUsuarios();
   }
 });
 
@@ -51342,13 +51288,13 @@ var render = function() {
       _vm._v(" "),
       _c(
         "tbody",
-        _vm._l(_vm.correntistas, function(item) {
+        _vm._l(_vm.usuario, function(item) {
           return _c("tr", { key: item.id }, [
             _c("td", [
               _c(
                 "a",
                 { staticClass: "pointer", attrs: { href: "/emprestimos" } },
-                [_vm._v(_vm._s(item.IDCorrentista))]
+                [_vm._v(_vm._s(item.nomeItem))]
               )
             ]),
             _vm._v(" "),
@@ -51356,7 +51302,7 @@ var render = function() {
               _c(
                 "a",
                 { staticClass: "pointer", attrs: { href: "/emprestimos" } },
-                [_vm._v(_vm._s(item.NomeCorrentista))]
+                [_vm._v(_vm._s(item.cpfItem))]
               )
             ]),
             _vm._v(" "),
@@ -51364,7 +51310,7 @@ var render = function() {
               _c(
                 "a",
                 { staticClass: "pointer", attrs: { href: "/emprestimos" } },
-                [_vm._v(_vm._s(item.Email))]
+                [_vm._v(_vm._s(item.emailItem))]
               )
             ])
           ])
@@ -51375,187 +51321,7 @@ var render = function() {
     _vm._v(" "),
     _c("hr"),
     _vm._v(" "),
-    _c("div", { staticClass: "container-pagination" }, [
-      _c("div", { staticClass: "pagination" }, [
-        _vm.pagination.prev_page_url
-          ? _c(
-              "button",
-              {
-                staticClass: "btn btn-default",
-                on: {
-                  click: function($event) {
-                    return _vm.buscarUsuarios("/api/correntistas")
-                  }
-                }
-              },
-              [_vm._v("«")]
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        _vm.pagination.prev_page_url
-          ? _c(
-              "button",
-              {
-                staticClass: "btn btn-default",
-                on: {
-                  click: function($event) {
-                    return _vm.buscarUsuarios(_vm.pagination.prev_page_url)
-                  }
-                }
-              },
-              [_vm._v("<")]
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        parseInt(_vm.pagination.current_page) - 3 > 0
-          ? _c(
-              "button",
-              {
-                staticClass: "btn btn-default",
-                on: {
-                  click: function($event) {
-                    _vm.buscarUsuarios(
-                      "/api/correntistas?page=" +
-                        (parseInt(_vm.pagination.current_page) - 3)
-                    )
-                  }
-                }
-              },
-              [_vm._v(_vm._s(_vm.pagination.current_page - 3))]
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        parseInt(_vm.pagination.current_page) - 2 > 0
-          ? _c(
-              "button",
-              {
-                staticClass: "btn btn-default",
-                on: {
-                  click: function($event) {
-                    _vm.buscarUsuarios(
-                      "/api/correntistas?page=" +
-                        (parseInt(_vm.pagination.current_page) - 2)
-                    )
-                  }
-                }
-              },
-              [_vm._v(_vm._s(_vm.pagination.current_page - 2))]
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        parseInt(_vm.pagination.current_page) - 1 > 0
-          ? _c(
-              "button",
-              {
-                staticClass: "btn btn-default",
-                on: {
-                  click: function($event) {
-                    _vm.buscarUsuarios(
-                      "/api/correntistas?page=" +
-                        (parseInt(_vm.pagination.current_page) - 1)
-                    )
-                  }
-                }
-              },
-              [_vm._v(_vm._s(_vm.pagination.current_page - 1))]
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-secondary2" }, [
-          _vm._v(_vm._s(_vm.pagination.current_page))
-        ]),
-        _vm._v(" "),
-        parseInt(_vm.pagination.current_page) + 1 <= _vm.pagination.last_page
-          ? _c(
-              "button",
-              {
-                staticClass: "btn btn-default",
-                attrs: { disabled: !_vm.pagination.next_page_url },
-                on: {
-                  click: function($event) {
-                    _vm.buscarUsuarios(
-                      "/api/correntistas?page=" +
-                        (parseInt(_vm.pagination.current_page) + 1)
-                    )
-                  }
-                }
-              },
-              [_vm._v(_vm._s(_vm.pagination.current_page + 1))]
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        parseInt(_vm.pagination.current_page) + 2 <= _vm.pagination.last_page
-          ? _c(
-              "button",
-              {
-                staticClass: "btn btn-default",
-                attrs: { disabled: !_vm.pagination.next_page_url },
-                on: {
-                  click: function($event) {
-                    _vm.buscarUsuarios(
-                      "/api/correntistas?page=" +
-                        (parseInt(_vm.pagination.current_page) + 2)
-                    )
-                  }
-                }
-              },
-              [_vm._v(_vm._s(_vm.pagination.current_page + 2))]
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        parseInt(_vm.pagination.current_page) + 3 <= _vm.pagination.last_page
-          ? _c(
-              "button",
-              {
-                staticClass: "btn btn-default",
-                attrs: { disabled: !_vm.pagination.next_page_url },
-                on: {
-                  click: function($event) {
-                    _vm.buscarUsuarios(
-                      "/api/correntistas?page=" +
-                        (parseInt(_vm.pagination.current_page) + 3)
-                    )
-                  }
-                }
-              },
-              [_vm._v(_vm._s(_vm.pagination.current_page + 3))]
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        _vm.pagination.next_page_url
-          ? _c(
-              "button",
-              {
-                staticClass: "btn btn-default",
-                on: {
-                  click: function($event) {
-                    return _vm.buscarUsuarios(_vm.pagination.next_page_url)
-                  }
-                }
-              },
-              [_vm._v(">")]
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        _vm.pagination.next_page_url
-          ? _c(
-              "button",
-              {
-                staticClass: "btn btn-default",
-                on: {
-                  click: function($event) {
-                    _vm.buscarUsuarios(
-                      "/api/correntistas?page=" +
-                        parseInt(_vm.pagination.last_page)
-                    )
-                  }
-                }
-              },
-              [_vm._v("»")]
-            )
-          : _vm._e()
-      ])
-    ])
+    _vm._m(3)
   ])
 }
 var staticRenderFns = [
@@ -51619,11 +51385,87 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", { staticClass: "titulos-pesquisa" }, [
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("ID")]),
-        _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Nome")]),
         _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("CPF")]),
+        _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("E-mail")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container-pagination" }, [
+      _c("div", { staticClass: "pagination" }, [
+        _c(
+          "a",
+          {
+            staticClass: "pointer",
+            attrs: {
+              href: "#",
+              "data-toggle": "tooltip",
+              "data-placement": "bottom",
+              title: "Primeira página"
+            }
+          },
+          [_vm._v("«")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "pointer",
+            attrs: {
+              href: "#",
+              "data-toggle": "tooltip",
+              "data-placement": "bottom",
+              title: "Anterior"
+            }
+          },
+          [_vm._v("<")]
+        ),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("1")]),
+        _vm._v(" "),
+        _c("a", { staticClass: "active", attrs: { href: "#" } }, [_vm._v("2")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("3")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("4")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("5")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("6")]),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "pointer",
+            attrs: {
+              href: "#",
+              "data-toggle": "tooltip",
+              "data-placement": "bottom",
+              title: "Próxima"
+            }
+          },
+          [_vm._v(">")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "pointer",
+            attrs: {
+              href: "#",
+              "data-toggle": "tooltip",
+              "data-placement": "bottom",
+              title: "Última página"
+            }
+          },
+          [_vm._v("»")]
+        )
       ])
     ])
   }
