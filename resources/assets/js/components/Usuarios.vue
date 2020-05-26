@@ -9,18 +9,24 @@
       <div class="col-sm-2">
         <label class="lbPesquisar">Pesquisar por:</label>
       </div>
-      <div class="col-md-3">
+      <!-- <div class="col-md-3">
         <select name="pesquisa" class="form-control form-group-sm select-size">
           <option value="1">Nome</option>
           <option value="3">CPF</option>
           <option value="4">E-mail</option>
         </select>
-      </div>
-      <div class="col-md-5">
-        <input type="search" placeholder="Digite o termo desejado" class="form-control" />
+      </div>-->
+      <div class="col-md-8">
+        <input
+          type="search"
+          v-on:keyup.enter="pesquisar()"
+          v-model="termoPesquisa"
+          placeholder="Digite o termo desejado"
+          class="form-control"
+        />
       </div>
       <div class="col-sm-2">
-        <button type="submit" class="btn mb-2 btn-color">Pesquisar</button>
+        <button @click="pesquisar()" type="submit" class="btn mb-2 btn-color">Pesquisar</button>
       </div>
     </div>
     <!-- pesquisa -->
@@ -247,7 +253,9 @@ export default {
   data() {
     return {
       correntistas: [],
-      pagination: {}
+      resultados: {},
+      pagination: {},
+      termoPesquisa: ""
     };
   },
   methods: {
@@ -268,6 +276,13 @@ export default {
         prev_page_url: data.prev_page_url
       };
       this.pagination = cPagination;
+    },
+    pesquisar: function() {
+      let uri = "/api/correntistas/busca/" + this.termoPesquisa;
+      this.axios.get(uri).then(response => {
+        this.resultados = response.data;
+        this.correntistas = this.resultados.data;
+      });
     }
   },
   created() {

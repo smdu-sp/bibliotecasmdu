@@ -51284,12 +51284,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       correntistas: [],
-      pagination: {}
+      resultados: {},
+      pagination: {},
+      termoPesquisa: ""
     };
   },
 
@@ -51311,15 +51319,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         prev_page_url: data.prev_page_url
       };
       this.pagination = cPagination;
+    },
+    pesquisar: function pesquisar() {
+      var _this = this;
+
+      var uri = "/api/correntistas/busca/" + this.termoPesquisa;
+      this.axios.get(uri).then(function (response) {
+        _this.resultados = response.data;
+        _this.correntistas = _this.resultados.data;
+      });
     }
   },
   created: function created() {
-    var _this = this;
+    var _this2 = this;
 
     var uri = "http://localhost:8000/api/correntistas";
     this.axios.get(uri).then(function (response) {
-      _this.resultados = response.data;
-      _this.acervo = _this.resultados.data;
+      _this2.resultados = response.data;
+      _this2.acervo = _this2.resultados.data;
     });
   },
   mounted: function mounted() {
@@ -51342,7 +51359,58 @@ var render = function() {
     _vm._v(" "),
     _c("br"),
     _vm._v(" "),
-    _vm._m(0),
+    _c("div", { staticClass: "linha-pesquisa row" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-8" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.termoPesquisa,
+              expression: "termoPesquisa"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: { type: "search", placeholder: "Digite o termo desejado" },
+          domProps: { value: _vm.termoPesquisa },
+          on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.pesquisar()
+            },
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.termoPesquisa = $event.target.value
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-sm-2" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn mb-2 btn-color",
+            attrs: { type: "submit" },
+            on: {
+              click: function($event) {
+                return _vm.pesquisar()
+              }
+            }
+          },
+          [_vm._v("Pesquisar")]
+        )
+      ])
+    ]),
     _vm._v(" "),
     _vm._m(1),
     _vm._v(" "),
@@ -51574,42 +51642,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "linha-pesquisa row" }, [
-      _c("div", { staticClass: "col-sm-2" }, [
-        _c("label", { staticClass: "lbPesquisar" }, [_vm._v("Pesquisar por:")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-3" }, [
-        _c(
-          "select",
-          {
-            staticClass: "form-control form-group-sm select-size",
-            attrs: { name: "pesquisa" }
-          },
-          [
-            _c("option", { attrs: { value: "1" } }, [_vm._v("Nome")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "3" } }, [_vm._v("CPF")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "4" } }, [_vm._v("E-mail")])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-5" }, [
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { type: "search", placeholder: "Digite o termo desejado" }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-sm-2" }, [
-        _c(
-          "button",
-          { staticClass: "btn mb-2 btn-color", attrs: { type: "submit" } },
-          [_vm._v("Pesquisar")]
-        )
-      ])
+    return _c("div", { staticClass: "col-sm-2" }, [
+      _c("label", { staticClass: "lbPesquisar" }, [_vm._v("Pesquisar por:")])
     ])
   },
   function() {
