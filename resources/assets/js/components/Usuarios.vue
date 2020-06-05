@@ -282,6 +282,7 @@ export default {
       this.axios.get(uri).then(response => {
         this.resultados = response.data;
         this.correntistas = this.resultados.data;
+        this.makePagination(response.data);
       });
     }
   },

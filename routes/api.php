@@ -42,4 +42,5 @@ Route::prefix('acervo')->group(function(){
 Route::prefix('correntistas')->group(function(){
 	Route::get('/', 'CorrentistasController@pag')->name('paginate_correntistas');
 	Route::get('/{item}', 'CorrentistasController@mostrar')->name('correntista');
+	Route::get('/busca/{termo}', 'BuscaCorrentistasController@pag')->name('buscar_correntista');
 });

@@ -18,11 +18,14 @@ class BuscaCorrentistasController extends Controller
   		// TODO: criar frontend com campo de busca e filtros
     }
 
-    public function buscaAssuntos($q) {
-    	$idList = DB::table('assuntos')->where('Termo', 'LIKE', '%'.$q.'%')
-    	->orWhere('Referencia', 'LIKE', '%'.$q.'%')
-        ->join('correntistas', 'emprestimos.IDCorrentista', '=', 'correntistas.IDCorrentista')
-    	->select('assuntosdoacervo.IDAcervo')
+    public function buscaCorrentistas($q) {
+    	// $idList = DB::table('correntistas')->where('NomeCorrentista', 'LIKE', '%'.$q.'%')
+    	// ->orWhere('IDCorrentista', 'LIKE', '%'.$q.'%')
+    	// ->join('correntistas', 'emprestimos.IDCorrentista', '=', 'correntistas.IDCorrentista')
+    	// ->select('correntista.IDCorrentista')
+		// ->get();
+		$idList = DB::table('correntistas')->where('NomeCorrentista', 'LIKE', '%'.$q.'%')
+    	->select('correntistas.IDCorrentista')
     	->get();
     	$idArr = array();
     	foreach ($idList as $key => $value) {
@@ -31,12 +34,13 @@ class BuscaCorrentistasController extends Controller
     		}
     	}
     	return $idArr;
-    }
+	}
+	
 
-    public function buscaAutores($q) {
-    	$idList = DB::table('correntistas')->where('NomeDoCorrentista', 'LIKE', '%'.$q.'%')
-        ->join('correntistas', 'emprestimos.IDCorrentista', '=', 'correntistas.IDCorrentista')
-    	->select('autoresdoacervo.IDAcervo')
+    public function buscaEmprestimos($q) {
+    	$idList = DB::table('emprestimos')->where('IDCorrentista', 'LIKE', '%'.$q.'%')
+    	->join('correntistas', 'emprestimos.IDCorrentista', '=', 'correntistas.IDCorrentista')
+    	->select('correntistas.IDCorrentista')
     	->get();
     	$idArr = array();
     	foreach ($idList as $key => $value) {
@@ -52,14 +56,14 @@ class BuscaCorrentistasController extends Controller
     	
     	if (!$tipo) {
     		$data = Correntistas::where('NomeCorrentista', 'LIKE', '%'.$q.'%')
-    										->orWhere('RF', 'LIKE', '%'.$q.'%')
+    										->orWhere('Tipo', 'LIKE', '%'.$q.'%')
     										->orWhere('Email', 'LIKE', '%'.$q.'%')
+    										->orWhere('Setor', 'LIKE', '%'.$q.'%')
     										->orWhereIn('IDCorrentista', $this->buscaCorrentistas($q))
-    										->orWhereIn('IDCorrentista', $this->buscaRF($q))
     										->paginate(10);
 			}
 			else if ($tipo === 'NomeCorrentista') {
-				$data = Correntistas::whereIn('IDCorrentista', $this->buscaAutores($q))->paginate(10);
+				$data = Correntistas::whereIn('IDCorrentista', $this->buscaCorrentistas($q))->paginate(10);
 			}
 			else {
 				$data = Correntistas::where($tipo, 'LIKE', '%'.$q.'%')->paginate(10);
@@ -67,8 +71,8 @@ class BuscaCorrentistasController extends Controller
 			
     	// Inclui dados dos autores em cada item encontrado
     	foreach ($data as $key => $value) {
-    		$autores = collect(['Correntistas' => (new CorrentistaController)->getCorrentista($value->IDCorrentista)]);
-    		$data[$key] = $autores->merge($value);
+    		$correntistas = collect(['NomeCorrentistas' => (new CorrentistasController)->getEmprestimos($value->IDCorrentista)]);
+    		$data[$key] = $correntistas->merge($value);
 			// TODO: Verificar se possui arquivo BLOB
     		foreach ($data[$key] as $newKey => $newValue) {
     			if($newKey === 'ARQUIVO' && !is_null($newValue)) {
@@ -80,3 +84,4 @@ class BuscaCorrentistasController extends Controller
     	return response()->json($data);
     }
 }
+

@@ -50128,6 +50128,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.axios.get(uri).then(function (response) {
         _this.resultados = response.data;
         _this.acervo = _this.resultados.data;
+        _this.makePagination(response.data);
       });
     },
     verificaValidade: function verificaValidade(propriedade) {
@@ -51327,6 +51328,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.axios.get(uri).then(function (response) {
         _this.resultados = response.data;
         _this.correntistas = _this.resultados.data;
+        _this.makePagination(response.data);
       });
     }
   },
