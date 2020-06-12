@@ -49,15 +49,9 @@
       </thead>
       <tbody>
         <tr v-for="item in correntistas" v-bind:key="item.id">
-          <td>
-            <a href="/emprestimos" class="pointer">{{ item.IDCorrentista }}</a>
-          </td>
-          <td>
-            <a href="/emprestimos" class="pointer">{{ item.NomeCorrentista }}</a>
-          </td>
-          <td>
-            <a href="/emprestimos" class="pointer">{{ item.Email }}</a>
-          </td>
+          <td><router-link to="/emprestimos" class="pointer">{{ item.IDCorrentista }}</router-link></td>
+          <td><router-link to="/emprestimos" class="pointer">{{ item.NomeCorrentista }}</router-link></td>
+          <td><router-link to="/emprestimos" class="pointer">{{ item.Email }}</router-link></td>
         </tr>
       </tbody>
     </table>
@@ -253,12 +247,20 @@ export default {
   data() {
     return {
       correntistas: [],
+      itemAtual: {},
       resultados: {},
       pagination: {},
       termoPesquisa: ""
     };
   },
   methods: {
+    Emprestimos(itemDoCorrentistas) {
+      this.itemAtual = itemDoCorrentistas;
+      console.log(this.itemAtual);
+    },
+    checkUserLevel(userLevel) {
+      return userLevel === this.$parent.userLevel;
+    },
     buscarUsuarios: function(page_url) {
       document.activeElement.blur();
       let app = this;

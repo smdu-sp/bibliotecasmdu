@@ -51285,17 +51285,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       correntistas: [],
+      itemAtual: {},
       resultados: {},
       pagination: {},
       termoPesquisa: ""
@@ -51303,6 +51298,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
+    Emprestimos: function Emprestimos(itemDoCorrentistas) {
+      this.itemAtual = itemDoCorrentistas;
+      console.log(this.itemAtual);
+    },
+    checkUserLevel: function checkUserLevel(userLevel) {
+      return userLevel === this.$parent.userLevel;
+    },
+
     buscarUsuarios: function buscarUsuarios(page_url) {
       document.activeElement.blur();
       var app = this;
@@ -51425,29 +51428,41 @@ var render = function() {
         "tbody",
         _vm._l(_vm.correntistas, function(item) {
           return _c("tr", { key: item.id }, [
-            _c("td", [
-              _c(
-                "a",
-                { staticClass: "pointer", attrs: { href: "/emprestimos" } },
-                [_vm._v(_vm._s(item.IDCorrentista))]
-              )
-            ]),
+            _c(
+              "td",
+              [
+                _c(
+                  "router-link",
+                  { staticClass: "pointer", attrs: { to: "/emprestimos" } },
+                  [_vm._v(_vm._s(item.IDCorrentista))]
+                )
+              ],
+              1
+            ),
             _vm._v(" "),
-            _c("td", [
-              _c(
-                "a",
-                { staticClass: "pointer", attrs: { href: "/emprestimos" } },
-                [_vm._v(_vm._s(item.NomeCorrentista))]
-              )
-            ]),
+            _c(
+              "td",
+              [
+                _c(
+                  "router-link",
+                  { staticClass: "pointer", attrs: { to: "/emprestimos" } },
+                  [_vm._v(_vm._s(item.NomeCorrentista))]
+                )
+              ],
+              1
+            ),
             _vm._v(" "),
-            _c("td", [
-              _c(
-                "a",
-                { staticClass: "pointer", attrs: { href: "/emprestimos" } },
-                [_vm._v(_vm._s(item.Email))]
-              )
-            ])
+            _c(
+              "td",
+              [
+                _c(
+                  "router-link",
+                  { staticClass: "pointer", attrs: { to: "/emprestimos" } },
+                  [_vm._v(_vm._s(item.Email))]
+                )
+              ],
+              1
+            )
           ])
         }),
         0
@@ -53240,7 +53255,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.main {\r\n  padding: 2em;\r\n  font-family: Arial, Helvetica, sans-serif;\n}\nh1 {\r\n  color: #000;\r\n  font-weight: bold;\n}\nh2 {\r\n  font-size: 28px;\r\n  font-style: italic;\r\n  color: black;\n}\n.container {\r\n  padding-left: 0;\r\n  padding-top: 0;\r\n  color: #000;\n}\nh4 {\r\n  color: #080;\r\n  font-weight: bold;\r\n  font-size: 22px;\n}\ntable {\r\n  color: black;\n}\n.btn-btn1 {\r\n  background-color: darkgrey;\r\n  color: white;\r\n  border-color:ghostwhite;\r\n  float: right;\r\n  margin: 0 10px;\r\n  border-radius: 5px;\n}\n.btn-btn1:hover {\r\n  background-color: gray;\r\n  color:ghostwhite;\n}\n.btn-btn2 {\r\n  background-color: darkgrey;\r\n  color: white;\r\n  border-color:ghostwhite;\r\n  float: right;\r\n  margin: 0 10px;\r\n  border-radius: 5px;\n}\n.btn-btn2:hover {\r\n  background-color: gray;\r\n  color:ghostwhite;\n}\n.btn-btn3 {\r\n  background-color: #080;\r\n  color: white;\r\n  border-color:ghostwhite;\r\n  float: right;\r\n  margin: 0 10px;\r\n  border-radius: 5px;\n}\n.btn-btn3:hover {\r\n  background-color: #070;\r\n  color:ghostwhite;\n}\r\n", ""]);
+exports.push([module.i, "\n.main {\r\n  padding: 2em;\r\n  font-family: Arial, Helvetica, sans-serif;\n}\nh1 {\r\n  color: #000;\r\n  font-weight: bold;\n}\nh2 {\r\n  font-size: 28px;\r\n  font-style: italic;\r\n  color: black;\n}\n.container {\r\n  padding-left: 0;\r\n  padding-top: 0;\r\n  color: #000;\n}\nh4 {\r\n  color: #080;\r\n  font-weight: bold;\r\n  font-size: 22px;\n}\ntable {\r\n  color: black;\n}\n.btn-btn1 {\r\n  background-color: darkgrey;\r\n  color: white;\r\n  border-color: ghostwhite;\r\n  float: right;\r\n  margin: 0 10px;\r\n  border-radius: 5px;\n}\n.btn-btn1:hover {\r\n  background-color: gray;\r\n  color: ghostwhite;\n}\n.btn-btn2 {\r\n  background-color: darkgrey;\r\n  color: white;\r\n  border-color: ghostwhite;\r\n  float: right;\r\n  margin: 0 10px;\r\n  border-radius: 5px;\n}\n.btn-btn2:hover {\r\n  background-color: gray;\r\n  color: ghostwhite;\n}\n.btn-btn3 {\r\n  background-color: #080;\r\n  color: white;\r\n  border-color: ghostwhite;\r\n  float: right;\r\n  margin: 0 10px;\r\n  border-radius: 5px;\n}\n.btn-btn3:hover {\r\n  background-color: #070;\r\n  color: ghostwhite;\n}\r\n", ""]);
 
 // exports
 
@@ -53365,38 +53380,54 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      histEmprestimos: [{
-        titulo: "Avenida Paulista",
-        emprestimoData: "2019-05-10",
-        devolucaoData: "2019-05-25",
-        situacaoExemplar: "Entregue",
-        exemplarEdicao: "1"
-      }, {
-        titulo: "Operação Urbana Faria Lima",
-        emprestimoData: "2019-11-10",
-        devolucaoData: "2019-11-23",
-        situacaoExemplar: "Entregue",
-        exemplarEdicao: "2"
-      }, {
-        titulo: "Polis",
-        emprestimoData: "2019-11-20",
-        devolucaoData: "",
-        situacaoExemplar: "Emprestado",
-        exemplarEdicao: "2"
-      }, {
-        titulo: "Cadastro de referencias urbanas: zona leste",
-        emprestimoData: "2019-12-01",
-        devolucaoData: "2019-12-15",
-        situacaoExemplar: "Entregue",
-        exemplarEdicao: "1"
-      }]
+      emprestimos: [],
+      pagination: {}
     };
+  },
+
+  methods: {
+    Emprestimos: function Emprestimos(itemDoCorrentistas) {
+      this.itemAtual = itemDoCorrentistas;
+      console.log(this.itemAtual);
+    },
+    checkUserLevel: function checkUserLevel(userLevel) {
+      return userLevel === this.$parent.userLevel;
+    },
+
+    buscarEmprestimos: function buscarEmprestimos(page_url) {
+      document.activeElement.blur();
+      var app = this;
+      page_url = page_url || "/api/emprestimos";
+      this.axios.get(page_url).then(function (response) {
+        app.makePagination(response.data);
+        app.emprestimos = response.data.data;
+      });
+    },
+    makePagination: function makePagination(data) {
+      var cPagination = {
+        current_page: data.current_page,
+        last_page: data.last_page,
+        next_page_url: data.next_page_url,
+        prev_page_url: data.prev_page_url
+      };
+      this.pagination = cPagination;
+    }
+  },
+  created: function created() {
+    var _this = this;
+
+    var uri = "http://localhost:8000/api/emprestimos";
+    this.axios.get(uri).then(function (response) {
+      _this.resultados = response.data;
+      _this.emprestimos = _this.resultados.data;
+    });
+  },
+  mounted: function mounted() {
+    this.buscarEmprestimos();
   }
 });
 
@@ -53436,34 +53467,30 @@ var render = function() {
         }
       },
       [
-        _c("h4", [_vm._v("Marco William")]),
+        _c("h4", [_vm._v(_vm._s(_vm.itemAtual.NomeCorrentista))]),
         _vm._v(" "),
         _c("hr"),
         _vm._v(" "),
         _c("table", { staticClass: "table table-hover" }, [
           _vm._m(0),
           _vm._v(" "),
-          _c(
-            "tbody",
-            _vm._l(_vm.histEmprestimos, function(item) {
-              return _c("tr", { key: item.id }, [
-                _vm._m(1, true),
-                _vm._v(" "),
-                _c("th", { attrs: { scope: "row" } }, [
-                  _vm._v(_vm._s(item.titulo))
-                ]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(item.emprestimoData))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(item.devolucaoData))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(item.situacaoExemplar))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(item.exemplarEdicao))])
-              ])
-            }),
-            0
-          )
+          _c("tbody", [
+            _c("tr", [
+              _vm._m(1),
+              _vm._v(" "),
+              _c("th", { attrs: { scope: "row" } }, [
+                _vm._v(_vm._s(_vm.itemAtual.titulo))
+              ]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(_vm.itemAtual.emprestimoData))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(_vm.itemAtual.devolucaoData))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(_vm.itemAtual.situacaoExemplar))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(_vm.itemAtual.exemplarEdicao))])
+            ])
+          ])
         ])
       ]
     )
@@ -53475,8 +53502,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("thead", [
-      _c("th", { attrs: { scope: "col" } }),
-      _vm._v(" "),
       _c("th", { attrs: { scope: "col" } }, [_vm._v("Título")]),
       _vm._v(" "),
       _c("th", { attrs: { scope: "col" } }, [_vm._v("Emprestado em")]),

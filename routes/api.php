@@ -44,3 +44,8 @@ Route::prefix('correntistas')->group(function(){
 	Route::get('/{item}', 'CorrentistasController@mostrar')->name('correntista');
 	Route::get('/busca/{termo}', 'BuscaCorrentistasController@pag')->name('buscar_correntista');
 });
+
+Route::prefix('emprestimos')->group(function(){
+	Route::get('/', 'EmprestimosController@pag')->name('paginate_emprestimos');
+	Route::get('/{item}', 'EmprestimosController@mostrar')->name('emprestimos');
+});

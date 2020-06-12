@@ -16,11 +16,10 @@
       role="tabpanel"
       aria-labelledby="lista-livros-emprestados"
     >
-      <h4>Marco William</h4>
+      <h4>{{ itemAtual.NomeCorrentista}}</h4>
       <hr />
       <table class="table table-hover">
         <thead>
-          <th scope="col"></th>
           <th scope="col">Título</th>
           <th scope="col">Emprestado em</th>
           <th scope="col">Devolvido em</th>
@@ -28,22 +27,21 @@
           <th scope="col">Exemplar</th>
         </thead>
         <tbody>
-          <tr v-for="item in histEmprestimos" v-bind:key="item.id">
+          <tr>
             <label>
               <input type="checkbox" />
               <th scope="col"></th>
             </label>
-            <th scope="row">{{ item.titulo }}</th>
-            <td>{{ item.emprestimoData }}</td>
-            <td>{{ item.devolucaoData }}</td>
-            <td>{{ item.situacaoExemplar }}</td>
-            <td>{{ item.exemplarEdicao }}</td>
+            <th scope="row">{{ itemAtual.titulo }}</th>
+            <td>{{ itemAtual.emprestimoData }}</td>
+            <td>{{ itemAtual.devolucaoData }}</td>
+            <td>{{ itemAtual.situacaoExemplar }}</td>
+            <td>{{ itemAtual.exemplarEdicao }}</td>
           </tr>
         </tbody>
       </table>
     </div>
     <!-- Informações dos Empréstimos -->
-
   </div>
 </template>
 
@@ -78,38 +76,38 @@ table {
 .btn-btn1 {
   background-color: darkgrey;
   color: white;
-  border-color:ghostwhite;
+  border-color: ghostwhite;
   float: right;
   margin: 0 10px;
   border-radius: 5px;
 }
 .btn-btn1:hover {
   background-color: gray;
-  color:ghostwhite;
+  color: ghostwhite;
 }
 .btn-btn2 {
   background-color: darkgrey;
   color: white;
-  border-color:ghostwhite;
+  border-color: ghostwhite;
   float: right;
   margin: 0 10px;
   border-radius: 5px;
 }
 .btn-btn2:hover {
   background-color: gray;
-  color:ghostwhite;
+  color: ghostwhite;
 }
 .btn-btn3 {
   background-color: #080;
   color: white;
-  border-color:ghostwhite;
+  border-color: ghostwhite;
   float: right;
   margin: 0 10px;
   border-radius: 5px;
 }
 .btn-btn3:hover {
   background-color: #070;
-  color:ghostwhite;
+  color: ghostwhite;
 }
 </style>
 
@@ -118,37 +116,46 @@ table {
 export default {
   data() {
     return {
-      histEmprestimos: [
-        {
-          titulo: "Avenida Paulista",
-          emprestimoData: "2019-05-10",
-          devolucaoData: "2019-05-25",
-          situacaoExemplar: "Entregue",
-          exemplarEdicao: "1"
-        },
-        {
-          titulo: "Operação Urbana Faria Lima",
-          emprestimoData: "2019-11-10",
-          devolucaoData: "2019-11-23",
-          situacaoExemplar: "Entregue",
-          exemplarEdicao: "2"
-        },
-        {
-          titulo: "Polis",
-          emprestimoData: "2019-11-20",
-          devolucaoData: "",
-          situacaoExemplar: "Emprestado",
-          exemplarEdicao: "2"
-        },
-        {
-          titulo: "Cadastro de referencias urbanas: zona leste",
-          emprestimoData: "2019-12-01",
-          devolucaoData: "2019-12-15",
-          situacaoExemplar: "Entregue",
-          exemplarEdicao: "1"
-        }
-      ]
+      emprestimos: [],
+      pagination: {}
     };
+  },
+  methods: {
+    Emprestimos(itemDoCorrentistas) {
+      this.itemAtual = itemDoCorrentistas;
+      console.log(this.itemAtual);
+    },
+    checkUserLevel(userLevel) {
+      return userLevel === this.$parent.userLevel;
+    },
+    buscarEmprestimos: function(page_url) {
+      document.activeElement.blur();
+      let app = this;
+      page_url = page_url || "/api/emprestimos";
+      this.axios.get(page_url).then(function(response) {
+        app.makePagination(response.data);
+        app.emprestimos = response.data.data;
+      });
+    },
+    makePagination: function(data) {
+      var cPagination = {
+        current_page: data.current_page,
+        last_page: data.last_page,
+        next_page_url: data.next_page_url,
+        prev_page_url: data.prev_page_url
+      };
+      this.pagination = cPagination;
+    }
+  },
+  created() {
+    let uri = "http://localhost:8000/api/emprestimos";
+    this.axios.get(uri).then(response => {
+      this.resultados = response.data;
+      this.emprestimos = this.resultados.data;
+    });
+  },
+  mounted() {
+    this.buscarEmprestimos();
   }
 };
 </script>
