@@ -16,10 +16,12 @@
       role="tabpanel"
       aria-labelledby="lista-livros-emprestados"
     >
-      <h4>{{ itemAtual.NomeCorrentista}}</h4>
-      <hr />
+      <br />
+      <br />
       <table class="table table-hover">
         <thead>
+          <th scope="col"></th>
+          <th scope="col">ID</th>
           <th scope="col">Título</th>
           <th scope="col">Emprestado em</th>
           <th scope="col">Devolvido em</th>
@@ -27,21 +29,119 @@
           <th scope="col">Exemplar</th>
         </thead>
         <tbody>
-          <tr>
+          <tr v-for="item in emprestimos" v-bind:key="item.id">
             <label>
               <input type="checkbox" />
               <th scope="col"></th>
             </label>
-            <th scope="row">{{ itemAtual.titulo }}</th>
-            <td>{{ itemAtual.emprestimoData }}</td>
-            <td>{{ itemAtual.devolucaoData }}</td>
-            <td>{{ itemAtual.situacaoExemplar }}</td>
-            <td>{{ itemAtual.exemplarEdicao }}</td>
+            <td>{{ item.IDAcervo }}</td>
+            <td>Em analise.</td>
+            <td>{{ item.DataEmprestimo }}</td>
+            <td>{{ item.DataDevolucao }}</td>
+            <td>Em analise.</td>
+            <td>{{ item.EXEMPLAR }}</td>
           </tr>
         </tbody>
       </table>
     </div>
     <!-- Informações dos Empréstimos -->
+
+    <!--Paginação-->
+    <div class="container-pagination">
+      <div class="pagination">
+        <!-- <a
+          href="#"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="Primeira página"
+          class="pointer"
+        >«</a>
+        <a
+          href="#"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="Anterior"
+          class="pointer"
+        >&lt;</a>-->
+        <button
+          class="btn btn-default"
+          @click="buscarEmprestimos('/api/emprestimos')"
+          v-if="pagination.prev_page_url"
+        >«</button>
+
+        <button
+          class="btn btn-default"
+          @click="buscarEmprestimos(pagination.prev_page_url)"
+          v-if="pagination.prev_page_url"
+        >&lt;</button>
+        <!-- <a href="#">1</a>
+        <a class="active" href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>-->
+        <button
+          v-if="(parseInt(pagination.current_page) - 3) > 0"
+          class="btn btn-default"
+          @click="buscarEmprestimos('/api/emprestimos?page=' + (parseInt(pagination.current_page) - 3))"
+        >{{ pagination.current_page - 3 }}</button>
+        <button
+          v-if="(parseInt(pagination.current_page) - 2) > 0"
+          class="btn btn-default"
+          @click="buscarEmprestimos('/api/emprestimos?page=' + (parseInt(pagination.current_page) - 2))"
+        >{{ pagination.current_page - 2 }}</button>
+        <button
+          v-if="(parseInt(pagination.current_page) - 1) > 0"
+          class="btn btn-default"
+          @click="buscarEmprestimos('/api/emprestimos?page=' + (parseInt(pagination.current_page) - 1))"
+        >{{ pagination.current_page - 1 }}</button>
+        <button class="btn btn-secondary2">{{ pagination.current_page }}</button>
+        <button
+          v-if="(parseInt(pagination.current_page) + 1) <= pagination.last_page"
+          class="btn btn-default"
+          @click="buscarEmprestimos('/api/emprestimos?page=' + (parseInt(pagination.current_page) + 1))"
+          :disabled="!pagination.next_page_url"
+        >{{ pagination.current_page + 1 }}</button>
+        <button
+          v-if="(parseInt(pagination.current_page) + 2) <= pagination.last_page"
+          class="btn btn-default"
+          @click="buscarEmprestimos('/api/emprestimos?page=' + (parseInt(pagination.current_page) + 2))"
+          :disabled="!pagination.next_page_url"
+        >{{ pagination.current_page + 2 }}</button>
+        <button
+          v-if="(parseInt(pagination.current_page) + 3) <= pagination.last_page"
+          class="btn btn-default"
+          @click="buscarEmprestimos('/api/emprestimos?page=' + (parseInt(pagination.current_page) + 3))"
+          :disabled="!pagination.next_page_url"
+        >{{ pagination.current_page +3 }}</button>
+        <!-- <a
+          href="#"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="Próxima"
+          class="pointer"
+        >&gt;</a>
+        <a
+          href="#"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="Última página"
+          class="pointer"
+        >»</a>-->
+        <button
+          class="btn btn-default"
+          @click="buscarEmprestimos(pagination.next_page_url)"
+          v-if="pagination.next_page_url"
+        >&gt;</button>
+        <!-- BOTÃO - ÚLTIMA PÁGINA -->
+        <button
+          class="btn btn-default"
+          @click="buscarEmprestimos('/api/emprestimos?page=' + (parseInt(pagination.last_page)))"
+          v-if="pagination.next_page_url"
+        >»</button>
+      </div>
+    </div>
+    <!--Paginação-->
   </div>
 </template>
 
@@ -64,11 +164,6 @@ h2 {
   padding-left: 0;
   padding-top: 0;
   color: #000;
-}
-h4 {
-  color: #080;
-  font-weight: bold;
-  font-size: 22px;
 }
 table {
   color: black;
@@ -109,6 +204,20 @@ table {
   background-color: #070;
   color: ghostwhite;
 }
+.container-pagination {
+  text-align: center;
+}
+.pagination button {
+  display: inline-block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: none;
+  border-radius: 15px;
+}
+.linha-pesquisa > :first-child {
+  padding-left: 1em;
+}
 </style>
 
 
@@ -121,13 +230,6 @@ export default {
     };
   },
   methods: {
-    Emprestimos(itemDoCorrentistas) {
-      this.itemAtual = itemDoCorrentistas;
-      console.log(this.itemAtual);
-    },
-    checkUserLevel(userLevel) {
-      return userLevel === this.$parent.userLevel;
-    },
     buscarEmprestimos: function(page_url) {
       document.activeElement.blur();
       let app = this;
