@@ -26,10 +26,10 @@
     <!--pesquisa-->
 
     <div class="row">
-      <div class="col-md-10">
+      <!-- <div class="col-md-10">
         <h3>Foram localizados 10 registros em nossa base de dados</h3>
-      </div>
-      <div class="col-md-2" style="padding-top: 20px;">
+      </div> -->
+      <div class="col-md-8" style="padding-top: 20px;">
         <router-link :to="{ name: 'cadastrar' }" class="btn btn-secondary1">Cadastrar Item</router-link>
       </div>
     </div>

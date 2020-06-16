@@ -31,11 +31,11 @@
     </div>
     <!-- pesquisa -->
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-10">
         <h3>Foram localizados 06 registros em nossa base de dados</h3>
       </div>
-    </div>
+    </div> -->
     <br />
 
     <!--Tabela de itens encontrados-->
@@ -49,14 +49,74 @@
       </thead>
       <tbody>
         <tr v-for="item in correntistas" v-bind:key="item.id">
-          <td><router-link to="/emprestimos" class="pointer">{{ item.IDCorrentista }}</router-link></td>
-          <td><router-link to="/emprestimos" class="pointer">{{ item.NomeCorrentista }}</router-link></td>
-          <td><router-link to="/emprestimos" class="pointer">{{ item.Email }}</router-link></td>
+          <td
+            @click="openModal(item)"
+            data-toggle="modal"
+            data-target=".bd-example-modal-lg"
+            class="pointer"
+          >{{ item.IDCorrentista }}</td>
+          <td
+            @click="openModal(item)"
+            data-toggle="modal"
+            data-target=".bd-example-modal-lg"
+            class="pointer"
+          >{{ item.NomeCorrentista }}</td>
+          <td
+            @click="openModal(item)"
+            data-toggle="modal"
+            data-target=".bd-example-modal-lg"
+            class="pointer"
+          >{{ item.Email }}</td>
         </tr>
       </tbody>
     </table>
     <!--Tabela de itens encontrados-->
 
+    <!--Modal-->
+    <div
+      class="modal fade bd-example-modal-lg"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <h5 class="modal-title">Empréstimos do Usuário</h5>
+          <div class="modal-header">
+            <table class="table info-emprestimo">
+              <tbody>
+                <tr>
+                  <th scope="row">ID Acervo:</th>
+                  <td v-for="idacervo in itemAtual.Emprestimos" :key="idacervo.id">{{ idacervo.IDAcervo }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Título:</th>
+                  <td v-for="titulo in itemAtual.Acervo" :key="titulo.id">{{ titulo.Titulo }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Emprestado em:</th>
+                  <td v-for="dataemprestimo in itemAtual.Emprestimos" :key="dataemprestimo.id">{{ dataemprestimo.DataEmprestimo }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Devolvido em:</th>
+                  <td v-for="datadevolucao in itemAtual.Emprestimos" :key="datadevolucao.id">{{ datadevolucao.DataDevolucao }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Situação:</th>
+                  <td>Em analise.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-color">Reservar</button>
+            <button type="button" class="btn btn-secondary1" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Modal-->
     <hr />
 
     <!--Paginação-->
@@ -96,7 +156,7 @@
         <button
           v-if="(parseInt(pagination.current_page) - 3) > 0"
           class="btn btn-default"
-          @click="buscarUsuarios('/api/acervo?page=' + (parseInt(pagination.current_page) - 3))"
+          @click="buscarUsuarios('/api/correntistas?page=' + (parseInt(pagination.current_page) - 3))"
         >{{ pagination.current_page - 3 }}</button>
         <button
           v-if="(parseInt(pagination.current_page) - 2) > 0"
@@ -215,12 +275,21 @@ td {
   font-size: 16px;
   color: #000;
 }
-a {
-  color: inherit;
+.modal-title {
+  padding: 10px;
+  margin-left: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #0a0;
 }
-a:hover {
-  color: inherit;
-  text-decoration: none;
+.info-emprestimo th {
+  color: #0a0;
+  font-weight: bold;
+  font-size: 16px;
+}
+.info-emprestimo td {
+  color: black;
+  display: -webkit-box;
 }
 .container-pagination {
   text-align: center;
@@ -247,19 +316,16 @@ export default {
   data() {
     return {
       correntistas: [],
-      itemAtual: {},
+      itemAtual: [],
       resultados: {},
       pagination: {},
       termoPesquisa: ""
     };
   },
   methods: {
-    Emprestimos(itemDoCorrentistas) {
-      this.itemAtual = itemDoCorrentistas;
+    openModal(itemDosEmprestimos) {
+      this.itemAtual = itemDosEmprestimos;
       console.log(this.itemAtual);
-    },
-    checkUserLevel(userLevel) {
-      return userLevel === this.$parent.userLevel;
     },
     buscarUsuarios: function(page_url) {
       document.activeElement.blur();
@@ -286,6 +352,13 @@ export default {
         this.correntistas = this.resultados.data;
         this.makePagination(response.data);
       });
+    },
+    verificaValidade(propriedade) {
+      if (propriedade && propriedade.length > 0) {
+        return true;
+      } else {
+        return false;
+      }
     }
   },
   created() {

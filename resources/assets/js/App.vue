@@ -19,13 +19,17 @@
         <img src="../img/usuario-icon.jpg" alt="Usuarios" class="header-icon" />
       </router-link>
 
+      <router-link to="/emprestimos">
+        <img src="../img/emprestimos-icon.jpg" alt="Emprestimos" class="header-icon" />
+      </router-link>
+
       <router-link to="/relatorios">
         <img src="../img/relatorios-icon.jpg" alt="Relatorios" class="header-icon" />
       </router-link>
 
       <!-- <router-link to="/etiquetas">
         <img src="../img/etiquetas-icon.jpg" alt="Etiquetas" class="header-icon" />
-      </router-link> -->
+      </router-link>-->
 
       <a class="pointer">
         <img
@@ -148,10 +152,10 @@
   color: #0a0;
 }
 a {
-  color:gray;
+  color: gray;
 }
 a:hover {
-  color:lightslategrey;
+  color: lightslategrey;
   text-decoration: none;
 }
 .btn-modal {
@@ -163,8 +167,8 @@ a:hover {
   text-align: center;
 }
 .btn-modal:hover {
-  color:lightgrey;
-  background-color:#080;
+  color: lightgrey;
+  background-color: #080;
 }
 .pointer {
   cursor: pointer;

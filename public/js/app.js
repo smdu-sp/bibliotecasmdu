@@ -47898,7 +47898,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.main {\r\n  background-color: #fff;\r\n  padding-top: 2em;\n}\n.container {\r\n  padding-top: 2em;\n}\n.header-icon {\r\n  max-width: 150px;\r\n  padding-left: 2em;\r\n  padding-top: 1.5em;\n}\n.to-the-right {\r\n  float: right;\r\n  padding-top: 3em;\r\n  padding-right: 2em;\n}\n.logo {\r\n  max-width: 300px;\n}\n.login-icon-style {\r\n  width: 30px;\n}\n.fade-enter-active,\r\n.fade-leave-active {\r\n  -webkit-transition: opacity 0.2s;\r\n  transition: opacity 0.2s;\n}\n.fade-enter,\r\n.fade-leave-active {\r\n  opacity: 0;\n}\n.modal-content {\r\n  padding: 15px;\n}\n.modal-style {\r\n  width: 400px;\n}\n.modal-title {\r\n  padding: 10px;\r\n  margin-left: 12px;\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n  color: #0a0;\n}\na {\r\n  color:gray;\n}\na:hover {\r\n  color:lightslategrey;\r\n  text-decoration: none;\n}\n.btn-modal {\r\n  width: 70.39px;\r\n  color: #fff;\r\n  background-color: #090;\r\n  font-weight: bold;\r\n  padding-left: 10px;\r\n  text-align: center;\n}\n.btn-modal:hover {\r\n  color:lightgrey;\r\n  background-color:#080;\n}\n.pointer {\r\n  cursor: pointer;\n}\n.user-width {\r\n  width: 300px;\n}\nfooter {\r\n  padding-top: 3em;\r\n  padding-bottom: 3em;\r\n  font-size: 16px;\r\n  text-align: center;\r\n  color: #000;\n}\r\n", ""]);
+exports.push([module.i, "\n.main {\r\n  background-color: #fff;\r\n  padding-top: 2em;\n}\n.container {\r\n  padding-top: 2em;\n}\n.header-icon {\r\n  max-width: 150px;\r\n  padding-left: 2em;\r\n  padding-top: 1.5em;\n}\n.to-the-right {\r\n  float: right;\r\n  padding-top: 3em;\r\n  padding-right: 2em;\n}\n.logo {\r\n  max-width: 300px;\n}\n.login-icon-style {\r\n  width: 30px;\n}\n.fade-enter-active,\r\n.fade-leave-active {\r\n  -webkit-transition: opacity 0.2s;\r\n  transition: opacity 0.2s;\n}\n.fade-enter,\r\n.fade-leave-active {\r\n  opacity: 0;\n}\n.modal-content {\r\n  padding: 15px;\n}\n.modal-style {\r\n  width: 400px;\n}\n.modal-title {\r\n  padding: 10px;\r\n  margin-left: 12px;\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n  color: #0a0;\n}\na {\r\n  color: gray;\n}\na:hover {\r\n  color: lightslategrey;\r\n  text-decoration: none;\n}\n.btn-modal {\r\n  width: 70.39px;\r\n  color: #fff;\r\n  background-color: #090;\r\n  font-weight: bold;\r\n  padding-left: 10px;\r\n  text-align: center;\n}\n.btn-modal:hover {\r\n  color: lightgrey;\r\n  background-color: #080;\n}\n.pointer {\r\n  cursor: pointer;\n}\n.user-width {\r\n  width: 300px;\n}\nfooter {\r\n  padding-top: 3em;\r\n  padding-bottom: 3em;\r\n  font-size: 16px;\r\n  text-align: center;\r\n  color: #000;\n}\r\n", ""]);
 
 // exports
 
@@ -47944,6 +47944,10 @@ module.exports = function listToStyles (parentId, list) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Header_vue__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Header_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Header_vue__);
+//
+//
+//
+//
 //
 //
 //
@@ -48405,6 +48409,16 @@ var render = function() {
               attrs: {
                 src: __webpack_require__(59),
                 alt: "Usuarios"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("router-link", { attrs: { to: "/emprestimos" } }, [
+            _c("img", {
+              staticClass: "header-icon",
+              attrs: {
+                src: __webpack_require__(121),
+                alt: "Emprestimos"
               }
             })
           ]),
@@ -50220,11 +50234,9 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _vm._m(1),
-      _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-md-2", staticStyle: { "padding-top": "20px" } },
+        { staticClass: "col-md-8", staticStyle: { "padding-top": "20px" } },
         [
           _c(
             "router-link",
@@ -50242,7 +50254,7 @@ var render = function() {
     _c("br"),
     _vm._v(" "),
     _c("table", { staticClass: "table table-hover" }, [
-      _vm._m(2),
+      _vm._m(1),
       _vm._v(" "),
       _c(
         "tbody",
@@ -50397,13 +50409,13 @@ var render = function() {
                       : _c("td", [_vm._v("Não há descrição disponível.")])
                   ]),
                   _vm._v(" "),
+                  _vm._m(2),
+                  _vm._v(" "),
                   _vm._m(3),
                   _vm._v(" "),
                   _vm._m(4),
                   _vm._v(" "),
                   _vm._m(5),
-                  _vm._v(" "),
-                  _vm._m(6),
                   _vm._v(" "),
                   _c("tr", [
                     _c("th", { attrs: { scope: "row" } }, [
@@ -50424,7 +50436,7 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _vm._m(7)
+            _vm._m(6)
           ])
         ])
       ]
@@ -50621,16 +50633,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-2" }, [
       _c("label", { staticClass: "lbPesquisar" }, [_vm._v("Pesquisar por:")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-10" }, [
-      _c("h3", [
-        _vm._v("Foram localizados 10 registros em nossa base de dados")
-      ])
     ])
   },
   function() {
@@ -51030,7 +51032,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.main {\r\n  padding: 2em;\r\n  font-family: Arial, Helvetica, sans-serif;\n}\nh1 {\r\n  color: #000;\r\n  font-weight: bold;\n}\nh2 {\r\n  font-size: 28px;\r\n  font-style: italic;\n}\n.container {\r\n  padding-left: 0;\r\n  padding-top: 0;\r\n  color: #000;\n}\n.pointer {\r\n  cursor: pointer;\n}\n.lbPesquisar {\r\n  font-size: 18px;\r\n  color: #000;\n}\n.select-size {\r\n  width: 200px;\r\n  color: #000;\r\n  font-weight: bold;\n}\n.btn-color {\r\n  width: 120.75px;\r\n  color: #fff;\r\n  background-color: #090;\r\n  font-weight: bold;\n}\n.btn-color:hover {\r\n  background-color: #080;\r\n  color: #fff;\n}\nh3 {\r\n  font-size: 26px;\r\n  font-style: italic;\r\n  color: #090;\r\n  padding-top: 20px;\n}\n.titulos-pesquisa th {\r\n  color: #000;\r\n  font-weight: bold;\r\n  font-size: 18px;\n}\ntd {\r\n  max-width: 100px;\r\n  font-size: 16px;\r\n  color: #000;\n}\na {\r\n  color: inherit;\n}\na:hover {\r\n  color: inherit;\r\n  text-decoration: none;\n}\n.container-pagination {\r\n  text-align: center;\n}\n.pagination {\r\n  display: inline-block;\n}\n.pagination button {\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 8px 16px;\r\n  text-decoration: none;\r\n  border: none;\r\n  border-radius: 15px;\n}\n.linha-pesquisa > :first-child {\r\n  padding-left: 1em;\n}\r\n", ""]);
+exports.push([module.i, "\n.main {\r\n  padding: 2em;\r\n  font-family: Arial, Helvetica, sans-serif;\n}\nh1 {\r\n  color: #000;\r\n  font-weight: bold;\n}\nh2 {\r\n  font-size: 28px;\r\n  font-style: italic;\n}\n.container {\r\n  padding-left: 0;\r\n  padding-top: 0;\r\n  color: #000;\n}\n.pointer {\r\n  cursor: pointer;\n}\n.lbPesquisar {\r\n  font-size: 18px;\r\n  color: #000;\n}\n.select-size {\r\n  width: 200px;\r\n  color: #000;\r\n  font-weight: bold;\n}\n.btn-color {\r\n  width: 120.75px;\r\n  color: #fff;\r\n  background-color: #090;\r\n  font-weight: bold;\n}\n.btn-color:hover {\r\n  background-color: #080;\r\n  color: #fff;\n}\nh3 {\r\n  font-size: 26px;\r\n  font-style: italic;\r\n  color: #090;\r\n  padding-top: 20px;\n}\n.titulos-pesquisa th {\r\n  color: #000;\r\n  font-weight: bold;\r\n  font-size: 18px;\n}\ntd {\r\n  max-width: 100px;\r\n  font-size: 16px;\r\n  color: #000;\n}\n.modal-title {\r\n  padding: 10px;\r\n  margin-left: 12px;\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n  color: #0a0;\n}\n.info-emprestimo th {\r\n  color: #0a0;\r\n  font-weight: bold;\r\n  font-size: 16px;\n}\n.info-emprestimo td {\r\n  color: black;\r\n  display: -webkit-box;\n}\n.container-pagination {\r\n  text-align: center;\n}\n.pagination {\r\n  display: inline-block;\n}\n.pagination button {\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 8px 16px;\r\n  text-decoration: none;\r\n  border: none;\r\n  border-radius: 15px;\n}\n.linha-pesquisa > :first-child {\r\n  padding-left: 1em;\n}\r\n", ""]);
 
 // exports
 
@@ -51285,12 +51287,81 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       correntistas: [],
-      itemAtual: {},
+      itemAtual: [],
       resultados: {},
       pagination: {},
       termoPesquisa: ""
@@ -51298,12 +51369,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
-    Emprestimos: function Emprestimos(itemDoCorrentistas) {
-      this.itemAtual = itemDoCorrentistas;
+    openModal: function openModal(itemDosEmprestimos) {
+      this.itemAtual = itemDosEmprestimos;
       console.log(this.itemAtual);
-    },
-    checkUserLevel: function checkUserLevel(userLevel) {
-      return userLevel === this.$parent.userLevel;
     },
 
     buscarUsuarios: function buscarUsuarios(page_url) {
@@ -51333,6 +51401,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         _this.correntistas = _this.resultados.data;
         _this.makePagination(response.data);
       });
+    },
+    verificaValidade: function verificaValidade(propriedade) {
+      if (propriedade && propriedade.length > 0) {
+        return true;
+      } else {
+        return false;
+      }
     }
   },
   created: function created() {
@@ -51417,12 +51492,10 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
     _c("br"),
     _vm._v(" "),
     _c("table", { staticClass: "table table-hover" }, [
-      _vm._m(2),
+      _vm._m(1),
       _vm._v(" "),
       _c(
         "tbody",
@@ -51430,44 +51503,159 @@ var render = function() {
           return _c("tr", { key: item.id }, [
             _c(
               "td",
-              [
-                _c(
-                  "router-link",
-                  { staticClass: "pointer", attrs: { to: "/emprestimos" } },
-                  [_vm._v(_vm._s(item.IDCorrentista))]
-                )
-              ],
-              1
+              {
+                staticClass: "pointer",
+                attrs: {
+                  "data-toggle": "modal",
+                  "data-target": ".bd-example-modal-lg"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.openModal(item)
+                  }
+                }
+              },
+              [_vm._v(_vm._s(item.IDCorrentista))]
             ),
             _vm._v(" "),
             _c(
               "td",
-              [
-                _c(
-                  "router-link",
-                  { staticClass: "pointer", attrs: { to: "/emprestimos" } },
-                  [_vm._v(_vm._s(item.NomeCorrentista))]
-                )
-              ],
-              1
+              {
+                staticClass: "pointer",
+                attrs: {
+                  "data-toggle": "modal",
+                  "data-target": ".bd-example-modal-lg"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.openModal(item)
+                  }
+                }
+              },
+              [_vm._v(_vm._s(item.NomeCorrentista))]
             ),
             _vm._v(" "),
             _c(
               "td",
-              [
-                _c(
-                  "router-link",
-                  { staticClass: "pointer", attrs: { to: "/emprestimos" } },
-                  [_vm._v(_vm._s(item.Email))]
-                )
-              ],
-              1
+              {
+                staticClass: "pointer",
+                attrs: {
+                  "data-toggle": "modal",
+                  "data-target": ".bd-example-modal-lg"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.openModal(item)
+                  }
+                }
+              },
+              [_vm._v(_vm._s(item.Email))]
             )
           ])
         }),
         0
       )
     ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade bd-example-modal-lg",
+        attrs: {
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "myLargeModalLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c("div", { staticClass: "modal-dialog modal-lg" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _c("h5", { staticClass: "modal-title" }, [
+              _vm._v("Empréstimos do Usuário")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-header" }, [
+              _c("table", { staticClass: "table info-emprestimo" }, [
+                _c("tbody", [
+                  _c(
+                    "tr",
+                    [
+                      _c("th", { attrs: { scope: "row" } }, [
+                        _vm._v("ID Acervo:")
+                      ]),
+                      _vm._v(" "),
+                      _vm._l(_vm.itemAtual.Emprestimos, function(idacervo) {
+                        return _c("td", { key: idacervo.id }, [
+                          _vm._v(_vm._s(idacervo.IDAcervo))
+                        ])
+                      })
+                    ],
+                    2
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "tr",
+                    [
+                      _c("th", { attrs: { scope: "row" } }, [
+                        _vm._v("Título:")
+                      ]),
+                      _vm._v(" "),
+                      _vm._l(_vm.itemAtual.Acervo, function(titulo) {
+                        return _c("td", { key: titulo.id }, [
+                          _vm._v(_vm._s(titulo.Titulo))
+                        ])
+                      })
+                    ],
+                    2
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "tr",
+                    [
+                      _c("th", { attrs: { scope: "row" } }, [
+                        _vm._v("Emprestado em:")
+                      ]),
+                      _vm._v(" "),
+                      _vm._l(_vm.itemAtual.Emprestimos, function(
+                        dataemprestimo
+                      ) {
+                        return _c("td", { key: dataemprestimo.id }, [
+                          _vm._v(_vm._s(dataemprestimo.DataEmprestimo))
+                        ])
+                      })
+                    ],
+                    2
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "tr",
+                    [
+                      _c("th", { attrs: { scope: "row" } }, [
+                        _vm._v("Devolvido em:")
+                      ]),
+                      _vm._v(" "),
+                      _vm._l(_vm.itemAtual.Emprestimos, function(
+                        datadevolucao
+                      ) {
+                        return _c("td", { key: datadevolucao.id }, [
+                          _vm._v(_vm._s(datadevolucao.DataDevolucao))
+                        ])
+                      })
+                    ],
+                    2
+                  ),
+                  _vm._v(" "),
+                  _vm._m(2)
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(3)
+          ])
+        ])
+      ]
+    ),
     _vm._v(" "),
     _c("hr"),
     _vm._v(" "),
@@ -51511,7 +51699,7 @@ var render = function() {
                 on: {
                   click: function($event) {
                     _vm.buscarUsuarios(
-                      "/api/acervo?page=" +
+                      "/api/correntistas?page=" +
                         (parseInt(_vm.pagination.current_page) - 3)
                     )
                   }
@@ -51667,18 +51855,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-10" }, [
-        _c("h3", [
-          _vm._v("Foram localizados 06 registros em nossa base de dados")
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", { staticClass: "titulos-pesquisa" }, [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("ID")]),
@@ -51687,6 +51863,37 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("E-mail")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { attrs: { scope: "row" } }, [_vm._v("Situação:")]),
+      _vm._v(" "),
+      _c("td", [_vm._v("Em analise.")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        { staticClass: "btn btn-color", attrs: { type: "button" } },
+        [_vm._v("Reservar")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-secondary1",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Fechar")]
+      )
     ])
   }
 ]
@@ -53255,7 +53462,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.main {\r\n  padding: 2em;\r\n  font-family: Arial, Helvetica, sans-serif;\n}\nh1 {\r\n  color: #000;\r\n  font-weight: bold;\n}\nh2 {\r\n  font-size: 28px;\r\n  font-style: italic;\r\n  color: black;\n}\n.container {\r\n  padding-left: 0;\r\n  padding-top: 0;\r\n  color: #000;\n}\nh4 {\r\n  color: #080;\r\n  font-weight: bold;\r\n  font-size: 22px;\n}\ntable {\r\n  color: black;\n}\n.btn-btn1 {\r\n  background-color: darkgrey;\r\n  color: white;\r\n  border-color: ghostwhite;\r\n  float: right;\r\n  margin: 0 10px;\r\n  border-radius: 5px;\n}\n.btn-btn1:hover {\r\n  background-color: gray;\r\n  color: ghostwhite;\n}\n.btn-btn2 {\r\n  background-color: darkgrey;\r\n  color: white;\r\n  border-color: ghostwhite;\r\n  float: right;\r\n  margin: 0 10px;\r\n  border-radius: 5px;\n}\n.btn-btn2:hover {\r\n  background-color: gray;\r\n  color: ghostwhite;\n}\n.btn-btn3 {\r\n  background-color: #080;\r\n  color: white;\r\n  border-color: ghostwhite;\r\n  float: right;\r\n  margin: 0 10px;\r\n  border-radius: 5px;\n}\n.btn-btn3:hover {\r\n  background-color: #070;\r\n  color: ghostwhite;\n}\r\n", ""]);
+exports.push([module.i, "\n.main {\r\n  padding: 2em;\r\n  font-family: Arial, Helvetica, sans-serif;\n}\nh1 {\r\n  color: #000;\r\n  font-weight: bold;\n}\nh2 {\r\n  font-size: 28px;\r\n  font-style: italic;\r\n  color: black;\n}\n.container {\r\n  padding-left: 0;\r\n  padding-top: 0;\r\n  color: #000;\n}\ntable {\r\n  color: black;\n}\n.btn-btn1 {\r\n  background-color: darkgrey;\r\n  color: white;\r\n  border-color: ghostwhite;\r\n  float: right;\r\n  margin: 0 10px;\r\n  border-radius: 5px;\n}\n.btn-btn1:hover {\r\n  background-color: gray;\r\n  color: ghostwhite;\n}\n.btn-btn2 {\r\n  background-color: darkgrey;\r\n  color: white;\r\n  border-color: ghostwhite;\r\n  float: right;\r\n  margin: 0 10px;\r\n  border-radius: 5px;\n}\n.btn-btn2:hover {\r\n  background-color: gray;\r\n  color: ghostwhite;\n}\n.btn-btn3 {\r\n  background-color: #080;\r\n  color: white;\r\n  border-color: ghostwhite;\r\n  float: right;\r\n  margin: 0 10px;\r\n  border-radius: 5px;\n}\n.btn-btn3:hover {\r\n  background-color: #070;\r\n  color: ghostwhite;\n}\n.container-pagination {\r\n  text-align: center;\n}\n.pagination button {\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 8px 16px;\r\n  text-decoration: none;\r\n  border: none;\r\n  border-radius: 15px;\n}\n.linha-pesquisa > :first-child {\r\n  padding-left: 1em;\n}\r\n", ""]);
 
 // exports
 
@@ -53380,6 +53587,115 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -53390,14 +53706,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
-    Emprestimos: function Emprestimos(itemDoCorrentistas) {
-      this.itemAtual = itemDoCorrentistas;
-      console.log(this.itemAtual);
-    },
-    checkUserLevel: function checkUserLevel(userLevel) {
-      return userLevel === this.$parent.userLevel;
-    },
-
     buscarEmprestimos: function buscarEmprestimos(page_url) {
       document.activeElement.blur();
       var app = this;
@@ -53467,33 +53775,219 @@ var render = function() {
         }
       },
       [
-        _c("h4", [_vm._v(_vm._s(_vm.itemAtual.NomeCorrentista))]),
+        _c("br"),
         _vm._v(" "),
-        _c("hr"),
+        _c("br"),
         _vm._v(" "),
         _c("table", { staticClass: "table table-hover" }, [
           _vm._m(0),
           _vm._v(" "),
-          _c("tbody", [
-            _c("tr", [
-              _vm._m(1),
-              _vm._v(" "),
-              _c("th", { attrs: { scope: "row" } }, [
-                _vm._v(_vm._s(_vm.itemAtual.titulo))
-              ]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(_vm.itemAtual.emprestimoData))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(_vm.itemAtual.devolucaoData))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(_vm.itemAtual.situacaoExemplar))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(_vm.itemAtual.exemplarEdicao))])
-            ])
-          ])
+          _c(
+            "tbody",
+            _vm._l(_vm.emprestimos, function(item) {
+              return _c("tr", { key: item.id }, [
+                _vm._m(1, true),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(item.IDAcervo))]),
+                _vm._v(" "),
+                _c("td", [_vm._v("Em analise.")]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(item.DataEmprestimo))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(item.DataDevolucao))]),
+                _vm._v(" "),
+                _c("td", [_vm._v("Em analise.")]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(item.EXEMPLAR))])
+              ])
+            }),
+            0
+          )
         ])
       ]
-    )
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "container-pagination" }, [
+      _c("div", { staticClass: "pagination" }, [
+        _vm.pagination.prev_page_url
+          ? _c(
+              "button",
+              {
+                staticClass: "btn btn-default",
+                on: {
+                  click: function($event) {
+                    return _vm.buscarEmprestimos("/api/emprestimos")
+                  }
+                }
+              },
+              [_vm._v("«")]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.pagination.prev_page_url
+          ? _c(
+              "button",
+              {
+                staticClass: "btn btn-default",
+                on: {
+                  click: function($event) {
+                    return _vm.buscarEmprestimos(_vm.pagination.prev_page_url)
+                  }
+                }
+              },
+              [_vm._v("<")]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        parseInt(_vm.pagination.current_page) - 3 > 0
+          ? _c(
+              "button",
+              {
+                staticClass: "btn btn-default",
+                on: {
+                  click: function($event) {
+                    _vm.buscarEmprestimos(
+                      "/api/emprestimos?page=" +
+                        (parseInt(_vm.pagination.current_page) - 3)
+                    )
+                  }
+                }
+              },
+              [_vm._v(_vm._s(_vm.pagination.current_page - 3))]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        parseInt(_vm.pagination.current_page) - 2 > 0
+          ? _c(
+              "button",
+              {
+                staticClass: "btn btn-default",
+                on: {
+                  click: function($event) {
+                    _vm.buscarEmprestimos(
+                      "/api/emprestimos?page=" +
+                        (parseInt(_vm.pagination.current_page) - 2)
+                    )
+                  }
+                }
+              },
+              [_vm._v(_vm._s(_vm.pagination.current_page - 2))]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        parseInt(_vm.pagination.current_page) - 1 > 0
+          ? _c(
+              "button",
+              {
+                staticClass: "btn btn-default",
+                on: {
+                  click: function($event) {
+                    _vm.buscarEmprestimos(
+                      "/api/emprestimos?page=" +
+                        (parseInt(_vm.pagination.current_page) - 1)
+                    )
+                  }
+                }
+              },
+              [_vm._v(_vm._s(_vm.pagination.current_page - 1))]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-secondary2" }, [
+          _vm._v(_vm._s(_vm.pagination.current_page))
+        ]),
+        _vm._v(" "),
+        parseInt(_vm.pagination.current_page) + 1 <= _vm.pagination.last_page
+          ? _c(
+              "button",
+              {
+                staticClass: "btn btn-default",
+                attrs: { disabled: !_vm.pagination.next_page_url },
+                on: {
+                  click: function($event) {
+                    _vm.buscarEmprestimos(
+                      "/api/emprestimos?page=" +
+                        (parseInt(_vm.pagination.current_page) + 1)
+                    )
+                  }
+                }
+              },
+              [_vm._v(_vm._s(_vm.pagination.current_page + 1))]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        parseInt(_vm.pagination.current_page) + 2 <= _vm.pagination.last_page
+          ? _c(
+              "button",
+              {
+                staticClass: "btn btn-default",
+                attrs: { disabled: !_vm.pagination.next_page_url },
+                on: {
+                  click: function($event) {
+                    _vm.buscarEmprestimos(
+                      "/api/emprestimos?page=" +
+                        (parseInt(_vm.pagination.current_page) + 2)
+                    )
+                  }
+                }
+              },
+              [_vm._v(_vm._s(_vm.pagination.current_page + 2))]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        parseInt(_vm.pagination.current_page) + 3 <= _vm.pagination.last_page
+          ? _c(
+              "button",
+              {
+                staticClass: "btn btn-default",
+                attrs: { disabled: !_vm.pagination.next_page_url },
+                on: {
+                  click: function($event) {
+                    _vm.buscarEmprestimos(
+                      "/api/emprestimos?page=" +
+                        (parseInt(_vm.pagination.current_page) + 3)
+                    )
+                  }
+                }
+              },
+              [_vm._v(_vm._s(_vm.pagination.current_page + 3))]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.pagination.next_page_url
+          ? _c(
+              "button",
+              {
+                staticClass: "btn btn-default",
+                on: {
+                  click: function($event) {
+                    return _vm.buscarEmprestimos(_vm.pagination.next_page_url)
+                  }
+                }
+              },
+              [_vm._v(">")]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.pagination.next_page_url
+          ? _c(
+              "button",
+              {
+                staticClass: "btn btn-default",
+                on: {
+                  click: function($event) {
+                    _vm.buscarEmprestimos(
+                      "/api/emprestimos?page=" +
+                        parseInt(_vm.pagination.last_page)
+                    )
+                  }
+                }
+              },
+              [_vm._v("»")]
+            )
+          : _vm._e()
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -53502,6 +53996,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("thead", [
+      _c("th", { attrs: { scope: "col" } }),
+      _vm._v(" "),
+      _c("th", { attrs: { scope: "col" } }, [_vm._v("ID")]),
+      _vm._v(" "),
       _c("th", { attrs: { scope: "col" } }, [_vm._v("Título")]),
       _vm._v(" "),
       _c("th", { attrs: { scope: "col" } }, [_vm._v("Emprestado em")]),
@@ -54162,6 +54660,22 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/emprestimos-icon.jpg?521345a7b83c39bd0009956fc3ace4e4";
 
 /***/ })
 /******/ ]);
