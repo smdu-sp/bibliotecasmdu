@@ -39,7 +39,8 @@
     <br />
 
     <!--Tabela de itens encontrados-->
-    <table class="table table-hover">
+    <div class="table-responsive">
+    <table class="table">
       <thead>
         <tr class="titulos-pesquisa">
           <th scope="col">ID</th>
@@ -70,6 +71,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
     <!--Tabela de itens encontrados-->
 
     <!--Modal-->
@@ -92,7 +94,7 @@
                 </tr>
                 <tr>
                   <th scope="row">Título:</th>
-                  <td v-for="titulo in itemAtual.Acervo" :key="titulo.id">{{ titulo.Titulo }}</td>
+                  <td v-for="titulo in Acervo" :key="titulo.id">{{ titulo.Titulo }}</td>
                 </tr>
                 <tr>
                   <th scope="row">Emprestado em:</th>

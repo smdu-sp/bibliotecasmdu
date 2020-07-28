@@ -19,24 +19,28 @@
       <div class="col-md-8">
         <input type="search" v-on:keyup.enter="pesquisar()" v-model="termoPesquisa" placeholder="Digite o termo desejado" class="form-control" />
       </div>
-      <div class="col-sm-2">
+      <div class="col-sm-1">
         <button @click="pesquisar()" type="submit" class="btn mb-2 btn-color">Pesquisar</button>
+      </div>
+      <div class="col-md-1">
+        <router-link :to="{ name: 'cadastrar' }" class="btn btn-secondary1">Cadastrar Item</router-link>
       </div>
     </div>
     <!--pesquisa-->
 
-    <div class="row">
-      <!-- <div class="col-md-10">
+    <!-- <div class="row">
+      <div class="col-md-10">
         <h3>Foram localizados 10 registros em nossa base de dados</h3>
-      </div> -->
-      <div class="col-md-8" style="padding-top: 20px;">
+      </div>
+      <div class="col-md-2" style="padding-top: 20px;">
         <router-link :to="{ name: 'cadastrar' }" class="btn btn-secondary1">Cadastrar Item</router-link>
       </div>
-    </div>
+    </div> -->
     <br />
 
     <!--Tabela de itens encontrados-->
-    <table class="table table-hover">
+    <div class="table-responsive">
+    <table class="table">
       <thead>
         <tr class="titulos-pesquisa">
           <th class="col-sm-1">ID</th>
@@ -90,6 +94,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
     <!--Tabela de itens encontrados-->
 
     <!--Modal-->

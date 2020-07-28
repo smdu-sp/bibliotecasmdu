@@ -1,13 +1,56 @@
 <template>
   <div class="main">
-    <div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">
+        <img src="../img/logo-prefeitura.jpg" alt="Home" class="logo" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Alterna navegação"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/sobre">
+            <img src="../img/sobre-icon.jpg" alt="Sobre" class="header-icon" />
+          </a>
+          <a class="nav-item nav-link" href="/catalogo">
+            <img src="../img/catalogo-icon.jpg" alt="Catalogo" class="header-icon" />
+          </a>
+          <a class="nav-item nav-link" href="/usuarios">
+            <img src="../img/catalogo-icon.jpg" alt="Catalogo" class="header-icon" />
+          </a>
+          <a class="nav-item nav-link" href="/relatorios">
+            <img src="../img/relatorios-icon.jpg" alt="Relatorios" class="header-icon" />
+          </a>
+          <a class="nav-item nav-link">
+            <img
+              src="../img/login-icon.jpg"
+              alt="login"
+              class="header-icon to-the-right"
+              @click="openModal"
+              data-toggle="modal"
+              data-target=".chamar-modal"
+            />
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- <div>
       <router-link to="/">
         <img src="../img/logo-prefeitura.jpg" alt="Home" class="logo" />
-      </router-link>
+    </router-link>-->
 
-      <!--<router-link to="/cadastrar">Cadastrar Item</router-link>-->
+    <!--<router-link to="/cadastrar">Cadastrar Item</router-link>-->
 
-      <router-link to="/sobre">
+    <!-- <router-link to="/sobre">
         <img src="../img/sobre-icon.jpg" alt="Sobre" class="header-icon" />
       </router-link>
 
@@ -25,12 +68,12 @@
 
       <router-link to="/relatorios">
         <img src="../img/relatorios-icon.jpg" alt="Relatorios" class="header-icon" />
-      </router-link>
+    </router-link>-->
 
-      <!-- <router-link to="/etiquetas">
+    <!-- <router-link to="/etiquetas">
         <img src="../img/etiquetas-icon.jpg" alt="Etiquetas" class="header-icon" />
-      </router-link>-->
-
+    </router-link>-->
+    <!-- 
       <a class="pointer">
         <img
           src="../img/login-icon.jpg"
@@ -41,7 +84,8 @@
           data-target=".chamar-modal"
         />
       </a>
-    </div>
+    </div>-->
+
     <!-- <Header></Header> -->
     <transition name="fade">
       <router-view></router-view>
@@ -107,6 +151,31 @@
 </template>
  
 <style>
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  img {
+    display: inline-block;
+    margin: 14px;
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .navbar-toggler {
+    display: none;
+  }
+}
 .main {
   background-color: #fff;
   padding-top: 2em;
@@ -120,8 +189,8 @@
   padding-top: 1.5em;
 }
 .to-the-right {
-  float: right;
-  padding-top: 3em;
+  position: absolute;
+  right: 0px;
   padding-right: 2em;
 }
 .logo {
@@ -170,9 +239,9 @@ a:hover {
   color: lightgrey;
   background-color: #080;
 }
-.pointer {
+/* .pointer {
   cursor: pointer;
-}
+} */
 .user-width {
   width: 300px;
 }
@@ -191,17 +260,17 @@ import Header from "./components/Header.vue";
 export default {
   name: "Biblioteca",
   components: {
-    Header
+    Header,
   },
   data() {
     return {
-      userLevel: "unknown"
+      userLevel: "unknown",
     };
   },
   methods: {
     openModal() {
       // Função do Bootstrap
-    }
-  }
+    },
+  },
 };
 </script>

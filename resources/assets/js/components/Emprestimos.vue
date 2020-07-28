@@ -18,7 +18,8 @@
     >
       <br />
       <br />
-      <table class="table table-hover">
+      <div class="table-responsive">
+      <table class="table">
         <thead>
           <th scope="col"></th>
           <th scope="col">ID</th>
@@ -35,7 +36,7 @@
               <th scope="col"></th>
             </label>
             <td>{{ item.IDAcervo }}</td>
-            <td>Em analise.</td>
+            <td v-for="titulo in Acervo" :key="titulo.id">titulo.Titulo</td>
             <td>{{ item.DataEmprestimo }}</td>
             <td>{{ item.DataDevolucao }}</td>
             <td>Em analise.</td>
@@ -43,6 +44,7 @@
           </tr>
         </tbody>
       </table>
+    </div>
     </div>
     <!-- Informações dos Empréstimos -->
 

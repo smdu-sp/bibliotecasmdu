@@ -32,7 +32,8 @@
     <br />
 
     <!--Tabela de itens encontrados-->
-    <table class="table table-hover">
+    <div class="table-responsive">
+    <table class="table">
       <thead>
         <tr class="relatorios-pesquisa">
           <th scope="col">Título</th>
@@ -75,6 +76,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
     <!--Tabela de itens encontrados-->
 
     <!--Modal-->
