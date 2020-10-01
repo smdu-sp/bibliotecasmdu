@@ -14,7 +14,6 @@ Vue.use(VueAxios, axios);
 import VueTheMask from 'vue-the-mask';
 Vue.use(VueTheMask)
 
-
 import Home from './components/Home.vue';
 import Cadastrar from './components/Cadastrar.vue';
 import Catalogo from './components/Catalogo.vue';
