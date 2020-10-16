@@ -49173,7 +49173,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.container {\r\n  background-color: #fff;\r\n  padding: 2em;\r\n  font-family: Arial, Helvetica, sans-serif;\n}\n.bg-home {\r\n  /*background-image: url('/images/background-home-image.jpg');*/\r\n  /*background-repeat: no-repeat;*/\r\n  min-height: 500px;\r\n  text-align: center;\r\n  width: 100%;\r\n  left: 0;\n}\n.bg-img {\r\n  position: absolute;\r\n  width: 100vw;\r\n  max-width: 100%;\r\n  z-index: 0;\r\n  left: 0;\r\n  height: 500px;\n}\n.alinhar-itens {\r\n  position: absolute;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\r\n  top: 25%;\r\n  bottom: 25%;\r\n  margin: auto;\r\n  z-index: 2;\r\n  left: 0;\n}\n.titulo {\r\n  color: white;\r\n  font-weight: bold;\r\n  font-size: 40px;\r\n  text-align: center;\n}\n.subtitulo {\r\n  color: white;\r\n  font-weight: bold;\r\n  font-size: 24px;\r\n  text-align: center;\r\n  padding: 60px;\r\n  margin-right: 200px;\r\n  margin-left: 200px;\n}\n.btnVisualizarCatalogo {\r\n  color: white;\r\n  background-color: #c00;\r\n  border-radius: 12px;\r\n  border-width: 0px;\r\n  border-color: red;\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n  padding: 6px;\n}\n.home-card {\r\n  margin-right: 1%;\r\n  margin-left: 1%;\r\n  float: left;\r\n  width: 250px;\r\n  color: #000;\r\n  text-align: center;\r\n  min-height: 100px;\n}\n.home-card > img {\r\n  min-height: 143px;\n}\n.icon-sizes {\r\n  max-width: 90px;\r\n  padding-top: 50px;\n}\nh4 {\r\n  font-weight: bold;\r\n  color: #000;\n}\n.btnCards {\r\n  width: 150px;\r\n  background-color: #090;\r\n  color: white;\r\n  text-align: center;\r\n  font-weight: bold;\r\n  font-size: 20px;\r\n  border-radius: 12px;\r\n  border-color: #0a0;\r\n  border-width: 0px;\r\n  padding: 6px;\n}\r\n\r\n/* Extra small devices (portrait phones, less than 576px) */\n@media (max-width: 575.98px) {\n.titulo {\r\n  font-size: 25px;\r\n    text-align: center;\r\n    padding: 25px;\n}\n.subtitulo {\r\n    font-size: 15px;\r\n    text-align: center;\r\n    padding: 45px;\r\n    margin-right: 50px;\r\n    margin-left: 50px;\n}\n}\r\n/* Small devices (landscape phones, 576px and up) */\n@media (min-width: 576px) and (max-width: 767.98px) {\n}\r\n/* Medium devices (tablets, 768px and up) */\n@media (min-width: 768px) and (max-width: 991.98px) {\n}\r\n/* Large devices (desktops, 992px and up) */\n@media (min-width: 992px) and (max-width: 1199.98px) {\n}\r\n/* Extra large devices (large desktops, 1200px and up) */\n@media (min-width: 1200px) {\n}\r\n", ""]);
+exports.push([module.i, "\n.container {\r\n  background-color: #fff;\r\n  padding: 2em;\r\n  font-family: Arial, Helvetica, sans-serif;\n}\n.bg-home {\r\n  /*background-image: url('/images/background-home-image.jpg');*/\r\n  /*background-repeat: no-repeat;*/\r\n  min-height: 500px;\r\n  text-align: center;\r\n  width: 100%;\r\n  left: 0;\n}\n.bg-img {\r\n  position: absolute;\r\n  width: 100vw;\r\n  max-width: 100%;\r\n  z-index: 0;\r\n  left: 0;\r\n  height: 500px;\n}\n.alinhar-itens {\r\n  position: absolute;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\r\n  top: 25%;\r\n  bottom: 25%;\r\n  margin: auto;\r\n  z-index: 2;\r\n  left: 0;\n}\n.titulo {\r\n  color: white;\r\n  font-weight: bold;\r\n  font-size: 40px;\r\n  text-align: center;\n}\n.subtitulo {\r\n  color: white;\r\n  font-weight: bold;\r\n  font-size: 24px;\r\n  text-align: center;\r\n  padding: 60px;\r\n  margin-right: 200px;\r\n  margin-left: 200px;\n}\n.btnVisualizarCatalogo {\r\n  color: white;\r\n  background-color: #c00;\r\n  border-radius: 12px;\r\n  border-width: 0px;\r\n  border-color: red;\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n  padding: 6px;\n}\n.home-card {\r\n  margin-right: 1%;\r\n  margin-left: 1%;\r\n  float: left;\r\n  width: 250px;\r\n  color: #000;\r\n  text-align: center;\r\n  min-height: 100px;\n}\n.home-card > img {\r\n  min-height: 143px;\n}\n.icon-sizes {\r\n  max-width: 90px;\r\n  padding-top: 50px;\n}\nh4 {\r\n  font-weight: bold;\r\n  color: #000;\n}\n.btnCards {\r\n  width: 150px;\r\n  background-color: #090;\r\n  color: white;\r\n  text-align: center;\r\n  font-weight: bold;\r\n  font-size: 20px;\r\n  border-radius: 12px;\r\n  border-color: #0a0;\r\n  border-width: 0px;\r\n  padding: 6px;\n}\r\n\r\n/* Extra small devices (portrait phones, less than 576px) */\n@media (max-width: 575.98px) {\n.titulo {\r\n    font-size: 25px;\r\n    text-align: center;\r\n    padding: 25px;\n}\n.subtitulo {\r\n    font-size: 17px;\r\n    padding: 35px;\r\n    margin-right: 50px;\r\n    margin-left: 50px;\n}\n}\r\n/* Small devices (landscape phones, 576px and up) */\n@media (min-width: 576px) and (max-width: 767.98px) {\r\n  /* .subtitulo {\r\n    padding: 25px;\r\n    margin-right: 100px;\r\n    margin-left: 100px;\r\n  } */\n.navbar-collapse.collapse {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\n}\n}\r\n/* Medium devices (tablets, 768px and up) */\n@media (min-width: 768px) and (max-width: 991.98px) {\n.navbar-collapse.collapse {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\n}\n.titulo {\r\n    font-size: 50px;\n}\n.subtitulo {\r\n    font-size: 25px;\r\n    padding: 15px;\n}\n.btnVisualizarCatalogo {\r\n    font-size: 30px;\n}\n}\r\n/* Large devices (desktops, 992px and up) */\n@media (min-width: 992px) and (max-width: 1199.98px) {\n}\r\n/* Extra large devices (large desktops, 1200px and up) */\n@media (min-width: 1200px) {\n}\r\n", ""]);
 
 // exports
 
@@ -49184,6 +49184,22 @@ exports.push([module.i, "\n.container {\r\n  background-color: #fff;\r\n  paddin
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -49358,7 +49374,7 @@ var render = function() {
           _vm._v(" "),
           _c("p", { staticClass: "subtitulo" }, [
             _vm._v(
-              "\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n        tempor incididunt ut labore et dolore magna aliqua.\n      "
+              "\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do\n        eiusmod tempor incididunt ut labore et dolore magna aliqua.\n      "
             )
           ]),
           _vm._v(" "),

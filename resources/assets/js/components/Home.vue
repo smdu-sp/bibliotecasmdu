@@ -5,8 +5,8 @@
       <div class="alinhar-itens">
         <p class="titulo">Controle de documentos</p>
         <p class="subtitulo">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <br />
         <router-link to="catalogo">
@@ -115,33 +115,47 @@ h4 {
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   .titulo {
-  font-size: 25px;
+    font-size: 25px;
     text-align: center;
     padding: 25px;
   }
   .subtitulo {
-    font-size: 15px;
-    text-align: center;
-    padding: 45px;
+    font-size: 17px;
+    padding: 35px;
     margin-right: 50px;
-    margin-left: 50px;
-}
+    margin-left: 50px;  
+  }
 }
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-
+  /* .subtitulo {
+    padding: 25px;
+  } */
+  .navbar-collapse.collapse {
+    display: flex;
+  }
 }
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-
+  .navbar-collapse.collapse {
+    display: flex;
+  }
+  .titulo {
+    font-size: 50px;
+  }
+  .subtitulo {
+    font-size: 25px;
+    padding: 15px;
+  }
+  .btnVisualizarCatalogo {
+    font-size: 30px;
+  }
 }
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-
 }
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-
 }
 </style>
 
@@ -149,6 +163,6 @@ h4 {
 export default {
   mounted() {
     console.log("Componente Home montado.");
-  }
+  },
 };
 </script>
